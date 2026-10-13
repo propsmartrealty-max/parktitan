@@ -11,7 +11,7 @@ const PHONE_NUMBER = '+91 7744009295';
 const PHONE_RAW = '7744009295';
 const WHATSAPP_LINK = 'https://wa.me/917744009295?text=Hi%20Pride%20Purple%20Team%2C%20I%20am%20interested%20in%20Park%20Titan%20Hinjewadi.%20Please%20share%20cost%20sheet%20and%20floor%20plans.';
 const LEAD_EMAIL = 'propsmartrealty@gmail.com';
-const RERA_NUMBER = 'P52100049631';
+const RERA_NUMBER = 'P52100047702, P52100028049, P52100030567';
 const GOOGLE_MAPS_URL = 'https://www.google.com/maps/place/Pride+Purple/@18.6022775,73.7252633,17z/data=!3m1!4b1!4m6!3m5!1s0x3bc2bbe16bf80081:0x3e5e7c84298f3dcf!8m2!3d18.6022775!4d73.7278382!16s%2Fg%2F11fv4jxp10';
 
 // Base HTML Shell for Edge Transformation
@@ -428,8 +428,8 @@ const EDGE_HTML_TEMPLATE = `<!DOCTYPE html>
         <div class="edge-stat-lbl">Padukone · Shiamak · BSA</div>
       </div>
       <div class="edge-stat-card">
-        <div class="edge-stat-val">₹84.02L*</div>
-        <div class="edge-stat-lbl">Starting Agreement Value</div>
+        <div class="edge-stat-val">₹93.57L*</div>
+        <div class="edge-stat-lbl">Final Price (All-Inclusive)*</div>
       </div>
     </div>
   </section>
@@ -477,7 +477,7 @@ const EDGE_HTML_TEMPLATE = `<!DOCTYPE html>
   <!-- Footer -->
   <footer class="edge-footer">
     <div style="max-width:800px;margin:0 auto">
-      <p style="margin-bottom:12px"><strong>Pride Purple Park Titan Hinjewadi</strong> · MahaRERA Registration: P52100049631, P52100080502, P52100031768, P52100034961.</p>
+      <p style="margin-bottom:12px"><strong>Pride Purple Park Titan Hinjewadi</strong> · MahaRERA Registration: Phase 1 (P52100028049), Phase 2 (P52100030567), Phase 5 (P52100047702).</p>
       <p style="margin-bottom:16px">Authorized Channel Partner / Direct Desk: <a href="tel:7744009295"><strong>+91 7744009295</strong></a> | Enquiries: <a href="mailto:propsmartrealty@gmail.com"><strong>propsmartrealty@gmail.com</strong></a></p>
       <p style="font-size:11px;color:rgba(255,255,255,0.4)">Disclaimer: All details, floor plans, dimensions, and prices are based on sanctioned RERA disclosures and subject to prevailing builder terms. This portal is maintained for authorized informational assistance and site visit coordination.</p>
     </div>
@@ -684,7 +684,7 @@ function resolveProgrammaticSlug(slug) {
   
   let category = 'Township Engineering';
   let entity = 'Park Titan Hinjewadi';
-  let price_val = '8402750';
+  let price_val = '9357088';
   let tableRows = '';
   let contextualOverview = '';
 
@@ -710,20 +710,18 @@ function resolveProgrammaticSlug(slug) {
     category = 'Floor Plans & Cost Sheet';
     entity = cleanTitle.replace(/Pride Purple Park Titan | Floor Plan And Sanctioned Layout| Cost Sheet And Price Breakdown/g, '');
     
-    let agVal = '₹84,02,750';
     let allInc = '₹93,57,088*';
-    let carpet = '652.45 sq.ft.';
-    let balcony = '73.99 sq.ft.';
     let total = '726.44 sq.ft.';
+    price_val = '9357088';
     
     if (slug.includes('789')) {
-      agVal = '₹90,61,500'; allInc = '₹1,00,88,275*'; carpet = '680.14 sq.ft.'; balcony = '109.40 sq.ft.'; total = '789.54 sq.ft.'; price_val = '9061500';
+      allInc = '₹1,00,88,275*'; total = '789.54 sq.ft.'; price_val = '10088275';
     } else if (slug.includes('988')) {
-      agVal = '₹1,11,38,500'; allInc = '₹1,23,93,825*'; carpet = '906.40 sq.ft.'; balcony = '81.85 sq.ft.'; total = '988.25 sq.ft.'; price_val = '11138500';
+      allInc = '₹1,23,93,825*'; total = '988.25 sq.ft.'; price_val = '12393825';
     } else if (slug.includes('1060')) {
-      agVal = '₹1,23,27,600'; allInc = '₹1,37,13,680*'; carpet = '936.17 sq.ft.'; balcony = '123.70 sq.ft.'; total = '1,059.87 sq.ft.'; price_val = '12327600';
+      allInc = '₹1,37,13,680*'; total = '1,059.87 sq.ft.'; price_val = '13713680';
     } else if (slug.includes('1212')) {
-      agVal = '₹1,48,10,600'; allInc = '₹1,64,69,830*'; carpet = '1,063.46 sq.ft.'; balcony = '148.76 sq.ft.'; total = '1,212.22 sq.ft.'; price_val = '14810600';
+      allInc = '₹1,64,69,830*'; total = '1,212.22 sq.ft.'; price_val = '16469830';
     }
 
     contextualOverview = `
@@ -732,11 +730,8 @@ function resolveProgrammaticSlug(slug) {
     `;
     tableRows = `
       <tr><td>Configuration Format</td><td><strong>${escapeHtml(entity)}</strong></td></tr>
-      <tr><td>Net RERA Usable Carpet</td><td>${carpet}</td></tr>
-      <tr><td>Sanctioned Balcony Area</td><td>${balcony}</td></tr>
-      <tr><td>Total Sanctioned Living Space</td><td><strong>${total}</strong></td></tr>
-      <tr><td>Agreement Value</td><td><strong>${agVal}</strong></td></tr>
-      <tr><td>All-Inclusive Total (Taxes Incl.)</td><td><strong style="color:#d4af37">${allInc}</strong></td></tr>
+      <tr><td>Total Carpet Area</td><td><strong style="color:#d4af37">${total}</strong></td></tr>
+      <tr><td>Final Price (All-Inclusive)*</td><td><strong style="color:#2ecc71;font-size:16px">${allInc}</strong></td></tr>
       <tr><td>Floor Rise Applicable</td><td>₹15,000 per floor (from 2nd floor onwards)</td></tr>
       <tr><td>MahaRERA Sanction Status</td><td>Registered &amp; Fully Sanctioned (${RERA_NUMBER})</td></tr>
     `;
@@ -904,7 +899,7 @@ function resolveProgrammaticSlug(slug) {
   return {
     slug,
     title: `${cleanTitle} | Pride Purple Park Titan Hinjewadi`,
-    meta_desc: `Explore ${cleanTitle} at Pride Purple Park Titan Hinjewadi. 2 & 3 BHK luxury residences starting ₹84.02L*. MahaRERA ${RERA_NUMBER}. Call ${PHONE_NUMBER}.`,
+    meta_desc: `Explore ${cleanTitle} at Pride Purple Park Titan Hinjewadi. 2 & 3 BHK luxury residences (Total Carpet 726.44 to 1,212.22 sq.ft.) with final all-inclusive pricing starting ₹93.57L*. MahaRERA ${RERA_NUMBER}. Call ${PHONE_NUMBER}.`,
     h1: cleanTitle,
     category,
     entity,
