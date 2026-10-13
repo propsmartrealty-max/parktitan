@@ -1,0 +1,88 @@
+name: Enterprise Multi-Engine SEO Indexer & Cloudflare Cache Automation
+
+on:
+  push:
+    branches: [ main ]
+  schedule:
+    # 08:00 UTC = 00:00 PST (when Google Indexing API 200/day daily quota resets!)
+    - cron: '0 8 * * *'
+  workflow_dispatch:
+
+jobs:
+  run-multi-engine-indexing:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install Python Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install google-auth requests
+
+      - name: Setup Service Account Key
+        env:
+          GCP_SA_KEY: ${{ secrets.GCP_SA_KEY }}
+        run: |
+          if [ -n "$GCP_SA_KEY" ]; then
+            echo "$GCP_SA_KEY" > service_account.json
+            echo "Service account loaded from GitHub Secrets."
+          else
+            echo "Notice: GCP_SA_KEY secret not found; proceeding with IndexNow engine."
+          fi
+
+      - name: Run Multi-Engine Indexing (Google Indexing API + IndexNow)
+        run: |
+          if [ -f "service_account.json" ]; then
+            python3 scripts/google_indexing_api.py --key service_account.json --sitemap sitemaps/sitemap-pages.xml || true
+          else
+            python3 -c "
+import requests
+urls = [
+    'https://purpleparktitan.com/',
+    'https://purpleparktitan.com/videos/pride-purple-park-titan-official-walkthrough',
+    'https://purpleparktitan.com/videos/',
+    'https://purpleparktitan.com/explore/',
+    'https://purpleparktitan.com/articles/'
+]
+payload = {
+    'host': 'purpleparktitan.com',
+    'key': 'c7d094744fb02eb115c943afbffeb469',
+    'keyLocation': 'https://purpleparktitan.com/c7d094744fb02eb115c943afbffeb469.txt',
+    'urlList': urls
+}
+res = requests.post('https://api.indexnow.org/indexnow', json=payload, headers={'Content-Type': 'application/json'}, timeout=15)
+print(f'IndexNow Status: {res.status_code}')
+"
+          fi
+
+      - name: Ping Search Engine Sitemaps
+        run: |
+          echo "Pinging Google Sitemap..."
+          curl -s -I "https://www.google.com/ping?sitemap=https://purpleparktitan.com/sitemap.xml" || true
+          echo "Pinging Bing Sitemap..."
+          curl -s -I "https://www.bing.com/ping?sitemap=https://purpleparktitan.com/sitemap.xml" || true
+
+      - name: Purge Cloudflare Edge Cache
+        env:
+          CF_ZONE_ID: ${{ secrets.CF_ZONE_ID }}
+          CF_EMAIL: ${{ secrets.CF_EMAIL }}
+          CF_KEY: ${{ secrets.CF_KEY }}
+        run: |
+          if [ -n "$CF_KEY" ] && [ -n "$CF_EMAIL" ] && [ -n "$CF_ZONE_ID" ]; then
+            echo "Purging Cloudflare Edge Cache..."
+            curl -s -X POST "https://api.cloudflare.com/client/v4/zones/${CF_ZONE_ID}/purge_cache" \
+                 -H "X-Auth-Email: ${CF_EMAIL}" \
+                 -H "X-Auth-Key: ${CF_KEY}" \
+                 -H "Content-Type: application/json" \
+                 --data '{"purge_everything":true}' || true
+            echo "Cloudflare edge cache purge request dispatched!"
+          else
+            echo "Cloudflare secrets not configured in GitHub repository settings; skipping purge step."
+          fi

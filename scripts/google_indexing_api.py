@@ -100,6 +100,35 @@ def publish_url(url, token, action_type="URL_UPDATED"):
         print(f"  [✗ ERROR] {url} -> {e}")
         return False
 
+
+INDEXNOW_ENDPOINT = "https://api.indexnow.org/indexnow"
+INDEXNOW_KEY = "c7d094744fb02eb115c943afbffeb469"
+INDEXNOW_KEY_LOCATION = "https://purpleparktitan.com/c7d094744fb02eb115c943afbffeb469.txt"
+
+def submit_to_indexnow(urls):
+    print("\n" + "=" * 65)
+    print("  SUBMITTING TO INDEXNOW (BING, YANDEX, SEZNAM, NAVER, COPILOT)")
+    print("=" * 65)
+    payload = {
+        "host": "purpleparktitan.com",
+        "key": INDEXNOW_KEY,
+        "keyLocation": INDEXNOW_KEY_LOCATION,
+        "urlList": urls[:1000] # IndexNow allows up to 10,000 URLs per call
+    }
+    headers = {"Content-Type": "application/json; charset=utf-8"}
+    try:
+        res = requests.post(INDEXNOW_ENDPOINT, headers=headers, json=payload, timeout=20)
+        if res.status_code in [200, 202]:
+            print(f"  [✓ {res.status_code} ACCEPTED] {len(urls)} URLs pushed directly to IndexNow network!")
+            return True
+        else:
+            print(f"  [✗ {res.status_code}] IndexNow returned: {res.text}")
+            return False
+    except Exception as e:
+        print(f"  [✗ ERROR] IndexNow submission error: {e}")
+        return False
+
+
 def main():
     parser = argparse.ArgumentParser(description="Google Indexing API Batch Pushing Tool")
     parser.add_argument("--key", default="service_account.json", help="Path to Google Cloud Service Account JSON key")
@@ -134,8 +163,14 @@ def main():
             success_count += 1
 
     print("\n" + "=" * 65)
-    print(f"Completed! Successfully submitted {success_count}/{len(urls_to_submit)} URLs to Google Indexing API.")
-    print("Googlebot typically initiates crawling within 2 to 15 minutes.")
+    print(f"Completed! Submitted to Google Indexing API: {success_count}/{len(urls_to_submit)} successful.")
+    if success_count == 0:
+        print("  Notice: Google 200/day daily quota will reset at midnight PST.")
+
+    # Push to IndexNow network (Bing, Yandex, Copilot)
+    submit_to_indexnow(urls_to_submit)
+    print("\n" + "=" * 65)
+    print("MULTI-ENGINE INDEXING RUN COMPLETE!")
     print("=" * 65)
 
 if __name__ == "__main__":
