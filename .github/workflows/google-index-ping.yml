@@ -1,0 +1,21 @@
+name: Google & Bing Search Indexing Automation
+
+on:
+  push:
+    branches: [ main ]
+  schedule:
+    # Run daily at 00:00 UTC to re-ping search engines
+    - cron: '0 0 * * *'
+  workflow_dispatch:
+
+jobs:
+  ping-search-engines:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping Google & Bing Sitemaps
+        run: |
+          echo "Pinging Google with updated sitemap..."
+          curl -s -I "https://www.google.com/ping?sitemap=https://purpleparktitan.com/sitemap.xml" || true
+          echo "Pinging Bing with updated sitemap..."
+          curl -s -I "https://www.bing.com/ping?sitemap=https://purpleparktitan.com/sitemap.xml" || true
+          echo "Search engine ping completed successfully!"
