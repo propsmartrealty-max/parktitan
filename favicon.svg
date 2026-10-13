@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <linearGradient id="purpleGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4A154B"/>
+      <stop offset="50%" stop-color="#2D082E"/>
+      <stop offset="100%" stop-color="#140317"/>
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FCE38A"/>
+      <stop offset="40%" stop-color="#E6BE6E"/>
+      <stop offset="80%" stop-color="#C8963C"/>
+      <stop offset="100%" stop-color="#8A6520"/>
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="1.5" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <!-- Premium Rounded Icon Base -->
+  <rect width="64" height="64" rx="14" fill="url(#purpleGrad)"/>
+  <rect width="62" height="62" x="1" y="1" rx="13" fill="none" stroke="url(#goldGrad)" stroke-width="1.2" stroke-opacity="0.6"/>
+
+  <!-- Iconic 'P' & Crown Monogram for Pride Purple Park Titan -->
+  <g transform="translate(32, 33)">
+    <!-- Crown / Apex Accents -->
+    <path d="M-10 -15 L-5 -21 L0 -17 L5 -21 L10 -15 Z" fill="url(#goldGrad)" filter="url(#glow)"/>
+    
+    <!-- Stylized Monogram P -->
+    <path d="M-8 -12 L-8 17 M-8 -12 L3 -12 C8 -12 11 -9 11 -4 C11 1 8 4 3 4 L-8 4" 
+          fill="none" 
+          stroke="url(#goldGrad)" 
+          stroke-width="4.2" 
+          stroke-linecap="round" 
+          stroke-linejoin="round"/>
+          
+    <!-- Architectural Diamond Accent -->
+    <polygon points="0, -4 2, -1 0, 2 -2, -1" fill="#FFFFFF" opacity="0.9"/>
+  </g>
+</svg>

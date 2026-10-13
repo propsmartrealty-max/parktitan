@@ -12,6 +12,12 @@
 <meta name="geo.placename" content="Hinjewadi, Pune"/>
 <meta name="geo.position" content="18.5975;73.7228"/>
 <meta name="ICBM" content="18.5975, 73.7228"/>
+<!-- Favicon & Brand Icons -->
+<link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"/>
+<link rel="shortcut icon" href="/favicon.ico"/>
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"/>
+<meta name="theme-color" content="#2D082E"/>
 <link rel="canonical" href="https://purpleparktitan.com/"/>
 
 <!-- Open Graph / Facebook -->
@@ -1562,25 +1568,55 @@ em.gold, .t1 em, .t2 em, .hero-h1 em {
 #loader {
   position: fixed;
   inset: 0;
-  z-index: 8000;
-  background: var(--ink);
+  z-index: 99999;
+  background: radial-gradient(circle at center, #1E0B20 0%, #0A040B 70%, #050206 100%);
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  gap: 20px;
-  transition: opacity .8s var(--ease1), visibility .8s;
+  transition: opacity .5s cubic-bezier(.16,1,.3,1), visibility .5s;
+  pointer-events: all;
 }
 #loader.out {
   opacity: 0;
   visibility: hidden;
+  pointer-events: none;
+}
+.loader-brand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 14px;
+  animation: lfadeIn .5s cubic-bezier(.16,1,.3,1) forwards;
+}
+.loader-logo-img {
+  width: 140px;
+  height: auto;
+  filter: drop-shadow(0 0 24px rgba(200,150,60,.45)) drop-shadow(0 0 10px rgba(110,34,115,.4));
+  margin-bottom: 4px;
+}
+.loader-title {
+  font-family: var(--f-display);
+  font-size: 26px;
+  font-weight: 300;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  color: var(--white);
+  line-height: 1;
+}
+.loader-title em {
+  font-style: italic;
+  color: var(--gold2);
 }
 .loader-line {
-  width: 120px;
-  height: 1px;
-  background: rgba(255,255,255,.1);
+  width: 140px;
+  height: 2px;
+  background: rgba(255,255,255,.08);
   position: relative;
   overflow: hidden;
+  border-radius: 2px;
+  margin: 6px 0;
 }
 .loader-line::after {
   content: '';
@@ -1588,18 +1624,24 @@ em.gold, .t1 em, .t2 em, .hero-h1 em {
   inset-block: 0;
   left: -100%;
   width: 100%;
-  background: linear-gradient(90deg, transparent, var(--gold), transparent);
-  animation: lscan 1.2s var(--ease1) infinite;
+  background: linear-gradient(90deg, transparent, #E6BE6E, #C8963C, transparent);
+  animation: lscan .9s cubic-bezier(.16,1,.3,1) infinite;
 }
 @keyframes lscan {
   to { left: 200%; }
 }
-.loader-txt {
-  font-family: var(--f-serif);
-  font-size: 14px;
-  letter-spacing: 5px;
+@keyframes lfadeIn {
+  from { opacity: 0; transform: scale(.96) translateY(6px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+.loader-sub {
+  font-family: var(--f-ui);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 4px;
   text-transform: uppercase;
-  color: rgba(255,255,255,.45);
+  color: var(--gold2);
+  opacity: .85;
 }
 
 /* ── NAVBAR ── */
@@ -4412,11 +4454,14 @@ footer {
 <div id="cursor-dot"></div>
 <div id="cursor-ring"></div>
 
-<!-- 2. Loader -->
-<div id="loader">
-  <div class="loader-txt">Park Titan</div>
-  <div class="loader-line"></div>
-  <div class="loader-txt" style="font-size:10px;letter-spacing:4px">Pride Purple · Hinjewadi, Pune</div>
+<!-- 2. Loader (Exact Logo Branding Element) -->
+<div id="loader" aria-label="Loading Pride Purple Park Titan">
+  <div class="loader-brand">
+    <img src="/images/logo-park-titan.png" alt="Pride Purple Park Titan Logo" class="loader-logo-img"/>
+    <div class="loader-title">PARK <em>TITAN</em></div>
+    <div class="loader-line"></div>
+    <div class="loader-sub">PRIDE PURPLE · HINJEWADI, PUNE</div>
+  </div>
 </div>
 
 <!-- 4. Mobile Navigation Overlay -->
@@ -6361,12 +6406,23 @@ document.querySelectorAll('button, a, .acard, .tcard, .life-cell, .fcard, .spec-
 });
 
 /* ── Loader ── */
+// Infallible Fast Loader Dismissal
+function dismissLoader() {
+  const l = document.getElementById('loader');
+  if (l && !l.classList.contains('out')) {
+    l.classList.add('out');
+    document.querySelectorAll('.hpanel img').forEach(img => {
+      const p = img.closest('.hpanel');
+      if (p) p.classList.add('loaded');
+    });
+  }
+}
+// Dismiss immediately on window load
 window.addEventListener('load', () => {
-  setTimeout(() => {
-    document.getElementById('loader').classList.add('out');
-    document.querySelectorAll('.hpanel img').forEach(img => img.closest('.hpanel').classList.add('loaded'));
-  }, 1000);
+  setTimeout(dismissLoader, 450);
 });
+// Fallback dismiss after 1.8s max so website NEVER gets stuck
+setTimeout(dismissLoader, 1800);
 
 /* ── Navbar & FAB on Scroll ── */
 const nav = document.getElementById('navbar');
