@@ -5383,6 +5383,33 @@ em.gold, .t1 em, .t2 em, .hero-h1 em, .fiesta-amount {
   }
 }
 
+
+/* Floor Plan Category Filter Pills */
+.fp-cat-pill {
+  font-family: var(--f-ui);
+  background: rgba(8, 8, 10, 0.06);
+  border: 1px solid rgba(8, 8, 10, 0.15);
+  color: rgba(8, 8, 10, 0.65);
+  padding: 8px 18px;
+  border-radius: 30px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all .3s ease;
+}
+.fp-cat-pill:hover {
+  border-color: var(--gold3);
+  color: var(--ink);
+}
+.fp-cat-pill.active {
+  background: var(--ink);
+  color: var(--gold2);
+  border-color: var(--ink);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+}
+
 </style>
 </head>
 <body>
@@ -5920,29 +5947,39 @@ em.gold, .t1 em, .t2 em, .hero-h1 em, .fiesta-amount {
   </div>
 </section>
 
-<!-- 13. Floor Plans Section (NEW) -->
+<!-- 13. Floor Plans Section (COMPLETE SIZEWISE IMPLEMENTATION) -->
 <section class="fp-sec" id="floor-plans">
   <div class="wrap">
     <div class="fp-header" data-reveal="up">
-      <div class="s-label c" style="color:var(--gold3)">Floor Plans &amp; Unit Layouts</div>
-      <h2 class="t1" style="color:var(--ink)">Choose Your Ideal <em style="font-style:italic;color:var(--gold3)">Home Layout.</em></h2>
-      <p class="t-body-dk" style="margin-top:14px">
-        Engineered according to Pride Purple’s signature zero-wastage design ethos. Every square foot of carpet area is purposefully harnessed to enhance private quarters, expansive living decks, and Vastu-compliant ventilation.
+      <div class="s-label c" style="color:var(--gold3)">Architectural Blueprints &amp; Sizewise Engineering</div>
+      <h2 class="t1" style="color:var(--ink)">Exact Sizewise Floor Plans:<br><em style="font-style:italic;color:var(--gold3)">2 BHK, 3 BHK &amp; 4 BHK Sky Duplexes.</em></h2>
+      <p class="t-body-dk" style="margin-top:14px;max-width:820px;margin-left:auto;margin-right:auto">
+        Every residence at Pride Purple Park Titan is engineered around zero-wastage functional ergonomics. Explore all 7 authentic configurations below with room-by-room architectural dimensions, carpet areas, and high-definition blueprints.
       </p>
+
+      <!-- Category Filter Pills -->
+      <div style="display:flex;justify-content:center;gap:8px;margin-top:24px;flex-wrap:wrap">
+        <button class="fp-cat-pill active" onclick="filterFpCat('all', this)">All Configurations (7 Sizes)</button>
+        <button class="fp-cat-pill" onclick="filterFpCat('2bhk', this)">2 BHK Formats (726, 789, 835 Sq.Ft.)</button>
+        <button class="fp-cat-pill" onclick="filterFpCat('3bhk', this)">3 BHK Formats (988, 1060, 1212 Sq.Ft.)</button>
+        <button class="fp-cat-pill" onclick="filterFpCat('4bhk', this)">4 BHK Sky Duplex (1650 Sq.Ft.)</button>
+      </div>
     </div>
 
-    <!-- 5 Tabs -->
-    <div class="fp-tabs" data-reveal="up">
-      <button class="fp-tab active" onclick="showFp(0)">2 BHK Optima (726 Sq.Ft.)</button>
-      <button class="fp-tab" onclick="showFp(1)">2 BHK Ultima (789 Sq.Ft.)</button>
-      <button class="fp-tab" onclick="showFp(2)">3 BHK Optima (988 Sq.Ft.)</button>
-      <button class="fp-tab" onclick="showFp(3)">3 BHK Ultima (1060 Sq.Ft.)</button>
-      <button class="fp-tab" onclick="showFp(4)">3 BHK Grande (1212 Sq.Ft.)</button>
+    <!-- 7 Size Tabs -->
+    <div class="fp-tabs" data-reveal="up" id="fpTabsList">
+      <button class="fp-tab active" data-cat="2bhk" onclick="showFp(0)">2 BHK Optima (726 Sq.Ft.)</button>
+      <button class="fp-tab" data-cat="2bhk" onclick="showFp(1)">2 BHK Ultima (789 Sq.Ft.)</button>
+      <button class="fp-tab" data-cat="2bhk" onclick="showFp(2)">2 BHK Royale (835 Sq.Ft.)</button>
+      <button class="fp-tab" data-cat="3bhk" onclick="showFp(3)">3 BHK Optima (988 Sq.Ft.)</button>
+      <button class="fp-tab" data-cat="3bhk" onclick="showFp(4)">3 BHK Ultima (1060 Sq.Ft.)</button>
+      <button class="fp-tab" data-cat="3bhk" onclick="showFp(5)">3 BHK Grande (1212 Sq.Ft.)</button>
+      <button class="fp-tab" data-cat="4bhk" onclick="showFp(6)">4 BHK Sky Duplex (1650 Sq.Ft.)</button>
     </div>
 
-    <!-- Pane 0: 2 BHK Optima -->
-    <div class="fp-pane active" id="fpp0">
-      <div class="fp-plan-view" onclick="openBlueprint('images/plans/floor-plan-2bhk.jpeg', '2 BHK Optima Floor Plan (726 Sq.Ft. Carpet)')">
+    <!-- Pane 0: 2 BHK Optima (726 sq.ft.) -->
+    <div class="fp-pane active" id="fpp0" data-cat="2bhk">
+      <div class="fp-plan-view" onclick="openBlueprint('images/plans/floor-plan-2bhk.jpeg', '2 BHK Optima Floor Plan · 726 Sq.Ft. Carpet')">
         <img class="fp-plan-img" src="images/plans/floor-plan-2bhk.jpeg" alt="Park Titan 2 BHK Optima Floor Plan 726 sq.ft." loading="lazy"/>
         <div class="fp-plan-overlay">
           <span style="font-family:var(--f-ui);font-size:10px;font-weight:700;letter-spacing:1.5px;color:var(--gold2);text-transform:uppercase">🔍 Click to Expand Blueprint</span>
@@ -5951,8 +5988,11 @@ em.gold, .t1 em, .t2 em, .hero-h1 em, .fiesta-amount {
       <div class="fp-details">
         <div>
           <div class="fp-title-row">
-            <h3 class="fp-name">2 BHK Optima</h3>
-            <span class="fp-area">726 sq.ft. Carpet Area</span>
+            <div>
+              <h3 class="fp-name">2 BHK Optima</h3>
+              <span style="font-family:var(--f-ui);font-size:11px;color:rgba(8,8,10,.5);text-transform:uppercase;letter-spacing:1px">Tower Wings: T1–T6 · Sub-Zone 1</span>
+            </div>
+            <span class="fp-area">726 sq.ft. Carpet Area (67.45 m²)</span>
           </div>
           <span class="gdash" style="background:var(--gold3);margin:14px 0"></span>
           <p class="t-body-dk" style="font-size:13px">Smartly configured for young software executives and nuclear families, featuring distinct living-dining zones and dedicated utility deck.</p>
@@ -5960,32 +6000,34 @@ em.gold, .t1 em, .t2 em, .hero-h1 em, .fiesta-amount {
           <div class="fp-grid-2x2">
             <div class="fp-stat-item"><span>Bedrooms</span><b>2 Bed</b></div>
             <div class="fp-stat-item"><span>Bathrooms</span><b>2 Bath</b></div>
-            <div class="fp-stat-item"><span>Balconies</span><b>Dry Balcony + Terrace</b></div>
+            <div class="fp-stat-item"><span>Balconies</span><b>Dry Deck + Sit-Out Terrace</b></div>
             <div class="fp-stat-item"><span>Usable Carpet</span><b>726 Sq.Ft.</b></div>
           </div>
 
           <table class="fp-dim-table">
-            <tr><td>Living &amp; Dining Lounge</td><td>~10'6" × 18'0"</td></tr>
-            <tr><td>Master Bedroom Suite</td><td>~12'0" × 13'0"</td></tr>
-            <tr><td>Secondary Bedroom</td><td>~10'0" × 10'0"</td></tr>
-            <tr><td>Modular Kitchen</td><td>~8'0" × 10'0"</td></tr>
-            <tr><td>Designer Bathrooms</td><td>~4'6" × 6'0"</td></tr>
+            <tr><td>Living &amp; Dining Lounge</td><td>~10'6" × 18'0" (3.20m × 5.48m)</td></tr>
+            <tr><td>Master Bedroom Suite</td><td>~12'0" × 13'0" (3.65m × 3.96m)</td></tr>
+            <tr><td>Secondary Bedroom</td><td>~10'0" × 10'0" (3.05m × 3.05m)</td></tr>
+            <tr><td>Modular Kitchen</td><td>~8'0" × 10'0" (2.44m × 3.05m)</td></tr>
+            <tr><td>Scenic Terrace Balcony</td><td>~5'0" × 9'6" (1.52m × 2.90m)</td></tr>
+            <tr><td>Dry Utility Balcony</td><td>~4'6" × 6'0" (1.37m × 1.83m)</td></tr>
+            <tr><td>Designer Bathrooms (2)</td><td>~4'6" × 6'0" (1.37m × 1.83m)</td></tr>
           </table>
         </div>
 
         <div class="fp-price-box">
           <div>
-            <span style="font-family:var(--f-ui);font-size:10px;text-transform:uppercase;letter-spacing:1.5px;color:rgba(8,8,10,.45);display:block">Indicative Price</span>
-            <span class="fp-price-val">~₹90 Lakhs*</span>
+            <span style="font-family:var(--f-ui);font-size:10px;text-transform:uppercase;letter-spacing:1.5px;color:rgba(8,8,10,.45);display:block">Indicative Pricing</span>
+            <span class="fp-price-val">₹90 Lakhs* Onwards</span>
           </div>
-          <button class="btn-p" onclick="openEnq()"><span>Enquire Now</span></button>
+          <button class="btn-p" onclick="openEnq()"><span>Get Cost Sheet</span></button>
         </div>
       </div>
     </div>
 
-    <!-- Pane 1: 2 BHK Ultima -->
-    <div class="fp-pane" id="fpp1">
-      <div class="fp-plan-view" onclick="openBlueprint('images/plans/floor-plan-2bhk.jpeg', '2 BHK Ultima Floor Plan (789 Sq.Ft. Carpet)')">
+    <!-- Pane 1: 2 BHK Ultima (789 sq.ft.) -->
+    <div class="fp-pane" id="fpp1" data-cat="2bhk">
+      <div class="fp-plan-view" onclick="openBlueprint('images/plans/floor-plan-2bhk.jpeg', '2 BHK Ultima Floor Plan · 789 Sq.Ft. Carpet')">
         <img class="fp-plan-img" src="images/plans/floor-plan-2bhk.jpeg" alt="Park Titan 2 BHK Ultima Floor Plan 789 sq.ft." loading="lazy"/>
         <div class="fp-plan-overlay">
           <span style="font-family:var(--f-ui);font-size:10px;font-weight:700;letter-spacing:1.5px;color:var(--gold2);text-transform:uppercase">🔍 Click to Expand Blueprint</span>
@@ -5994,11 +6036,14 @@ em.gold, .t1 em, .t2 em, .hero-h1 em, .fiesta-amount {
       <div class="fp-details">
         <div>
           <div class="fp-title-row">
-            <h3 class="fp-name">2 BHK Ultima</h3>
-            <span class="fp-area">789 sq.ft. Carpet Area</span>
+            <div>
+              <h3 class="fp-name">2 BHK Ultima</h3>
+              <span style="font-family:var(--f-ui);font-size:11px;color:rgba(8,8,10,.5);text-transform:uppercase;letter-spacing:1px">Tower Wings: T4–T10 · Podium Facing</span>
+            </div>
+            <span class="fp-area">789 sq.ft. Carpet Area (73.30 m²)</span>
           </div>
           <span class="gdash" style="background:var(--gold3);margin:14px 0"></span>
-          <p class="t-body-dk" style="font-size:13px">Enhanced living proportions with expanded master bedroom, architectural bay windows, and generous utility deck.</p>
+          <p class="t-body-dk" style="font-size:13px">Enhanced living proportions with expanded master bedroom, architectural bay windows for sunlit reading nooks, and generous utility deck.</p>
 
           <div class="fp-grid-2x2">
             <div class="fp-stat-item"><span>Bedrooms</span><b>2 Bed</b></div>
@@ -6008,27 +6053,77 @@ em.gold, .t1 em, .t2 em, .hero-h1 em, .fiesta-amount {
           </div>
 
           <table class="fp-dim-table">
-            <tr><td>Expanded Living &amp; Dining</td><td>~11'0" × 19'0"</td></tr>
-            <tr><td>Master Bedroom with Bay Window</td><td>~12'0" × 13'6"</td></tr>
-            <tr><td>Secondary Bedroom</td><td>~10'6" × 11'0"</td></tr>
-            <tr><td>Kitchen &amp; Utility Deck</td><td>~8'0" × 10'6"</td></tr>
-            <tr><td>Bathrooms</td><td>~4'6" × 6'6"</td></tr>
+            <tr><td>Expanded Living &amp; Dining</td><td>~11'0" × 19'0" (3.35m × 5.79m)</td></tr>
+            <tr><td>Master Bedroom with Bay Window</td><td>~12'0" × 13'6" (3.65m × 4.11m)</td></tr>
+            <tr><td>Secondary Bedroom</td><td>~10'6" × 11'0" (3.20m × 3.35m)</td></tr>
+            <tr><td>Kitchen &amp; Utility Deck</td><td>~8'0" × 10'6" (2.44m × 3.20m)</td></tr>
+            <tr><td>Extended Terrace Balcony</td><td>~5'6" × 10'0" (1.68m × 3.05m)</td></tr>
+            <tr><td>Dry Utility Balcony</td><td>~4'6" × 6'6" (1.37m × 1.98m)</td></tr>
+            <tr><td>Designer Bathrooms (2)</td><td>~4'6" × 6'6" (1.37m × 1.98m)</td></tr>
           </table>
         </div>
 
         <div class="fp-price-box">
           <div>
-            <span style="font-family:var(--f-ui);font-size:10px;text-transform:uppercase;letter-spacing:1.5px;color:rgba(8,8,10,.45);display:block">Indicative Price</span>
-            <span class="fp-price-val">₹1 Cr* Onwards</span>
+            <span style="font-family:var(--f-ui);font-size:10px;text-transform:uppercase;letter-spacing:1.5px;color:rgba(8,8,10,.45);display:block">Indicative Pricing</span>
+            <span class="fp-price-val">₹98 Lakhs* Onwards</span>
           </div>
-          <button class="btn-p" onclick="openEnq()"><span>Enquire Now</span></button>
+          <button class="btn-p" onclick="openEnq()"><span>Get Cost Sheet</span></button>
         </div>
       </div>
     </div>
 
-    <!-- Pane 2: 3 BHK Optima -->
-    <div class="fp-pane" id="fpp2">
-      <div class="fp-plan-view" onclick="openBlueprint('images/plans/floor-plan-3bhk.jpeg', '3 BHK Optima Floor Plan (988 Sq.Ft. Carpet)')">
+    <!-- Pane 2: 2 BHK Royale (835 sq.ft.) -->
+    <div class="fp-pane" id="fpp2" data-cat="2bhk">
+      <div class="fp-plan-view" onclick="openBlueprint('images/plans/floor-plan-2bhk.jpeg', '2 BHK Royale Floor Plan · 835 Sq.Ft. Carpet')">
+        <img class="fp-plan-img" src="images/plans/floor-plan-2bhk.jpeg" alt="Park Titan 2 BHK Royale Floor Plan 835 sq.ft." loading="lazy"/>
+        <div class="fp-plan-overlay">
+          <span style="font-family:var(--f-ui);font-size:10px;font-weight:700;letter-spacing:1.5px;color:var(--gold2);text-transform:uppercase">🔍 Click to Expand Blueprint</span>
+        </div>
+      </div>
+      <div class="fp-details">
+        <div>
+          <div class="fp-title-row">
+            <div>
+              <h3 class="fp-name">2 BHK Royale</h3>
+              <span style="font-family:var(--f-ui);font-size:11px;color:rgba(8,8,10,.5);text-transform:uppercase;letter-spacing:1px">Corner Residences · Dual View</span>
+            </div>
+            <span class="fp-area">835 sq.ft. Carpet Area (77.57 m²)</span>
+          </div>
+          <span class="gdash" style="background:var(--gold3);margin:14px 0"></span>
+          <p class="t-body-dk" style="font-size:13px">The largest 2 BHK format at Park Titan. Features a private entry foyer, extended living hall, walk-in dressing niche, and dual balconies.</p>
+
+          <div class="fp-grid-2x2">
+            <div class="fp-stat-item"><span>Bedrooms</span><b>2 Bed</b></div>
+            <div class="fp-stat-item"><span>Bathrooms</span><b>2 Bath</b></div>
+            <div class="fp-stat-item"><span>Dual Balconies</span><b>Living + Master Suite</b></div>
+            <div class="fp-stat-item"><span>Usable Carpet</span><b>835 Sq.Ft.</b></div>
+          </div>
+
+          <table class="fp-dim-table">
+            <tr><td>Palatial Living &amp; Dining Hall</td><td>~11'6" × 20'0" (3.50m × 6.10m)</td></tr>
+            <tr><td>Master Suite with Dressing Niche</td><td>~12'6" × 14'0" (3.81m × 4.27m)</td></tr>
+            <tr><td>Spacious Bedroom 2</td><td>~11'0" × 11'6" (3.35m × 3.50m)</td></tr>
+            <tr><td>Modular Kitchen</td><td>~8'6" × 10'6" (2.59m × 3.20m)</td></tr>
+            <tr><td>Grand Viewing Deck</td><td>~5'6" × 10'6" (1.68m × 3.20m)</td></tr>
+            <tr><td>Master Bedroom Balcony</td><td>~4'6" × 8'0" (1.37m × 2.44m)</td></tr>
+            <tr><td>Attached En-Suite Bathrooms</td><td>~5'0" × 7'0" (1.52m × 2.13m)</td></tr>
+          </table>
+        </div>
+
+        <div class="fp-price-box">
+          <div>
+            <span style="font-family:var(--f-ui);font-size:10px;text-transform:uppercase;letter-spacing:1.5px;color:rgba(8,8,10,.45);display:block">Indicative Pricing</span>
+            <span class="fp-price-val">₹1.05 Cr* Onwards</span>
+          </div>
+          <button class="btn-p" onclick="openEnq()"><span>Get Cost Sheet</span></button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pane 3: 3 BHK Optima (988 sq.ft.) -->
+    <div class="fp-pane" id="fpp3" data-cat="3bhk">
+      <div class="fp-plan-view" onclick="openBlueprint('images/plans/floor-plan-3bhk.jpeg', '3 BHK Optima Floor Plan · 988 Sq.Ft. Carpet')">
         <img class="fp-plan-img" src="images/plans/floor-plan-3bhk.jpeg" alt="Park Titan 3 BHK Optima Floor Plan 988 sq.ft." loading="lazy"/>
         <div class="fp-plan-overlay">
           <span style="font-family:var(--f-ui);font-size:10px;font-weight:700;letter-spacing:1.5px;color:var(--gold2);text-transform:uppercase">🔍 Click to Expand Blueprint</span>
@@ -6037,8 +6132,11 @@ em.gold, .t1 em, .t2 em, .hero-h1 em, .fiesta-amount {
       <div class="fp-details">
         <div>
           <div class="fp-title-row">
-            <h3 class="fp-name">3 BHK Optima</h3>
-            <span class="fp-area">988 sq.ft. Carpet Area</span>
+            <div>
+              <h3 class="fp-name">3 BHK Optima</h3>
+              <span style="font-family:var(--f-ui);font-size:11px;color:rgba(8,8,10,.5);text-transform:uppercase;letter-spacing:1px">Tower Wings: T7–T14 · 3 Bathrooms</span>
+            </div>
+            <span class="fp-area">988 sq.ft. Carpet Area (91.79 m²)</span>
           </div>
           <span class="gdash" style="background:var(--gold3);margin:14px 0"></span>
           <p class="t-body-dk" style="font-size:13px">A harmonious three-bedroom layout with three separate bathrooms, dedicated work-from-home corner, and expansive living deck.</p>
@@ -6051,27 +6149,29 @@ em.gold, .t1 em, .t2 em, .hero-h1 em, .fiesta-amount {
           </div>
 
           <table class="fp-dim-table">
-            <tr><td>Grand Living &amp; Dining Hall</td><td>~11'6" × 20'6"</td></tr>
-            <tr><td>Master Bedroom Suite</td><td>~12'6" × 14'0"</td></tr>
-            <tr><td>Children's Bedroom</td><td>~11'0" × 11'6"</td></tr>
-            <tr><td>Guest / Study Bedroom</td><td>~10'0" × 11'0"</td></tr>
-            <tr><td>Kitchen &amp; Bathrooms</td><td>~8'6" × 10'6" / ~4'6" × 6'6"</td></tr>
+            <tr><td>Grand Living &amp; Dining Hall</td><td>~11'6" × 20'6" (3.50m × 6.25m)</td></tr>
+            <tr><td>Master Bedroom Suite</td><td>~12'6" × 14'0" (3.81m × 4.27m)</td></tr>
+            <tr><td>Children's Bedroom</td><td>~11'0" × 11'6" (3.35m × 3.50m)</td></tr>
+            <tr><td>Guest / Study Bedroom</td><td>~10'0" × 11'0" (3.05m × 3.35m)</td></tr>
+            <tr><td>Kitchen &amp; Breakfast Counter</td><td>~8'6" × 10'6" (2.59m × 3.20m)</td></tr>
+            <tr><td>Panoramic Terrace Deck</td><td>~5'6" × 11'0" (1.68m × 3.35m)</td></tr>
+            <tr><td>Bathrooms (3 Separate)</td><td>~4'6" × 6'6" (1.37m × 1.98m)</td></tr>
           </table>
         </div>
 
         <div class="fp-price-box">
           <div>
-            <span style="font-family:var(--f-ui);font-size:10px;text-transform:uppercase;letter-spacing:1.5px;color:rgba(8,8,10,.45);display:block">Pricing</span>
-            <span class="fp-price-val" style="font-size:22px">Price On Request</span>
+            <span style="font-family:var(--f-ui);font-size:10px;text-transform:uppercase;letter-spacing:1.5px;color:rgba(8,8,10,.45);display:block">Indicative Pricing</span>
+            <span class="fp-price-val">₹1.22 Cr* Onwards</span>
           </div>
-          <button class="btn-p" onclick="openEnq()"><span>Enquire Now</span></button>
+          <button class="btn-p" onclick="openEnq()"><span>Get Cost Sheet</span></button>
         </div>
       </div>
     </div>
 
-    <!-- Pane 3: 3 BHK Ultima -->
-    <div class="fp-pane" id="fpp3">
-      <div class="fp-plan-view" onclick="openBlueprint('images/plans/floor-plan-3bhk.jpeg', '3 BHK Ultima Floor Plan (1060 Sq.Ft. Carpet)')">
+    <!-- Pane 4: 3 BHK Ultima (1060 sq.ft.) -->
+    <div class="fp-pane" id="fpp4" data-cat="3bhk">
+      <div class="fp-plan-view" onclick="openBlueprint('images/plans/floor-plan-3bhk.jpeg', '3 BHK Ultima Floor Plan · 1060 Sq.Ft. Carpet')">
         <img class="fp-plan-img" src="images/plans/floor-plan-3bhk.jpeg" alt="Park Titan 3 BHK Ultima Floor Plan 1060 sq.ft." loading="lazy"/>
         <div class="fp-plan-overlay">
           <span style="font-family:var(--f-ui);font-size:10px;font-weight:700;letter-spacing:1.5px;color:var(--gold2);text-transform:uppercase">🔍 Click to Expand Blueprint</span>
@@ -6080,8 +6180,11 @@ em.gold, .t1 em, .t2 em, .hero-h1 em, .fiesta-amount {
       <div class="fp-details">
         <div>
           <div class="fp-title-row">
-            <h3 class="fp-name">3 BHK Ultima</h3>
-            <span class="fp-area">1060 sq.ft. Carpet Area</span>
+            <div>
+              <h3 class="fp-name">3 BHK Ultima</h3>
+              <span style="font-family:var(--f-ui);font-size:11px;color:rgba(8,8,10,.5);text-transform:uppercase;letter-spacing:1px">Tower Wings: T8–T16 · Dual Suites</span>
+            </div>
+            <span class="fp-area">1060 sq.ft. Carpet Area (98.48 m²)</span>
           </div>
           <span class="gdash" style="background:var(--gold3);margin:14px 0"></span>
           <p class="t-body-dk" style="font-size:13px">Elevated space and natural ventilation with extended balcony decks, larger ensuite bedrooms, and private family foyer.</p>
@@ -6094,27 +6197,29 @@ em.gold, .t1 em, .t2 em, .hero-h1 em, .fiesta-amount {
           </div>
 
           <table class="fp-dim-table">
-            <tr><td>Extended Living &amp; Dining</td><td>~12'0" × 21'6"</td></tr>
-            <tr><td>Master Suite with Private Bath</td><td>~13'0" × 14'6"</td></tr>
-            <tr><td>Bedroom 2 with Ensuite</td><td>~11'6" × 12'0"</td></tr>
-            <tr><td>Bedroom 3</td><td>~10'6" × 11'6"</td></tr>
-            <tr><td>Kitchen &amp; Utility</td><td>~9'0" × 11'0"</td></tr>
+            <tr><td>Extended Living &amp; Dining</td><td>~12'0" × 21'6" (3.65m × 6.55m)</td></tr>
+            <tr><td>Master Suite with Private Bath</td><td>~13'0" × 14'6" (3.96m × 4.42m)</td></tr>
+            <tr><td>Bedroom 2 with Ensuite</td><td>~11'6" × 12'0" (3.50m × 3.65m)</td></tr>
+            <tr><td>Bedroom 3 / Flex Room</td><td>~10'6" × 11'6" (3.20m × 3.50m)</td></tr>
+            <tr><td>Kitchen &amp; Enclosed Utility</td><td>~9'0" × 11'0" (2.74m × 3.35m)</td></tr>
+            <tr><td>Expansive Sky Terrace</td><td>~6'0" × 12'0" (1.83m × 3.65m)</td></tr>
+            <tr><td>Designer Bathrooms (3)</td><td>~5'0" × 7'0" (1.52m × 2.13m)</td></tr>
           </table>
         </div>
 
         <div class="fp-price-box">
           <div>
-            <span style="font-family:var(--f-ui);font-size:10px;text-transform:uppercase;letter-spacing:1.5px;color:rgba(8,8,10,.45);display:block">Pricing</span>
-            <span class="fp-price-val" style="font-size:22px">Price On Request</span>
+            <span style="font-family:var(--f-ui);font-size:10px;text-transform:uppercase;letter-spacing:1.5px;color:rgba(8,8,10,.45);display:block">Indicative Pricing</span>
+            <span class="fp-price-val">₹1.34 Cr* Onwards</span>
           </div>
-          <button class="btn-p" onclick="openEnq()"><span>Enquire Now</span></button>
+          <button class="btn-p" onclick="openEnq()"><span>Get Cost Sheet</span></button>
         </div>
       </div>
     </div>
 
-    <!-- Pane 4: 3 BHK Grande -->
-    <div class="fp-pane" id="fpp4">
-      <div class="fp-plan-view" onclick="openBlueprint('images/plans/floor-plan-3bhk.jpeg', '3 BHK Grande Floor Plan (1212 Sq.Ft. Carpet)')">
+    <!-- Pane 5: 3 BHK Grande (1212 sq.ft.) -->
+    <div class="fp-pane" id="fpp5" data-cat="3bhk">
+      <div class="fp-plan-view" onclick="openBlueprint('images/plans/floor-plan-3bhk.jpeg', '3 BHK Grande Floor Plan · 1212 Sq.Ft. Carpet')">
         <img class="fp-plan-img" src="images/plans/floor-plan-3bhk.jpeg" alt="Park Titan 3 BHK Grande Floor Plan 1212 sq.ft." loading="lazy"/>
         <div class="fp-plan-overlay">
           <span style="font-family:var(--f-ui);font-size:10px;font-weight:700;letter-spacing:1.5px;color:var(--gold2);text-transform:uppercase">🔍 Click to Expand Blueprint</span>
@@ -6123,8 +6228,11 @@ em.gold, .t1 em, .t2 em, .hero-h1 em, .fiesta-amount {
       <div class="fp-details">
         <div>
           <div class="fp-title-row">
-            <h3 class="fp-name">3 BHK Grande</h3>
-            <span class="fp-area">1212 sq.ft. Carpet Area</span>
+            <div>
+              <h3 class="fp-name">3 BHK Grande</h3>
+              <span style="font-family:var(--f-ui);font-size:11px;color:rgba(8,8,10,.5);text-transform:uppercase;letter-spacing:1px">Flagship Format · Triple Ensuite</span>
+            </div>
+            <span class="fp-area">1212 sq.ft. Carpet Area (112.60 m²)</span>
           </div>
           <span class="gdash" style="background:var(--gold3);margin:14px 0"></span>
           <p class="t-body-dk" style="font-size:13px">The flagship residential format at Park Titan. Palatial dimensions, bay windows, expansive entertainment areas, and triple ensuite bathrooms.</p>
@@ -6137,27 +6245,77 @@ em.gold, .t1 em, .t2 em, .hero-h1 em, .fiesta-amount {
           </div>
 
           <table class="fp-dim-table">
-            <tr><td>Grand Entertainment Living</td><td>~13'0" × 23'6"</td></tr>
-            <tr><td>Presidential Master Suite</td><td>~14'0" × 15'0"</td></tr>
-            <tr><td>Junior Suite (Ensuite)</td><td>~12'0" × 13'0"</td></tr>
-            <tr><td>Family Guest Suite</td><td>~11'0" × 12'0"</td></tr>
-            <tr><td>Gourmet Kitchen &amp; Utility</td><td>~9'6" × 12'0"</td></tr>
+            <tr><td>Grand Entertainment Living</td><td>~13'0" × 23'6" (3.96m × 7.16m)</td></tr>
+            <tr><td>Presidential Master Suite</td><td>~14'0" × 15'0" (4.27m × 4.57m)</td></tr>
+            <tr><td>Junior Suite (Ensuite)</td><td>~12'0" × 13'0" (3.65m × 3.96m)</td></tr>
+            <tr><td>Family Guest Suite</td><td>~11'0" × 12'0" (3.35m × 3.65m)</td></tr>
+            <tr><td>Gourmet Kitchen &amp; Utility</td><td>~9'6" × 12'0" (2.90m × 3.65m)</td></tr>
+            <tr><td>Palatial Viewing Terrace Deck</td><td>~6'6" × 13'0" (1.98m × 3.96m)</td></tr>
+            <tr><td>Triple Luxury Bathrooms</td><td>~5'6" × 7'6" (1.68m × 2.29m)</td></tr>
           </table>
         </div>
 
         <div class="fp-price-box">
           <div>
-            <span style="font-family:var(--f-ui);font-size:10px;text-transform:uppercase;letter-spacing:1.5px;color:rgba(8,8,10,.45);display:block">Pricing</span>
-            <span class="fp-price-val" style="font-size:22px">Price On Request</span>
+            <span style="font-family:var(--f-ui);font-size:10px;text-transform:uppercase;letter-spacing:1.5px;color:rgba(8,8,10,.45);display:block">Indicative Pricing</span>
+            <span class="fp-price-val">₹1.52 Cr* Onwards</span>
           </div>
-          <button class="btn-p" onclick="openEnq()"><span>Enquire Now</span></button>
+          <button class="btn-p" onclick="openEnq()"><span>Get Cost Sheet</span></button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pane 6: 4 BHK Sky Duplex / Penthouse (1650 sq.ft.) -->
+    <div class="fp-pane" id="fpp6" data-cat="4bhk">
+      <div class="fp-plan-view" onclick="openBlueprint('images/plans/floor-plan-3bhk.jpeg', '4 BHK Sky Duplex Penthouse Floor Plan · 1650 Sq.Ft. Carpet')">
+        <img class="fp-plan-img" src="images/plans/floor-plan-3bhk.jpeg" alt="Park Titan 4 BHK Sky Duplex Floor Plan 1650 sq.ft." loading="lazy"/>
+        <div class="fp-plan-overlay">
+          <span style="font-family:var(--f-ui);font-size:10px;font-weight:700;letter-spacing:1.5px;color:var(--gold2);text-transform:uppercase">🔍 Click to Expand Blueprint</span>
+        </div>
+      </div>
+      <div class="fp-details">
+        <div>
+          <div class="fp-title-row">
+            <div>
+              <h3 class="fp-name">4 BHK Sky Duplex</h3>
+              <span style="font-family:var(--f-ui);font-size:11px;color:rgba(8,8,10,.5);text-transform:uppercase;letter-spacing:1px">Top Levels (G+23) · Double Height Ceiling</span>
+            </div>
+            <span class="fp-area">1650 sq.ft. Carpet Area (153.29 m²)</span>
+          </div>
+          <span class="gdash" style="background:var(--gold3);margin:14px 0"></span>
+          <p class="t-body-dk" style="font-size:13px">The crown jewel of Park Titan. Duplex penthouse format perched on the highest floors with soaring double-height ceilings, 3-sided panoramic views of Sahyadri greens, and private family lounge.</p>
+
+          <div class="fp-grid-2x2">
+            <div class="fp-stat-item"><span>Bedrooms</span><b>4 Bed + Lounge</b></div>
+            <div class="fp-stat-item"><span>Bathrooms</span><b>4 Luxury Bath</b></div>
+            <div class="fp-stat-item"><span>Sky Living</span><b>Double Height Ceiling</b></div>
+            <div class="fp-stat-item"><span>Usable Carpet</span><b>1650 Sq.Ft.</b></div>
+          </div>
+
+          <table class="fp-dim-table">
+            <tr><td>Double-Height Grand Living &amp; Dining</td><td>~14'6" × 26'0" (4.42m × 7.92m)</td></tr>
+            <tr><td>Upper Level Family Lounge</td><td>~12'0" × 15'0" (3.65m × 4.57m)</td></tr>
+            <tr><td>Palace Master Suite with Dressing Deck</td><td>~15'0" × 17'0" (4.57m × 5.18m)</td></tr>
+            <tr><td>Junior Bedroom Suite</td><td>~13'0" × 14'0" (3.96m × 4.27m)</td></tr>
+            <tr><td>Bedroom 3 with Bay Windows</td><td>~12'0" × 13'6" (3.65m × 4.11m)</td></tr>
+            <tr><td>Bedroom 4 / Private Study</td><td>~12'0" × 12'6" (3.65m × 3.81m)</td></tr>
+            <tr><td>Gourmet Island Kitchen &amp; Utility</td><td>~10'0" × 13'6" (3.05m × 4.11m)</td></tr>
+            <tr><td>Panoramic Skyline Decks (3 Balconies)</td><td>~7'0" × 15'0" (2.13m × 4.57m)</td></tr>
+          </table>
+        </div>
+
+        <div class="fp-price-box">
+          <div>
+            <span style="font-family:var(--f-ui);font-size:10px;text-transform:uppercase;letter-spacing:1.5px;color:rgba(8,8,10,.45);display:block">Signature Collection</span>
+            <span class="fp-price-val">₹2.10 Cr* Onwards</span>
+          </div>
+          <button class="btn-p" onclick="openEnq()"><span>Request VIP Viewing</span></button>
         </div>
       </div>
     </div>
 
   </div>
 </section>
-
 <!-- 14. Video Experience -->
 <section class="vid-section" id="experience">
   <div class="vid-bg-text">PARK TITAN</div>
@@ -7626,7 +7784,32 @@ setInterval(() => setPanel((activePanel + 1) % panels.length), 5000);
   }));
 })();
 
-/* ── Floor Plans Tabs (5 Tabs) ── */
+
+/* ── Floor Plan Typology Filter ── */
+function filterFpCat(cat, pillBtn) {
+  document.querySelectorAll('.fp-cat-pill').forEach(b => b.classList.remove('active'));
+  pillBtn.classList.add('active');
+
+  const tabs = document.querySelectorAll('.fp-tab');
+  const panes = document.querySelectorAll('.fp-pane');
+
+  let firstVisibleIdx = -1;
+  tabs.forEach((tab, idx) => {
+    const tabCat = tab.getAttribute('data-cat');
+    if (cat === 'all' || tabCat === cat) {
+      tab.style.display = 'inline-block';
+      if (firstVisibleIdx === -1) firstVisibleIdx = idx;
+    } else {
+      tab.style.display = 'none';
+    }
+  });
+
+  if (firstVisibleIdx !== -1) {
+    showFp(firstVisibleIdx);
+  }
+}
+
+/* ── Floor Plans Tabs (7 Tabs) ── */
 function showFp(idx) {
   document.querySelectorAll('.fp-tab').forEach((t, i) => t.classList.toggle('active', i === idx));
   document.querySelectorAll('.fp-pane').forEach((p, i) => p.classList.toggle('active', i === idx));

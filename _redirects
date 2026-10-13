@@ -1,3 +1,11 @@
+# Force Canonical Domain
+https://www.purpleparktitan.com/* https://purpleparktitan.com/:splat 301!
+http://www.purpleparktitan.com/* https://purpleparktitan.com/:splat 301!
+http://purpleparktitan.com/* https://purpleparktitan.com/:splat 301!
+https://parktitan.pages.dev/* https://purpleparktitan.com/:splat 301!
+http://parktitan.pages.dev/* https://purpleparktitan.com/:splat 301!
+
+# Section Anchors & Clean URLs
 /home / 301
 /floor-plans /#floor-plans 302
 /master-plan /#master-layout 302
@@ -14,6 +22,7 @@
 /faq /#faq 302
 /2bhk /#floor-plans 302
 /3bhk /#floor-plans 302
+/4bhk /#floor-plans 302
 /brochure /#contact 302
 /site-visit /#contact 302
 /book-visit /#contact 302
