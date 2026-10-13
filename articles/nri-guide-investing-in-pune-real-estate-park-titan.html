@@ -312,9 +312,45 @@ footer {
   font-size: 12px;
   color: rgba(255,255,255,.4);
 }
+
+/* Reading Scroll Progress Bar */
+#scrollProgressBar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: 0%;
+  background: linear-gradient(90deg, #C8963C 0%, #E6BE6E 50%, #FFF3D6 75%, #C8963C 100%);
+  background-size: 200% 100%;
+  animation: barGlow 3s linear infinite;
+  z-index: 9999;
+  box-shadow: 0 0 12px rgba(200, 150, 60, 0.7);
+  pointer-events: none;
+  transition: width 0.12s cubic-bezier(0.16, 1, 0.3, 1);
+}
+@keyframes barGlow {
+  0% { background-position: 0% 0%; }
+  100% { background-position: 200% 0%; }
+}
+
+/* Button & Card Micro-Interactions */
+.art-btn, .rel-card {
+  transition: all .35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+.rel-card:hover {
+  transform: translateY(-6px) !important;
+  border-color: rgba(230, 190, 110, 0.5) !important;
+  box-shadow: 0 16px 40px rgba(0,0,0,0.5), 0 0 20px rgba(200,150,60,0.1) !important;
+}
+.art-btn:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 12px 30px rgba(200,150,60,0.4) !important;
+}
+
 </style>
 </head>
 <body>
+<div id="scrollProgressBar" aria-hidden="true"></div>
 
 <div class="top-nav">
   <a href="/"><img src="/images/logo-park-titan.png" alt="Pride Purple Park Titan Logo"/></a>
@@ -400,6 +436,20 @@ footer {
   <p>© 2026 Pride Purple Group (Purple Corp). Park Titan Hinjewadi — MahaRERA Nos: P52100049631, P52100080502, P52100031768, P52100034961.</p>
   <p style="margin-top:8px"><a href="/" style="color:var(--gold2)">Visit Official Park Titan Website</a> | <a href="/sitemap.xml" style="color:var(--gold2)">XML Sitemap</a> | <a href="/#contact" style="color:var(--gold2)">Contact Sales Desk: 08062091702</a></p>
 </footer>
+
+
+<script>
+(function() {
+  const bar = document.getElementById('scrollProgressBar');
+  if (!bar) return;
+  window.addEventListener('scroll', () => {
+    const winScroll = document.documentElement.scrollTop || document.body.scrollTop;
+    const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const scrolled = height > 0 ? (winScroll / height) * 100 : 0;
+    bar.style.width = Math.min(scrolled, 100) + '%';
+  }, { passive: true });
+})();
+</script>
 
 </body>
 </html>

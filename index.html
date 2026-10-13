@@ -1649,6 +1649,24 @@ em.gold, .t1 em, .t2 em, .hero-h1 em {
 }
 
 /* ── ULTRA-FLUID GLASSMORHPIC NAVBAR (Google Design Sensibility) ── */
+
+/* Continuous Ambient Glass Float & Glow Animation */
+@keyframes navAmbientGlow {
+  0%, 100% {
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45), 
+                0 0 0 1px rgba(255, 255, 255, 0.05) inset,
+                0 1px 25px rgba(138, 43, 226, 0.12) inset;
+  }
+  50% {
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.55), 
+                0 0 0 1px rgba(230, 190, 110, 0.15) inset,
+                0 1px 35px rgba(200, 150, 60, 0.18) inset;
+  }
+}
+.nav {
+  animation: navAmbientGlow 6s ease-in-out infinite;
+}
+
 .nav {
   position: fixed;
   top: 18px;
@@ -1729,47 +1747,78 @@ em.gold, .t1 em, .t2 em, .hero-h1 em {
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
   list-style: none;
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(20, 10, 26, 0.55);
   padding: 6px 10px;
   border-radius: 40px;
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(230, 190, 110, 0.2);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35) inset, 0 1px 1px rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+.nav-links li {
+  position: relative;
 }
 .nav-links a {
   font-family: var(--f-google);
-  font-size: 13.5px;
-  font-weight: 500;
-  letter-spacing: 0.3px;
-  color: rgba(255, 255, 255, 0.82);
-  padding: 8px 16px;
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.78);
+  padding: 9px 16px;
   border-radius: 30px;
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
   text-decoration: none;
   position: relative;
-  transition: all .3s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow: hidden;
+  transition: all .35s cubic-bezier(0.16, 1, 0.3, 1);
 }
+/* Shimmer Light Reflection on Menu Hover */
+.nav-links a::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -120%;
+  width: 80%;
+  height: 200%;
+  background: linear-gradient(90deg, transparent, rgba(230, 190, 110, 0.35), transparent);
+  transform: skewX(-25deg);
+  transition: left .6s ease;
+  pointer-events: none;
+}
+.nav-links a:hover::before {
+  left: 140%;
+}
+/* Active / Hover Glowing Capsule */
 .nav-links a::after {
   content: '';
   position: absolute;
-  bottom: 4px;
-  left: 50%;
-  transform: translateX(-50%) scaleX(0);
-  width: 18px;
-  height: 2px;
-  border-radius: 2px;
-  background: linear-gradient(90deg, #E6BE6E, #C8963C);
-  transition: transform .3s cubic-bezier(0.16, 1, 0.3, 1);
+  inset: 0;
+  border-radius: 30px;
+  background: linear-gradient(135deg, rgba(200, 150, 60, 0.18), rgba(138, 43, 226, 0.25));
+  border: 1px solid rgba(230, 190, 110, 0.45);
+  box-shadow: 0 0 16px rgba(200, 150, 60, 0.35) inset, 0 2px 10px rgba(138, 43, 226, 0.2);
+  opacity: 0;
+  transform: scale(0.9);
+  transition: all .35s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: -1;
 }
 .nav-links a:hover {
   color: #FFFFFF;
-  background: rgba(255, 255, 255, 0.08);
-  transform: translateY(-1px);
+  text-shadow: 0 0 10px rgba(230, 190, 110, 0.5);
+  transform: translateY(-2px);
 }
 .nav-links a:hover::after {
-  transform: translateX(-50%) scaleX(1);
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Pulsing Gold Indicator for Live Section */
+.nav-links a:active {
+  transform: translateY(0) scale(0.97);
 }
 .nav-btn {
   background: linear-gradient(135deg, rgba(230, 190, 110, 0.15), rgba(138, 43, 226, 0.2));
@@ -2642,7 +2691,7 @@ em.gold, .t1 em, .t2 em, .hero-h1 em {
 .life-cell--big { grid-column: span 2; }
 .life-cell--big img { height: 380px; }
 
-/* ── 12. MASTER LAYOUT SECTION ── */
+/* ── 12. MASTER LAYOUT SECTION (CRYSTAL CLEAR BLUEPRINT & NO BLUR) ── */
 .master-sec {
   background: var(--ink2);
   padding: 100px 8%;
@@ -2671,31 +2720,50 @@ em.gold, .t1 em, .t2 em, .hero-h1 em {
   letter-spacing: 1.5px;
   text-transform: uppercase;
   background: rgba(200,150,60,.06);
+  transition: all .3s ease;
+}
+.master-pill:hover {
+  background: rgba(200,150,60,.16);
+  border-color: var(--gold);
 }
 .master-img-wrap {
   position: relative;
   overflow: hidden;
   border: 1px solid var(--line);
   aspect-ratio: 4/3;
-  min-height: 380px;
-  background: var(--ink3);
+  min-height: 420px;
+  background: #090a0d;
+  cursor: zoom-in;
+  border-radius: 8px;
+  box-shadow: 0 16px 40px rgba(0,0,0,.6);
+  transition: all .4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.master-img-wrap:hover {
+  border-color: var(--gold);
+  box-shadow: 0 24px 60px rgba(0,0,0,.8), 0 0 30px rgba(200,150,60,.2);
 }
 .master-img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  filter: blur(4px);
-  transform: scale(1.06);
-  transition: transform .6s var(--ease1);
+  object-fit: contain;
+  filter: none !important;
+  opacity: 1 !important;
+  transform: scale(1);
+  transition: transform .6s cubic-bezier(0.16, 1, 0.3, 1);
+  display: block;
+}
+.master-img-wrap:hover .master-img {
+  transform: scale(1.04);
 }
 .master-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(8,8,10,.88) 0%, rgba(8,8,10,.35) 50%, rgba(8,8,10,.6) 100%);
+  background: transparent;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 24px;
+  padding: 20px;
+  pointer-events: none;
 }
 .master-badge {
   align-self: flex-start;
@@ -2704,19 +2772,36 @@ em.gold, .t1 em, .t2 em, .hero-h1 em {
   font-weight: 700;
   letter-spacing: 2px;
   text-transform: uppercase;
-  background: var(--gold);
-  color: var(--ink);
-  padding: 5px 12px;
+  background: rgba(8, 8, 10, 0.85);
+  color: var(--gold2);
+  border: 1px solid var(--gold);
+  padding: 6px 14px;
+  border-radius: 30px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 15px rgba(0,0,0,.4);
 }
 .master-center-cta {
-  align-self: center;
-  text-align: center;
+  display: none;
 }
 .master-tag-bot {
-  font-family: var(--f-serif);
-  font-size: 20px;
-  color: var(--white);
-  letter-spacing: 1px;
+  align-self: flex-end;
+  font-family: var(--f-ui);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--ink);
+  background: var(--gold);
+  padding: 8px 16px;
+  border-radius: 30px;
+  box-shadow: 0 4px 20px rgba(0,0,0,.6);
+  pointer-events: auto;
+  cursor: pointer;
+  transition: all .3s ease;
+}
+.master-tag-bot:hover {
+  background: var(--gold2);
+  transform: translateY(-2px);
 }
 
 /* ── 13. FLOOR PLANS SECTION ── */
@@ -2774,38 +2859,69 @@ em.gold, .t1 em, .t2 em, .hero-h1 em {
 }
 .fp-plan-view {
   position: relative;
-  background: #0B0B0E;
+  background: #090B0E;
   overflow: hidden;
   min-height: 480px;
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: zoom-in;
+  padding: 16px;
+  border-radius: 4px 0 0 4px;
 }
 .fp-plan-img {
   width: 100%;
   height: 100%;
+  max-height: 520px;
   object-fit: contain;
-  filter: blur(4px);
-  opacity: .88;
-  transform: scale(1.02);
+  filter: none !important;
+  opacity: 1 !important;
+  transform: scale(1);
+  transition: transform .45s cubic-bezier(0.16, 1, 0.3, 1);
+  display: block;
+}
+.fp-plan-view:hover .fp-plan-img {
+  transform: scale(1.03);
 }
 .fp-plan-overlay {
   position: absolute;
-  inset: 0;
-  background: rgba(8,8,10,.48);
+  bottom: 16px;
+  right: 16px;
+  background: rgba(8, 8, 10, 0.85);
+  border: 1px solid var(--gold);
+  border-radius: 30px;
+  padding: 8px 18px;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  padding: 30px;
-  text-align: center;
+  gap: 8px;
+  pointer-events: auto;
+  cursor: pointer;
+  transition: all .3s ease;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 20px rgba(0,0,0,.5);
+}
+.fp-plan-overlay:hover {
+  background: var(--gold);
+  border-color: var(--gold);
+  transform: translateY(-2px);
 }
 .fp-plan-overlay p {
-  font-family: var(--f-body);
-  color: rgba(255,255,255,.9);
-  font-size: 13px;
-  margin-bottom: 18px;
-  letter-spacing: 1px;
+  display: none;
+}
+.fp-plan-overlay .btn-p {
+  background: none;
+  padding: 0;
+  clip-path: none;
+  box-shadow: none;
+  font-size: 10px;
+  color: var(--gold2);
+  letter-spacing: 1.5px;
+}
+.fp-plan-overlay:hover .btn-p {
+  color: var(--ink);
+}
+.fp-plan-overlay .btn-p::before, .fp-plan-overlay .btn-p::after {
+  display: none;
 }
 .fp-details {
   padding: 44px 38px;
@@ -4558,9 +4674,370 @@ footer {
   }
 }
 
+
+/* ══════════════════════════════════════════════════════════════════
+   ENTERPRISE-GRADE LUXURY ANIMATIONS SYSTEM
+   (Buttery Smooth Physics, Specular Shimmer & Dynamic Micro-Interactions)
+   ══════════════════════════════════════════════════════════════════ */
+
+/* ── 1. Top Reading Scroll Progress Bar ── */
+#scrollProgressBar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: 0%;
+  background: linear-gradient(90deg, #C8963C 0%, #E6BE6E 50%, #FFF3D6 75%, #C8963C 100%);
+  background-size: 200% 100%;
+  animation: barGlow 3s linear infinite;
+  z-index: 9999;
+  box-shadow: 0 0 12px rgba(200, 150, 60, 0.7);
+  pointer-events: none;
+  transition: width 0.12s cubic-bezier(0.16, 1, 0.3, 1);
+}
+@keyframes barGlow {
+  0% { background-position: 0% 0%; }
+  100% { background-position: 200% 0%; }
+}
+
+/* ── 2. Metallic Gold Specular Sheen for Headings ── */
+@keyframes goldSheen {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+em.gold, .t1 em, .t2 em, .hero-h1 em, .fiesta-amount {
+  background: linear-gradient(110deg, #C8963C 0%, #E6BE6E 30%, #FFF1C5 50%, #E6BE6E 70%, #C8963C 100%);
+  background-size: 250% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: goldSheen 8s ease-in-out infinite;
+  display: inline-block;
+}
+
+/* ── 3. High-End CTA Button Light Beam & Tactile Feedback ── */
+@keyframes btnBeam {
+  0%, 65% { left: -140%; }
+  100% { left: 180%; }
+}
+.btn-p, .btn-gold, .enq-sub, .art-btn {
+  position: relative;
+  overflow: hidden;
+  transition: transform .3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow .3s cubic-bezier(0.16, 1, 0.3, 1), background .3s;
+}
+.btn-p::after, .btn-gold::after, .enq-sub::after, .art-btn::after {
+  content: '';
+  position: absolute;
+  top: -60%;
+  left: -140%;
+  width: 70%;
+  height: 220%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.45), transparent);
+  transform: skewX(-25deg);
+  animation: btnBeam 4.5s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 2;
+}
+.btn-p:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 40px rgba(200, 150, 60, 0.45);
+}
+.btn-p:active, .btn-gold:active, .btn-s:active, .enq-sub:active, .fab:active {
+  transform: scale(0.97) translateY(0);
+}
+
+/* ── 4. Cascading Staggered Grid Reveal System ── */
+[data-stagger] > * {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+[data-stagger].in > * {
+  opacity: 1;
+  transform: translateY(0);
+}
+[data-stagger].in > *:nth-child(1) { transition-delay: 0.04s; }
+[data-stagger].in > *:nth-child(2) { transition-delay: 0.10s; }
+[data-stagger].in > *:nth-child(3) { transition-delay: 0.16s; }
+[data-stagger].in > *:nth-child(4) { transition-delay: 0.22s; }
+[data-stagger].in > *:nth-child(5) { transition-delay: 0.28s; }
+[data-stagger].in > *:nth-child(6) { transition-delay: 0.34s; }
+[data-stagger].in > *:nth-child(7) { transition-delay: 0.40s; }
+[data-stagger].in > *:nth-child(8) { transition-delay: 0.46s; }
+[data-stagger].in > *:nth-child(9) { transition-delay: 0.52s; }
+[data-stagger].in > *:nth-child(10) { transition-delay: 0.58s; }
+[data-stagger].in > *:nth-child(11) { transition-delay: 0.64s; }
+[data-stagger].in > *:nth-child(12) { transition-delay: 0.70s; }
+
+/* ── 5. Project Specs Card Elevation & Hover Physics ── */
+.spec-card {
+  transition: transform .45s cubic-bezier(0.16, 1, 0.3, 1), box-shadow .45s cubic-bezier(0.16, 1, 0.3, 1), border-color .45s cubic-bezier(0.16, 1, 0.3, 1), background .45s;
+}
+.spec-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(230, 190, 110, 0.6);
+  box-shadow: 0 22px 50px rgba(0, 0, 0, 0.65), 0 0 30px rgba(200, 150, 60, 0.16);
+  background: rgba(26, 26, 31, 0.98);
+}
+.spec-card:hover .spec-val {
+  color: var(--gold2);
+  transform: scale(1.03);
+  transition: transform .3s ease, color .3s ease;
+}
+
+/* ── 6. Academies Card Floating Physics ── */
+.acard {
+  transition: transform .5s cubic-bezier(0.16, 1, 0.3, 1), box-shadow .5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.acard:hover {
+  transform: translateY(-10px) scale(1.012);
+  box-shadow: 0 24px 50px rgba(0, 0, 0, 0.16), 0 4px 16px rgba(200, 150, 60, 0.12);
+}
+.acard:hover .acard-logo-wrap {
+  transform: scale(1.12);
+  box-shadow: 0 8px 24px rgba(200, 150, 60, 0.3);
+  transition: all .35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ── 7. Lifestyle Moments Parallax Zoom ── */
+.life-cell img {
+  transition: transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.life-cell:hover img {
+  transform: scale(1.08);
+}
+.life-cell:hover .life-tag {
+  background: var(--gold);
+  color: var(--ink);
+  box-shadow: 0 0 15px rgba(200, 150, 60, 0.5);
+  transition: all .35s ease;
+}
+
+/* ── 8. Amenities Column Hover Dynamics ── */
+.amen-col {
+  transition: all .45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.amen-col:hover {
+  background: rgba(26, 26, 31, 0.96);
+  transform: translateY(-6px);
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.55), 0 0 25px rgba(200, 150, 60, 0.1);
+}
+.amen-col:hover .amen-icon {
+  transform: translateY(-4px) scale(1.12);
+  transition: transform .35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ── 9. Fiesta Offers Elevation & Ambient Aurora ── */
+.fcard {
+  transition: all .45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.fcard:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.45), 0 0 25px rgba(200, 150, 60, 0.18);
+  border-top-color: var(--gold);
+}
+@keyframes auroraPulse {
+  0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.12; }
+  50% { transform: translate(-50%, -50%) scale(1.18); opacity: 0.22; }
+}
+.fiesta-bg-glow {
+  animation: auroraPulse 10s ease-in-out infinite;
+}
+
+/* ── 10. Testimonial Video Play Button Radar Ping ── */
+@keyframes playRadar {
+  0% { transform: scale(1); opacity: 0.8; }
+  100% { transform: scale(1.6); opacity: 0; }
+}
+.tcard-play::before {
+  content: '';
+  position: absolute;
+  inset: -6px;
+  border-radius: 4px;
+  border: 1px solid var(--gold);
+  animation: playRadar 2.4s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+  pointer-events: none;
+}
+
+/* ── 11. Floating WhatsApp & Action Buttons Atmosphere ── */
+@keyframes waFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+@keyframes waRing {
+  0% { transform: scale(0.95); opacity: 0.75; }
+  100% { transform: scale(1.6); opacity: 0; }
+}
+.wa {
+  animation: waFloat 4s ease-in-out infinite;
+}
+.wa::before {
+  content: '';
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  background: rgba(37, 211, 102, 0.35);
+  animation: waRing 2.4s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+  z-index: -1;
+  pointer-events: none;
+}
+.fab-stack {
+  animation: waFloat 5s ease-in-out infinite;
+  animation-delay: 1s;
+}
+
+/* ── 12. Pricing Table Interactive Row Glow ── */
+.pricing-table tr {
+  transition: all .3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.pricing-table tbody tr:hover {
+  background: rgba(200, 150, 60, 0.08);
+  box-shadow: inset 3px 0 0 var(--gold);
+}
+.pricing-table tbody tr:hover .price-cell {
+  color: var(--gold);
+  transform: scale(1.02);
+  display: inline-block;
+  transition: transform .25s ease, color .25s ease;
+}
+
+/* ── 13. Market Articles & Web Stories Hover Depth ── */
+#market-articles [data-reveal] > div,
+#market-articles [data-stagger] > div {
+  transition: transform .4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow .4s cubic-bezier(0.16, 1, 0.3, 1), border-color .4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+#market-articles [data-reveal] > div:hover,
+#market-articles [data-stagger] > div:hover {
+  transform: translateY(-8px);
+  border-color: rgba(230, 190, 110, 0.5);
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.55), 0 0 25px rgba(200, 150, 60, 0.14);
+}
+#web-stories a {
+  transition: transform .4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow .4s cubic-bezier(0.16, 1, 0.3, 1), border-color .4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+#web-stories a:hover {
+  transform: translateY(-8px);
+  border-color: var(--gold);
+  box-shadow: 0 22px 45px rgba(0, 0, 0, 0.65), 0 0 25px rgba(200, 150, 60, 0.22);
+}
+
+/* ── 14. Interactive Full-Resolution Blueprint Lightbox Modal ── */
+.blueprint-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 2500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+.blueprint-modal.open {
+  display: flex !important;
+  animation: bpFadeIn .3s ease forwards;
+}
+@keyframes bpFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.bpm-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(5, 5, 8, 0.95);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+.bpm-content {
+  position: relative;
+  z-index: 2;
+  width: 95%;
+  max-width: 1200px;
+  max-height: 92vh;
+  background: #0D0E12;
+  border: 1px solid var(--gold);
+  border-radius: 12px;
+  box-shadow: 0 25px 80px rgba(0, 0, 0, 0.85), 0 0 40px rgba(200, 150, 60, 0.2);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  animation: bpScaleUp .35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+@keyframes bpScaleUp {
+  from { transform: scale(0.92); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+.bpm-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 24px;
+  background: #14151B;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+.bpm-title {
+  font-family: var(--f-serif);
+  font-size: 19px;
+  color: var(--white);
+  font-weight: 500;
+}
+.bpm-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.bpm-btn {
+  font-family: var(--f-ui);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 8px 18px;
+  border-radius: 20px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all .25s ease;
+}
+.bpm-btn--dl {
+  background: var(--gold);
+  color: var(--ink);
+  border: none;
+}
+.bpm-btn--dl:hover {
+  background: var(--gold2);
+  transform: translateY(-2px);
+}
+.bpm-btn--close {
+  background: transparent;
+  color: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+.bpm-btn--close:hover {
+  color: var(--white);
+  border-color: var(--gold);
+}
+.bpm-body {
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: auto;
+  max-height: calc(92vh - 70px);
+  background: #08090C;
+}
+.bpm-body img {
+  max-width: 100%;
+  max-height: 80vh;
+  object-fit: contain;
+  border-radius: 4px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+}
+
 </style>
 </head>
 <body>
+
+<!-- 1. Real-Time Reading Progress Bar -->
+<div id="scrollProgressBar" aria-hidden="true"></div>
 
 <!-- 2. Custom Cursor -->
 <div id="cursor-dot"></div>
@@ -4578,16 +5055,16 @@ footer {
 
 <!-- 4. Mobile Navigation Overlay -->
 <nav class="mob-nav" id="mobNav">
-  <a href="#hero" onclick="closeMob()">Home</a>
-  <a href="#specs" onclick="closeMob()">Township Specs</a>
-  <a href="#academies" onclick="closeMob()">Academies</a>
-  <a href="#lifestyle" onclick="closeMob()">Lifestyle</a>
-  <a href="#master-layout" onclick="closeMob()">Master Plan</a>
-  <a href="#floor-plans" onclick="closeMob()">Floor Plans</a>
-  <a href="#pricing" onclick="closeMob()">Pricing</a>
-  <a href="#location" onclick="closeMob()">Location</a>
-  <a href="#buyer-guide" onclick="closeMob()">Buyer Guide</a>
-  <a href="#faq" onclick="closeMob()">FAQ</a>
+  <a href="#hero" onclick="closeMob()">HOME</a>
+  <a href="#specs" onclick="closeMob()">TOWNSHIP SPECS</a>
+  <a href="#academies" onclick="closeMob()">5 ACADEMIES</a>
+  <a href="#lifestyle" onclick="closeMob()">LIFESTYLE AMENITIES</a>
+  <a href="#master-layout" onclick="closeMob()">MASTER PLAN</a>
+  <a href="#floor-plans" onclick="closeMob()">FLOOR PLANS</a>
+  <a href="#pricing" onclick="closeMob()">UNIT PRICING</a>
+  <a href="#location" onclick="closeMob()">LOCATION &amp; MAP</a>
+  <a href="#buyer-guide" onclick="closeMob()">BUYER GUIDE</a>
+  <a href="#faq" onclick="closeMob()">FAQS</a>
 </nav>
 
 <!-- 5. Navbar -->
@@ -4596,13 +5073,13 @@ footer {
     <a href="#hero"><img src="images/logo-park-titan.png" alt="Park Titan Logo - Pride Purple Group Hinjewadi" height="72"/></a>
   </div>
   <ul class="nav-links">
-    <li><a href="#specs">Specs</a></li>
-    <li><a href="#academies">Academies</a></li>
-    <li><a href="#master-layout">Master Plan</a></li>
-    <li><a href="#floor-plans">Floor Plans</a></li>
-    <li><a href="#pricing">Pricing</a></li>
-    <li><a href="#location">Location</a></li>
-    <li><a href="#buyer-guide">Buyer Guide</a></li>
+    <li><a href="#specs">SPECS</a></li>
+    <li><a href="#academies">ACADEMIES</a></li>
+    <li><a href="#master-layout">MASTER PLAN</a></li>
+    <li><a href="#floor-plans">FLOOR PLANS</a></li>
+    <li><a href="#pricing">PRICING</a></li>
+    <li><a href="#location">LOCATION</a></li>
+    <li><a href="#buyer-guide">BUYER GUIDE</a></li>
     <li><a href="#faq">FAQ</a></li>
   </ul>
   <button class="nav-btn" onclick="openEnq()"><span>Book a Site Visit</span></button>
@@ -4695,7 +5172,7 @@ footer {
     <h2 class="t2" style="color:var(--white)">Master-Planned on a <em style="font-style:italic;color:var(--gold2)">Grand Architectural Canvas.</em></h2>
     <p class="t-body" style="max-width:640px;margin-top:12px">Park Titan redefines community planning in West Pune. Every dimension is calibrated to provide expansive open spaces, supreme pedestrian safety, and low core density.</p>
   </div>
-  <div class="specs-grid wrap" data-reveal="fade">
+  <div class="specs-grid wrap" data-reveal="fade" data-stagger>
     <div class="spec-card">
       <div class="spec-val">17+</div>
       <div class="spec-label">Acres Township</div>
@@ -4893,7 +5370,7 @@ footer {
       <button class="btn-s" onclick="openEnq()">Download Lifestyle Brochure</button>
     </div>
   </div>
-  <div class="life-grid" data-reveal="fade">
+  <div class="life-grid" data-reveal="fade" data-stagger>
     <div class="life-cell">
       <img src="images/moment-wellness.webp" alt="Holistic health and zen meditation deck at Park Titan" loading="lazy"/>
       <div class="life-veil"></div>
@@ -4966,14 +5443,11 @@ footer {
       <button class="btn-p" onclick="openEnq()"><span>Download Master Plan</span></button>
     </div>
 
-    <div class="master-img-wrap" data-reveal="right">
+    <div class="master-img-wrap" data-reveal="right" onclick="openBlueprint('images/plans/master-plan.jpeg', 'Pride Purple Park Titan · 17+ Acre Master Layout Plan')">
       <img class="master-img" src="images/plans/master-plan.jpeg" alt="Park Titan Master Layout Plan 17 Acres Hinjewadi" loading="lazy"/>
       <div class="master-overlay">
-        <span class="master-badge">Township Blueprint</span>
-        <div class="master-center-cta">
-          <button class="btn-p" onclick="openEnq()"><span>Get Full Master Plan</span></button>
-        </div>
-        <div class="master-tag-bot">Master Site Plan · 17+ Acres</div>
+        <span class="master-badge">Township Blueprint · 17+ Acres</span>
+        <div class="master-tag-bot">🔍 Click to Expand Full Blueprint</div>
       </div>
     </div>
   </div>
@@ -5001,11 +5475,10 @@ footer {
 
     <!-- Pane 0: 2 BHK Optima -->
     <div class="fp-pane active" id="fpp0">
-      <div class="fp-plan-view">
+      <div class="fp-plan-view" onclick="openBlueprint('images/plans/floor-plan-2bhk.jpeg', '2 BHK Optima Floor Plan (726 Sq.Ft. Carpet)')">
         <img class="fp-plan-img" src="images/plans/floor-plan-2bhk.jpeg" alt="Park Titan 2 BHK Optima Floor Plan 726 sq.ft." loading="lazy"/>
         <div class="fp-plan-overlay">
-          <p>Detailed architectural drawing with room dimensions &amp; balcony orientations.</p>
-          <button class="btn-p" onclick="openEnq()"><span>Request Floor Plan</span></button>
+          <span style="font-family:var(--f-ui);font-size:10px;font-weight:700;letter-spacing:1.5px;color:var(--gold2);text-transform:uppercase">🔍 Click to Expand Blueprint</span>
         </div>
       </div>
       <div class="fp-details">
@@ -5045,11 +5518,10 @@ footer {
 
     <!-- Pane 1: 2 BHK Ultima -->
     <div class="fp-pane" id="fpp1">
-      <div class="fp-plan-view">
+      <div class="fp-plan-view" onclick="openBlueprint('images/plans/floor-plan-2bhk.jpeg', '2 BHK Ultima Floor Plan (789 Sq.Ft. Carpet)')">
         <img class="fp-plan-img" src="images/plans/floor-plan-2bhk.jpeg" alt="Park Titan 2 BHK Ultima Floor Plan 789 sq.ft." loading="lazy"/>
         <div class="fp-plan-overlay">
-          <p>Detailed architectural drawing with room dimensions &amp; balcony orientations.</p>
-          <button class="btn-p" onclick="openEnq()"><span>Request Floor Plan</span></button>
+          <span style="font-family:var(--f-ui);font-size:10px;font-weight:700;letter-spacing:1.5px;color:var(--gold2);text-transform:uppercase">🔍 Click to Expand Blueprint</span>
         </div>
       </div>
       <div class="fp-details">
@@ -5089,11 +5561,10 @@ footer {
 
     <!-- Pane 2: 3 BHK Optima -->
     <div class="fp-pane" id="fpp2">
-      <div class="fp-plan-view">
+      <div class="fp-plan-view" onclick="openBlueprint('images/plans/floor-plan-3bhk.jpeg', '3 BHK Optima Floor Plan (988 Sq.Ft. Carpet)')">
         <img class="fp-plan-img" src="images/plans/floor-plan-3bhk.jpeg" alt="Park Titan 3 BHK Optima Floor Plan 988 sq.ft." loading="lazy"/>
         <div class="fp-plan-overlay">
-          <p>Detailed architectural drawing with room dimensions &amp; balcony orientations.</p>
-          <button class="btn-p" onclick="openEnq()"><span>Request Floor Plan</span></button>
+          <span style="font-family:var(--f-ui);font-size:10px;font-weight:700;letter-spacing:1.5px;color:var(--gold2);text-transform:uppercase">🔍 Click to Expand Blueprint</span>
         </div>
       </div>
       <div class="fp-details">
@@ -5133,11 +5604,10 @@ footer {
 
     <!-- Pane 3: 3 BHK Ultima -->
     <div class="fp-pane" id="fpp3">
-      <div class="fp-plan-view">
+      <div class="fp-plan-view" onclick="openBlueprint('images/plans/floor-plan-3bhk.jpeg', '3 BHK Ultima Floor Plan (1060 Sq.Ft. Carpet)')">
         <img class="fp-plan-img" src="images/plans/floor-plan-3bhk.jpeg" alt="Park Titan 3 BHK Ultima Floor Plan 1060 sq.ft." loading="lazy"/>
         <div class="fp-plan-overlay">
-          <p>Detailed architectural drawing with room dimensions &amp; balcony orientations.</p>
-          <button class="btn-p" onclick="openEnq()"><span>Request Floor Plan</span></button>
+          <span style="font-family:var(--f-ui);font-size:10px;font-weight:700;letter-spacing:1.5px;color:var(--gold2);text-transform:uppercase">🔍 Click to Expand Blueprint</span>
         </div>
       </div>
       <div class="fp-details">
@@ -5177,11 +5647,10 @@ footer {
 
     <!-- Pane 4: 3 BHK Grande -->
     <div class="fp-pane" id="fpp4">
-      <div class="fp-plan-view">
+      <div class="fp-plan-view" onclick="openBlueprint('images/plans/floor-plan-3bhk.jpeg', '3 BHK Grande Floor Plan (1212 Sq.Ft. Carpet)')">
         <img class="fp-plan-img" src="images/plans/floor-plan-3bhk.jpeg" alt="Park Titan 3 BHK Grande Floor Plan 1212 sq.ft." loading="lazy"/>
         <div class="fp-plan-overlay">
-          <p>Detailed architectural drawing with room dimensions &amp; balcony orientations.</p>
-          <button class="btn-p" onclick="openEnq()"><span>Request Floor Plan</span></button>
+          <span style="font-family:var(--f-ui);font-size:10px;font-weight:700;letter-spacing:1.5px;color:var(--gold2);text-transform:uppercase">🔍 Click to Expand Blueprint</span>
         </div>
       </div>
       <div class="fp-details">
@@ -5253,7 +5722,7 @@ footer {
       </div>
       <p class="t-body">Meticulously curated across the 7-acre vehicle-free podium and central clubhouse. Designed not merely as checkboxes, but as active daily assets that genuinely elevate your family's quality of living.</p>
     </div>
-    <div class="amen-grid" data-reveal="up">
+    <div class="amen-grid" data-reveal="up" data-stagger>
       <div class="amen-col">
         <div class="amen-num">01</div>
         <div class="amen-icon">🌿</div>
@@ -5307,7 +5776,7 @@ footer {
       </div>
       <p class="t-body">Hear unfiltered feedback from home buyers who chose Park Titan for its unmatched connectivity to Hinjewadi IT Park and wholesome community atmosphere.</p>
     </div>
-    <div class="testi-grid" data-reveal="fade">
+    <div class="testi-grid" data-reveal="fade" data-stagger>
       <button class="tcard" aria-label="Mr Vivek and Priyanka Resident Testimonial Video" onclick="openTesti('ofkenFQHvEU')">
         <img src="https://img.youtube.com/vi/ofkenFQHvEU/maxresdefault.jpg" alt="Mr Vivek and Priyanka Resident Testimonial Park Titan" loading="lazy"/>
         <div class="tcard-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
@@ -5348,7 +5817,7 @@ footer {
     <h2 class="t1" style="color:var(--white);margin-bottom:6px">Unlock Savings Up To</h2>
     <div class="fiesta-amount">₹2 Lakhs<sup style="font-size:.35em;vertical-align:super;-webkit-text-fill-color:var(--gold2)">*</sup></div>
     <p class="t-body" style="max-width:540px;margin-top:10px">Four exclusive purchasing privileges curated to streamline your home purchase. Select the financial benefit that matches your portfolio.</p>
-    <div class="fiesta-cards" data-reveal="up">
+    <div class="fiesta-cards" data-reveal="up" data-stagger>
       <div class="fcard" onclick="openEnq()">
         <div class="fcard-n">01</div>
         <h3>Structured Payment Plans</h3>
@@ -5565,7 +6034,7 @@ footer {
     <div class="s-label">Pride Purple Group · The Builder Legacy</div>
     <h2 class="t2" style="color:var(--white);margin-top:10px">28+ Years of Crafting<br><em style="font-style:italic;color:var(--gold2)">Landmark Communities Across Pune.</em></h2>
   </div>
-  <div class="legacy-track">
+  <div class="legacy-track" data-reveal="up" data-stagger>
     <div class="lstat"><div class="lstat-n">28+</div><div class="lstat-l">Years of Leadership</div></div>
     <div class="lstat"><div class="lstat-n">30+</div><div class="lstat-l">Landmark Projects</div></div>
     <div class="lstat"><div class="lstat-n">20M+</div><div class="lstat-l">Sq. Ft. Developed</div></div>
@@ -5581,7 +6050,7 @@ footer {
     <div class="s-label c">Delivered Landmarks Across Pune</div>
     <p style="font-family:var(--f-ui);font-size:11px;color:rgba(255,255,255,.28);letter-spacing:3px;text-transform:uppercase;margin-top:4px">Home to Over 40,000 Families</p>
   </div>
-  <div class="lmarks-grid wrap" data-reveal="up" style="margin-top:44px">
+  <div class="lmarks-grid wrap" data-reveal="up" data-stagger style="margin-top:44px">
     <div class="lcell"><img src="images/logos/titan.webp" alt="Park Titan Brand Logo" loading="lazy"/></div>
     <div class="lcell"><img src="images/logos/astra.webp" alt="Park Astra Project Logo" loading="lazy"/></div>
     <div class="lcell"><img src="images/logos/landmark.webp" alt="Park Landmark Project Logo" loading="lazy"/></div>
@@ -6316,7 +6785,7 @@ footer {
       <a href="/articles/" style="font-family:var(--f-ui);font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold2);border-bottom:1px solid var(--gold);padding-bottom:4px">View All Research Articles →</a>
     </div>
 
-    <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(340px, 1fr));gap:24px" data-reveal="fade">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(340px, 1fr));gap:24px" data-reveal="fade" data-stagger>
       <div style="background:var(--ink);border:1px solid var(--line);padding:28px;border-radius:4px;display:flex;flex-direction:column;justify-content:space-between">
         <div>
           <span style="font-family:var(--f-ui);font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold);display:inline-block;margin-bottom:8px">Market Comparison</span>
@@ -6369,7 +6838,7 @@ footer {
       <span style="font-family:var(--f-ui);font-size:11px;color:rgba(255,255,255,.4);letter-spacing:1px;text-transform:uppercase">Google Discover &amp; Web Stories Ready</span>
     </div>
 
-    <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));gap:20px" data-reveal="fade">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));gap:20px" data-reveal="fade" data-stagger>
       <!-- Story 1 -->
       <a href="/web-stories/5-academies-park-titan.html" target="_blank" style="position:relative;height:380px;border-radius:6px;overflow:hidden;border:1px solid var(--line);display:flex;flex-direction:column;justify-content:flex-end;padding:24px;text-decoration:none;transition:transform .3s ease">
         <img src="/images/academy-badminton.webp" alt="5 Academies Story" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:brightness(.65);transition:transform .4s ease"/>
@@ -6835,6 +7304,116 @@ function switchBgTab(tabId) {
   if (target) target.classList.add('active');
 }
 
+/* ── Real-Time Reading Progress Bar ── */
+(function() {
+  const bar = document.getElementById('scrollProgressBar');
+  if (!bar) return;
+  window.addEventListener('scroll', () => {
+    const winScroll = document.documentElement.scrollTop || document.body.scrollTop;
+    const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const scrolled = height > 0 ? (winScroll / height) * 100 : 0;
+    bar.style.width = Math.min(scrolled, 100) + '%';
+  }, { passive: true });
+})();
+
+/* ── Dynamic Rolling Number Counter Animation ── */
+(function() {
+  const countEls = document.querySelectorAll('.hstat-n, .lstat-n, .spec-val');
+  if (!countEls.length) return;
+
+  const countObserver = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        obs.unobserve(entry.target);
+        animateCounter(entry.target);
+      }
+    });
+  }, { threshold: 0.2 });
+
+  countEls.forEach(el => countObserver.observe(el));
+
+  function animateCounter(el) {
+    const raw = el.textContent.trim();
+    const match = raw.match(/^(.*?)(\d+)(.*)$/);
+    if (!match) return;
+
+    const prefix = match[1];
+    const target = parseInt(match[2], 10);
+    const suffix = match[3];
+    if (isNaN(target) || target <= 0) return;
+
+    const duration = 1600;
+    const start = performance.now();
+
+    function frame(now) {
+      const p = Math.min((now - start) / duration, 1);
+      // easeOutExpo
+      const ease = p === 1 ? 1 : 1 - Math.pow(2, -10 * p);
+      const cur = Math.floor(ease * target);
+      el.textContent = prefix + cur + suffix;
+      if (p < 1) {
+        requestAnimationFrame(frame);
+      } else {
+        el.textContent = raw;
+      }
+    }
+    requestAnimationFrame(frame);
+  }
+})();
+
+/* ── Interactive Blueprint Lightbox Modal Logic ── */
+function openBlueprint(imgSrc, title) {
+  const modal = document.getElementById('blueprintModal');
+  const img = document.getElementById('bpmImage');
+  const titleEl = document.getElementById('bpmTitle');
+  const dl = document.getElementById('bpmDownload');
+  if (!modal || !img) return;
+
+  img.src = imgSrc;
+  if (titleEl) titleEl.textContent = title || 'Pride Purple Park Titan Architectural Plan';
+  if (dl) {
+    dl.href = imgSrc;
+    dl.setAttribute('download', (title ? title.replace(/[^a-zA-Z0-9]/g, '_') : 'park_titan_blueprint') + '.jpeg');
+  }
+  modal.classList.add('open');
+  modal.style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+}
+
+function closeBlueprint() {
+  const modal = document.getElementById('blueprintModal');
+  if (!modal) return;
+  modal.classList.remove('open');
+  modal.style.display = 'none';
+  document.body.style.overflow = '';
+}
+
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') {
+    closeBlueprint();
+    closeTesti();
+    closeEnq();
+  }
+});
+
 </script>
+
+<!-- Interactive Full-Resolution Blueprint & Floor Plan Modal (Visible & No Blurring) -->
+<div class="blueprint-modal" id="blueprintModal" role="dialog" aria-label="Floor Plan and Blueprint Lightbox" style="display:none">
+  <div class="bpm-backdrop" onclick="closeBlueprint()"></div>
+  <div class="bpm-content">
+    <div class="bpm-header">
+      <div class="bpm-title" id="bpmTitle">Pride Purple Park Titan Architectural Plan</div>
+      <div class="bpm-actions">
+        <a id="bpmDownload" href="images/plans/master-plan.jpeg" download class="bpm-btn bpm-btn--dl">⬇ Download Blueprint</a>
+        <button class="bpm-btn bpm-btn--close" onclick="closeBlueprint()">✕ Close</button>
+      </div>
+    </div>
+    <div class="bpm-body">
+      <img id="bpmImage" src="images/plans/master-plan.jpeg" alt="Architectural Plan Full Screen"/>
+    </div>
+  </div>
+</div>
+
 </body>
 </html>
