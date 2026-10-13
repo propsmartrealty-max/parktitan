@@ -1,29 +1,70 @@
+# ==============================================================
+# ROBOTS.TXT — PRIDE PURPLE PARK TITAN (HINJEWADI, PUNE)
+# Canonical URL: https://purpleparktitan.com/
+# ==============================================================
+
 User-agent: *
 Allow: /
 Disallow: /admin/
 Disallow: /private/
 Disallow: /*.json$
 
-# Sitemap location
+# Official XML Sitemap
 Sitemap: https://purpleparktitan.com/sitemap.xml
 
-# Crawl-delay for secondary bots (Googlebot ignores this, but it's good practice)
-User-agent: Bingbot
-Crawl-delay: 10
-
-User-agent: Slurp
-Crawl-delay: 10
-
-# Allow all major search engines full access
+# Primary Google Search & Inspection Crawlers
 User-agent: Googlebot
 Allow: /
 
 User-agent: Googlebot-Image
 Allow: /images/
+Allow: /images/plans/
 
 User-agent: Googlebot-Video
 Allow: /
 
+User-agent: Google-InspectionTool
+Allow: /
+
+User-agent: GoogleOther
+Allow: /
+
+# Microsoft Bing & Yahoo
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 5
+
+User-agent: msnbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+Crawl-delay: 5
+
+# Apple Siri & Spotlight Search
+User-agent: Applebot
+Allow: /
+
+# AI Search Engines & Conversational Agents (Google SGE, Perplexity, OpenAI, Anthropic)
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+# Social Graph Crawlers
 User-agent: facebookexternalhit
 Allow: /
 
@@ -31,4 +72,7 @@ User-agent: Twitterbot
 Allow: /
 
 User-agent: LinkedInBot
+Allow: /
+
+User-agent: WhatsApp
 Allow: /
