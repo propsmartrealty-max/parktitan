@@ -6,6 +6,8 @@
 User-agent: *
 Allow: /
 Allow: /manifest.json
+Allow: /llms.txt
+Allow: /.well-known/llms.txt
 Disallow: /admin/
 Disallow: /private/
 

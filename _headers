@@ -51,3 +51,11 @@
 
 /manifest.json
   Cache-Control: public, max-age=86400, stale-while-revalidate=604800
+
+/llms.txt
+  Cache-Control: public, max-age=86400, stale-while-revalidate=604800
+  Content-Type: text/plain; charset=utf-8
+
+/.well-known/*
+  Cache-Control: public, max-age=86400, stale-while-revalidate=604800
+  Content-Type: text/plain; charset=utf-8

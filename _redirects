@@ -1,28 +1,28 @@
-# Force Canonical Domain
+# Force Canonical Host (Permanent 301)
 https://www.purpleparktitan.com/* https://purpleparktitan.com/:splat 301!
 http://www.purpleparktitan.com/* https://purpleparktitan.com/:splat 301!
 http://purpleparktitan.com/* https://purpleparktitan.com/:splat 301!
 https://parktitan.pages.dev/* https://purpleparktitan.com/:splat 301!
 http://parktitan.pages.dev/* https://purpleparktitan.com/:splat 301!
 
-# Section Anchors & Clean URLs
+# Section Anchors & Clean URLs (Permanent 301)
 /home / 301
-/floor-plans /#floor-plans 302
-/master-plan /#master-layout 302
-/price /#pricing 302
-/pricing /#pricing 302
-/cost-sheet /#pricing 302
-/buyer-guide /#buyer-guide 302
-/contact /#contact 302
-/amenities /#lifestyle 302
-/lifestyle /#lifestyle 302
-/academies /#academies 302
-/location /#location 302
-/reviews /#testimonials 302
-/faq /#faq 302
-/2bhk /#floor-plans 302
-/3bhk /#floor-plans 302
-/4bhk /#floor-plans 302
-/brochure /#contact 302
-/site-visit /#contact 302
-/book-visit /#contact 302
+/floor-plans /#floor-plans 301
+/master-plan /#master-layout 301
+/price /#pricing 301
+/pricing /#pricing 301
+/cost-sheet /#pricing 301
+/buyer-guide /#buyer-guide 301
+/contact /#contact 301
+/amenities /#lifestyle 301
+/lifestyle /#lifestyle 301
+/academies /#academies 301
+/location /#location 301
+/reviews /#testimonials 301
+/faq /#faq 301
+/2bhk /#floor-plans 301
+/3bhk /#floor-plans 301
+/4bhk /#floor-plans 301
+/brochure /#contact 301
+/site-visit /#contact 301
+/book-visit /#contact 301
