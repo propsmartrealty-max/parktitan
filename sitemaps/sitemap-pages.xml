@@ -7,57 +7,15 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://purpleparktitan.com/#specs</loc>
+    <loc>https://purpleparktitan.com/explore/</loc>
     <lastmod>2026-10-13</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://purpleparktitan.com/#academies</loc>
-    <lastmod>2026-10-13</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://purpleparktitan.com/#master-layout</loc>
-    <lastmod>2026-10-13</lastmod>
-    <changefreq>weekly</changefreq>
+    <changefreq>daily</changefreq>
     <priority>0.95</priority>
   </url>
   <url>
-    <loc>https://purpleparktitan.com/#floor-plans</loc>
+    <loc>https://purpleparktitan.com/articles/</loc>
     <lastmod>2026-10-13</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
-  </url>
-  <url>
-    <loc>https://purpleparktitan.com/#pricing</loc>
-    <lastmod>2026-10-13</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://purpleparktitan.com/#buyer-guide</loc>
-    <lastmod>2026-10-13</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://purpleparktitan.com/#location</loc>
-    <lastmod>2026-10-13</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://purpleparktitan.com/#faq</loc>
-    <lastmod>2026-10-13</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://purpleparktitan.com/#contact</loc>
-    <lastmod>2026-10-13</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.9</priority>
+    <priority>0.90</priority>
   </url>
 </urlset>

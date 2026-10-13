@@ -9,8 +9,12 @@ Disallow: /admin/
 Disallow: /private/
 Disallow: /*.json$
 
-# Official XML Sitemap
+# Official XML Sitemaps (Google, Bing, Yahoo, Applebot, AI Crawlers)
 Sitemap: https://purpleparktitan.com/sitemap.xml
+Sitemap: https://purpleparktitan.com/sitemaps/sitemap-pages.xml
+Sitemap: https://purpleparktitan.com/sitemaps/sitemap-articles.xml
+Sitemap: https://purpleparktitan.com/sitemaps/sitemap-media.xml
+Sitemap: https://purpleparktitan.com/sitemaps/sitemap-stories.xml
 
 # Primary Google Search & Inspection Crawlers
 User-agent: Googlebot

@@ -7,33 +7,109 @@
     <lastmod>2026-10-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
-    <image:image>
-      <image:loc>https://purpleparktitan.com/images/hero-1.webp</image:loc>
-      <image:title>Pride Purple Park Titan Hinjewadi Towers Elevation</image:title>
-    </image:image>
+    
+    <!-- Architectural Blueprints & Plans -->
     <image:image>
       <image:loc>https://purpleparktitan.com/images/plans/master-plan.jpeg</image:loc>
-      <image:title>Park Titan 17-Acre Master Site Plan Layout</image:title>
+      <image:title>Pride Purple Park Titan 17-Acre Master Layout Plan Hinjewadi</image:title>
+      <image:caption>Sanctioned township master plan showing 18 towers and 7-acre vehicle-free podium deck</image:caption>
     </image:image>
     <image:image>
       <image:loc>https://purpleparktitan.com/images/plans/floor-plan-2bhk.jpeg</image:loc>
-      <image:title>Park Titan 2 BHK Architectural Floor Plan</image:title>
+      <image:title>Park Titan 2 RLK Optima 726.44 Sq.Ft. Architectural Floor Plan</image:title>
+      <image:caption>Official sanctioned layout drawing with room dimensions for 2 RLK Optima non-garden residence</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://purpleparktitan.com/images/config-2bhk.webp</image:loc>
+      <image:title>Park Titan 2 RLK Ultima 789.54 Sq.Ft. Architectural Blueprint</image:title>
+      <image:caption>Official layout drawing with bay windows and extended balcony for 2 RLK Ultima</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://purpleparktitan.com/images/config-3bhk-a.webp</image:loc>
+      <image:title>Park Titan 3 RLK Optima 988.25 Sq.Ft. Architectural Blueprint</image:title>
+      <image:caption>Official 3 RLK Optima layout with 3 bathrooms and panoramic sit-out terrace</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://purpleparktitan.com/images/config-3bhk-b.webp</image:loc>
+      <image:title>Park Titan 3 RLK Ultima 1,059.87 Sq.Ft. Architectural Blueprint</image:title>
+      <image:caption>Official 3 RLK Ultima layout with dual ensuite bedrooms and sky viewing terrace</image:caption>
     </image:image>
     <image:image>
       <image:loc>https://purpleparktitan.com/images/plans/floor-plan-3bhk.jpeg</image:loc>
-      <image:title>Park Titan 3 BHK Architectural Floor Plan</image:title>
+      <image:title>Park Titan 3 RLK Grande 1,212.22 Sq.Ft. Flagship Architectural Floor Plan</image:title>
+      <image:caption>Sanctioned presidential layout drawing with triple ensuite bathrooms and palatial terrace deck</image:caption>
+    </image:image>
+
+    <!-- Project & Township Imagery -->
+    <image:image>
+      <image:loc>https://purpleparktitan.com/images/hero-1.webp</image:loc>
+      <image:title>Pride Purple Park Titan Hinjewadi High-Rise Residential Elevation</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://purpleparktitan.com/images/hero-2.webp</image:loc>
+      <image:title>Park Titan Evening Skyline and Illuminated Clubhouse Facade</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://purpleparktitan.com/images/hero-3.webp</image:loc>
+      <image:title>Park Titan Aerial View of 7-Acre Active Green Podium</image:title>
     </image:image>
     <image:image>
       <image:loc>https://purpleparktitan.com/images/park-life.webp</image:loc>
-      <image:title>Park Titan 7-Acre Vehicle-Free Elevated Podium</image:title>
+      <image:title>Park Titan Vehicle-Free Podium Life and Jogging Trails</image:title>
     </image:image>
+
+    <!-- 5 Sports Academies -->
+    <image:image>
+      <image:loc>https://purpleparktitan.com/images/academy-padukone.webp</image:loc>
+      <image:title>Padukone School of Badminton at Pride Purple Park Titan Hinjewadi</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://purpleparktitan.com/images/academy-shiamak.webp</image:loc>
+      <image:title>Shiamak Davar Dance Academy at Park Titan Hinjewadi</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://purpleparktitan.com/images/academy-bsa.webp</image:loc>
+      <image:title>The BSA Swimming Academy Professional Lap Pool at Park Titan</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://purpleparktitan.com/images/academy-sportybeans.webp</image:loc>
+      <image:title>SportyBeans Multi-Sport Training Facility at Park Titan</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://purpleparktitan.com/images/academy-ajivasan.webp</image:loc>
+      <image:title>Suresh Wadkar Ajivasan Music Academy Studio at Park Titan</image:title>
+    </image:image>
+
+    <!-- Official Walkthrough Video -->
     <video:video>
       <video:thumbnail_loc>https://img.youtube.com/vi/vsdzck0PdoY/maxresdefault.jpg</video:thumbnail_loc>
-      <video:title>Pride Purple Park Titan Hinjewadi Walkthrough Film</video:title>
-      <video:description>Cinematic walkthrough of Park Titan residences, 7-acre podium, and 5 sports academies.</video:description>
+      <video:title>Pride Purple Park Titan Hinjewadi 4K Drone Tour &amp; Walkthrough Film</video:title>
+      <video:description>Cinematic aerial tour and model apartment walkthrough of Park Titan 17-acre township on Hinjewadi-Marunji Link Road, Pune.</video:description>
       <video:player_loc>https://www.youtube-nocookie.com/embed/vsdzck0PdoY</video:player_loc>
       <video:duration>180</video:duration>
       <video:publication_date>2025-01-01T00:00:00+05:30</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+    </video:video>
+
+    <!-- Testimonial Video 1 -->
+    <video:video>
+      <video:thumbnail_loc>https://img.youtube.com/vi/ofkenFQHvEU/maxresdefault.jpg</video:thumbnail_loc>
+      <video:title>Mr. Vivek &amp; Priyanka Verified Resident Review of Park Titan Hinjewadi</video:title>
+      <video:description>Real resident experience and review of living at Pride Purple Park Titan, near Hinjewadi Phase 1 IT Park.</video:description>
+      <video:player_loc>https://www.youtube-nocookie.com/embed/ofkenFQHvEU</video:player_loc>
+      <video:duration>120</video:duration>
+      <video:publication_date>2025-03-01T00:00:00+05:30</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+    </video:video>
+
+    <!-- Testimonial Video 2 -->
+    <video:video>
+      <video:thumbnail_loc>https://img.youtube.com/vi/pZKpUTM1P88/maxresdefault.jpg</video:thumbnail_loc>
+      <video:title>Mr. Manhar Pune Investor Testimonial on Park Titan Capital Appreciation</video:title>
+      <video:description>Investor perspective on rental yields, IT workforce demand, and appreciation potential at Pride Purple Park Titan.</video:description>
+      <video:player_loc>https://www.youtube-nocookie.com/embed/pZKpUTM1P88</video:player_loc>
+      <video:duration>110</video:duration>
+      <video:publication_date>2025-03-15T00:00:00+05:30</video:publication_date>
       <video:family_friendly>yes</video:family_friendly>
     </video:video>
   </url>
