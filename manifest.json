@@ -1,0 +1,27 @@
+{
+  "name": "Pride Purple Park Titan Hinjewadi",
+  "short_name": "Park Titan",
+  "description": "Official luxury residential project portal for Pride Purple Park Titan Hinjewadi Phase 1, Pune.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#08080A",
+  "theme_color": "#3B1540",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/logo-park-titan.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

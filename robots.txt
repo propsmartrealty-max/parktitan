@@ -5,9 +5,9 @@
 
 User-agent: *
 Allow: /
+Allow: /manifest.json
 Disallow: /admin/
 Disallow: /private/
-Disallow: /*.json$
 
 # Official XML Sitemaps (Google, Bing, Yahoo, Applebot, AI Crawlers)
 Sitemap: https://purpleparktitan.com/sitemap.xml
@@ -16,16 +16,16 @@ Sitemap: https://purpleparktitan.com/sitemaps/sitemap-articles.xml
 Sitemap: https://purpleparktitan.com/sitemaps/sitemap-media.xml
 Sitemap: https://purpleparktitan.com/sitemaps/sitemap-stories.xml
 
-# Primary Google Search & Inspection Crawlers
+# Google Search & Inspection Crawlers (Unthrottled)
 User-agent: Googlebot
 Allow: /
 
 User-agent: Googlebot-Image
 Allow: /images/
-Allow: /images/plans/
 
 User-agent: Googlebot-Video
 Allow: /
+Allow: /videos/
 
 User-agent: Google-InspectionTool
 Allow: /
@@ -33,42 +33,56 @@ Allow: /
 User-agent: GoogleOther
 Allow: /
 
-# Microsoft Bing & Yahoo
+# Microsoft Bing, Yahoo & Copilot (Unthrottled)
 User-agent: Bingbot
 Allow: /
-Crawl-delay: 5
 
 User-agent: msnbot
 Allow: /
 
 User-agent: Slurp
 Allow: /
-Crawl-delay: 5
 
-# Apple Siri & Spotlight Search
+# Apple Spotlight & Siri Intelligence
 User-agent: Applebot
 Allow: /
 
-# AI Search Engines & Conversational Agents (Google SGE, Perplexity, OpenAI, Anthropic)
+User-agent: Applebot-Extended
+Allow: /
+
+# OpenAI & ChatGPT Search Engine (Unthrottled)
+User-agent: OAI-SearchBot
+Allow: /
+
 User-agent: GPTBot
 Allow: /
 
 User-agent: ChatGPT-User
 Allow: /
 
+# Perplexity AI Search
 User-agent: PerplexityBot
 Allow: /
 
+# Anthropic Claude & Research Crawlers
 User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
 Allow: /
 
 User-agent: anthropic-ai
 Allow: /
 
-User-agent: cohere-ai
+# ByteDance / TikTok AI Search
+User-agent: Bytespider
 Allow: /
 
-# Social Graph Crawlers
+# Common Crawl & Open Web Indexes
+User-agent: CCBot
+Allow: /
+
+# Social Graph OpenGraph Previews
 User-agent: facebookexternalhit
 Allow: /
 
