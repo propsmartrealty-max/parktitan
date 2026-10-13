@@ -113,4 +113,19 @@
       <video:family_friendly>yes</video:family_friendly>
     </video:video>
   </url>
+  <url>
+    <loc>https://purpleparktitan.com/videos/pride-purple-park-titan-official-walkthrough.html</loc>
+    <lastmod>2026-10-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+    <video:video>
+      <video:thumbnail_loc>https://purpleparktitan.com/images/hero-1.webp</video:thumbnail_loc>
+      <video:title>Pride Purple Park Titan Hinjewadi Official Cinematic Film</video:title>
+      <video:description>Official cinematic film of Pride Purple Park Titan Hinjewadi across 17+ acres with 7-acre vehicle-free podium deck, 5 academies, and 2 &amp; 3 BHK model homes.</video:description>
+      <video:player_loc>https://www.youtube-nocookie.com/embed/vsdzck0PdoY</video:player_loc>
+      <video:duration>222</video:duration>
+      <video:publication_date>2025-01-01T00:00:00+05:30</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+    </video:video>
+  </url>
 </urlset>
