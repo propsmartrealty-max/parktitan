@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+
+  <!-- Homepage — Primary landing page -->
+  <url>
+    <loc>https://purpleparktitan.com/</loc>
+    <lastmod>2026-10-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://purpleparktitan.com/images/hero-1.webp</image:loc>
+      <image:title>Park Titan Hinjewadi — 18 Towers Premium Residences by Pride Purple Group</image:title>
+      <image:caption>Aerial view of Park Titan residential towers on Hinjewadi-Marunji Link Road, Pune</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://purpleparktitan.com/images/plans/master-plan.jpeg</image:loc>
+      <image:title>Park Titan Master Site Plan — 17 Acres, 18 Towers, 7-Acre Podium</image:title>
+      <image:caption>Master layout plan of Park Titan integrated township, Hinjewadi, Pune</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://purpleparktitan.com/images/plans/floor-plan-2bhk.jpeg</image:loc>
+      <image:title>Park Titan 2 BHK Floor Plan — 726 to 789 sq.ft. Carpet Area</image:title>
+      <image:caption>2 BHK floor plan layout at Park Titan Hinjewadi by Pride Purple Group</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://purpleparktitan.com/images/plans/floor-plan-3bhk.jpeg</image:loc>
+      <image:title>Park Titan 3 BHK Floor Plan — 988 to 1212 sq.ft. Carpet Area</image:title>
+      <image:caption>3 BHK floor plan layout at Park Titan Hinjewadi by Pride Purple Group</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://purpleparktitan.com/images/locality-hinjawadi.webp</image:loc>
+      <image:title>Hinjewadi IT Park Aerial View — Rajiv Gandhi Infotech Park, Pune</image:title>
+      <image:caption>Aerial view of Hinjewadi IT hub, Pune, showing proximity to Park Titan</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://purpleparktitan.com/images/park-life.webp</image:loc>
+      <image:title>Park Titan Landscaped Podium — 7-Acre Green Lifestyle Space</image:title>
+      <image:caption>Landscaped open green podium at Park Titan residential township, Hinjewadi</image:caption>
+    </image:image>
+  </url>
+
+</urlset>

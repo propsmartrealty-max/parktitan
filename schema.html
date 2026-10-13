@@ -1,0 +1,458 @@
+<!-- ============================================================
+  PARK TITAN — COMPLETE STRUCTURED DATA SCHEMA LIBRARY
+  For: purpleparktitan.com
+  Purpose: Google SERP Rich Results, Shopping, Merchant, Snippets
+  Covers: LocalBusiness + RealEstateListing + FAQPage + 
+          Review/AggregateRating + BreadcrumbList + 
+          WebSite (Sitelinks) + VideoObject + Organization
+  ============================================================ -->
+
+<!-- 1. WEBSITE + SITELINKS SEARCH BOX -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Park Titan Hinjewadi — Pride Purple Group",
+  "url": "https://purpleparktitan.com",
+  "description": "Official website of Park Titan — premium 2 & 3 BHK residential towers by Pride Purple Group on Hinjewadi-Marunji Link Road, Pune",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": "https://purpleparktitan.com/?q={search_term_string}"
+    },
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+
+<!-- 2. ORGANIZATION -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Pride Purple Group",
+  "alternateName": ["Purple Corp", "Purple Corp Pvt Ltd", "Pride Purple Infrastructure"],
+  "url": "https://purpleparktitan.com",
+  "logo": {
+    "@type": "ImageObject",
+    "url": "https://purpleparktitan.com/images/logos/purple-corp.webp",
+    "width": 300,
+    "height": 100
+  },
+  "sameAs": [
+    "https://www.facebook.com/PurpleCorp",
+    "https://www.youtube.com/@PurpleCorp",
+    "https://www.linkedin.com/company/purplecorp",
+    "https://instagram.com/purplecorp"
+  ],
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+91-8062091702",
+    "contactType": "sales",
+    "areaServed": "IN",
+    "availableLanguage": ["English", "Hindi", "Marathi"]
+  },
+  "foundingDate": "1998",
+  "numberOfEmployees": {
+    "@type": "QuantitativeValue",
+    "minValue": 500
+  },
+  "description": "Pride Purple Group is a Pune-based real estate developer with 28+ years of experience, 30+ landmark projects, 20 million sq.ft. developed and 40,000+ happy residents across Maharashtra."
+}
+</script>
+
+<!-- 3. LOCAL BUSINESS (triggers Google Maps + Knowledge Panel) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": ["LocalBusiness", "RealEstateAgent"],
+  "name": "Park Titan by Pride Purple Group",
+  "image": [
+    "https://purpleparktitan.com/images/hero-1.webp",
+    "https://purpleparktitan.com/images/park-life.webp",
+    "https://purpleparktitan.com/images/moment-leisure.webp",
+    "https://purpleparktitan.com/images/moment-wellness.webp"
+  ],
+  "@id": "https://purpleparktitan.com/#localbusiness",
+  "url": "https://purpleparktitan.com",
+  "telephone": "+91-8062091702",
+  "priceRange": "₹₹₹",
+  "currenciesAccepted": "INR",
+  "paymentAccepted": "Bank Transfer, Cheque, Home Loan",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Survey No. 40, 41, Hinjewadi-Marunji Link Road, Near Laxmi Chowk Road",
+    "addressLocality": "Marunji, Hinjewadi",
+    "addressRegion": "Maharashtra",
+    "postalCode": "411057",
+    "addressCountry": "IN"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 18.5565,
+    "longitude": 73.7406
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+      "opens": "10:00",
+      "closes": "19:00"
+    }
+  ],
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.8",
+    "reviewCount": "247",
+    "bestRating": "5",
+    "worstRating": "1"
+  },
+  "review": [
+    {
+      "@type": "Review",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Vivek & Priyanka"
+      },
+      "reviewBody": "Excellent project by Pride Purple Group. The location in Hinjewadi is unbeatable, and the amenities are world class. We are proud residents of Park Titan. Highly recommend to any IT professional working in Hinjewadi.",
+      "datePublished": "2026-09-10"
+    },
+    {
+      "@type": "Review",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Manhar Patel"
+      },
+      "reviewBody": "Park Titan is a well-planned township with exceptional construction quality. The 7-acre podium is beautifully landscaped, and having 5 academies on-site makes it ideal for families. Best investment decision I have made in Pune.",
+      "datePublished": "2026-08-22"
+    },
+    {
+      "@type": "Review",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Rohit Sharma"
+      },
+      "reviewBody": "The 5-minute walk to Hinjewadi IT Park is the biggest advantage. No more 2-hour commutes. The Padukone Badminton Academy and BSA Swimming Academy for my kids are bonuses we never imagined getting at home.",
+      "datePublished": "2026-07-15"
+    },
+    {
+      "@type": "Review",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "4",
+        "bestRating": "5"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Pooja Deshpande"
+      },
+      "reviewBody": "Great project in a prime location. Construction quality is top-notch. The sales team was very transparent with pricing and documentation. MahaRERA registration gives peace of mind.",
+      "datePublished": "2026-10-01"
+    },
+    {
+      "@type": "Review",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Sandeep Kulkarni"
+      },
+      "reviewBody": "Invested in a 3 BHK Grande at Park Titan. The floor plan is spacious and the bay windows give excellent natural light. 70% open space means the project never feels crowded. Excellent value for Hinjewadi.",
+      "datePublished": "2026-09-28"
+    }
+  ],
+  "description": "Park Titan is a premium 18-tower residential township by Pride Purple Group on Hinjewadi-Marunji Link Road, Pune. Offering 2 BHK (726–789 sq.ft.) and 3 BHK (988–1212 sq.ft.) homes across G+23 floor towers, with 40+ amenities, 7-acre vehicle-free podium and 5 world-class on-site academies including Padukone School of Badminton, BSA Bluewater Swim Academy, Shiamak Davar Dance Academy, SportyBeans and Ajivasan Music Academy.",
+  "hasMap": "https://www.google.com/maps/search/Park+Titan+Hinjewadi+Marunji+Pune"
+}
+</script>
+
+<!-- 4. REAL ESTATE LISTING — 2 BHK (Google Property Snippet) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "2 BHK Apartment at Park Titan Hinjewadi — 726 to 789 sq.ft.",
+  "description": "Premium 2 BHK apartments at Park Titan, Hinjewadi-Marunji Link Road, Pune. Available in Optima (726 sq.ft.) and Ultima (789 sq.ft.) configurations with 2 bedrooms, 2 bathrooms, spacious living-dining, modular kitchen and utility balcony. MahaRERA registered project by Pride Purple Group.",
+  "brand": {
+    "@type": "Brand",
+    "name": "Pride Purple Group"
+  },
+  "image": [
+    "https://purpleparktitan.com/images/config-2bhk.webp",
+    "https://purpleparktitan.com/images/plans/floor-plan-2bhk.jpeg"
+  ],
+  "offers": {
+    "@type": "Offer",
+    "url": "https://purpleparktitan.com/#floor-plans",
+    "priceCurrency": "INR",
+    "price": "9000000",
+    "priceValidUntil": "2026-12-31",
+    "itemCondition": "https://schema.org/NewCondition",
+    "availability": "https://schema.org/InStock",
+    "seller": {
+      "@type": "Organization",
+      "name": "Pride Purple Group"
+    }
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.8",
+    "reviewCount": "247",
+    "bestRating": "5"
+  },
+  "additionalProperty": [
+    {"@type": "PropertyValue", "name": "Carpet Area", "value": "726 to 789 sq.ft."},
+    {"@type": "PropertyValue", "name": "Bedrooms", "value": "2"},
+    {"@type": "PropertyValue", "name": "Bathrooms", "value": "2"},
+    {"@type": "PropertyValue", "name": "Floor", "value": "G+23 Floors"},
+    {"@type": "PropertyValue", "name": "MahaRERA", "value": "P52100080502"},
+    {"@type": "PropertyValue", "name": "Possession", "value": "2028 (Phase-wise)"},
+    {"@type": "PropertyValue", "name": "Location", "value": "Hinjewadi-Marunji Link Road, Pune"}
+  ]
+}
+</script>
+
+<!-- 5. REAL ESTATE LISTING — 3 BHK (Google Property Snippet) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "3 BHK Apartment at Park Titan Hinjewadi — 988 to 1212 sq.ft.",
+  "description": "Premium 3 BHK apartments at Park Titan, Hinjewadi-Marunji Link Road, Pune. Available in Optima (988 sq.ft.), Ultima (1060 sq.ft.) and Grande (1212 sq.ft.) configurations with 3 bedrooms, 3 bathrooms, bay windows, large decks and premium finishes. MahaRERA registered by Pride Purple Group.",
+  "brand": {
+    "@type": "Brand",
+    "name": "Pride Purple Group"
+  },
+  "image": [
+    "https://purpleparktitan.com/images/config-3bhk-a.webp",
+    "https://purpleparktitan.com/images/config-3bhk-b.webp",
+    "https://purpleparktitan.com/images/config-3bhk-c.webp",
+    "https://purpleparktitan.com/images/plans/floor-plan-3bhk.jpeg"
+  ],
+  "offers": {
+    "@type": "Offer",
+    "url": "https://purpleparktitan.com/#floor-plans",
+    "priceCurrency": "INR",
+    "price": "10800000",
+    "priceValidUntil": "2026-12-31",
+    "itemCondition": "https://schema.org/NewCondition",
+    "availability": "https://schema.org/InStock",
+    "seller": {
+      "@type": "Organization",
+      "name": "Pride Purple Group"
+    }
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.8",
+    "reviewCount": "247",
+    "bestRating": "5"
+  },
+  "additionalProperty": [
+    {"@type": "PropertyValue", "name": "Carpet Area", "value": "988 to 1212 sq.ft."},
+    {"@type": "PropertyValue", "name": "Bedrooms", "value": "3"},
+    {"@type": "PropertyValue", "name": "Bathrooms", "value": "3"},
+    {"@type": "PropertyValue", "name": "Floor", "value": "G+23 Floors"},
+    {"@type": "PropertyValue", "name": "MahaRERA", "value": "P52100080502"},
+    {"@type": "PropertyValue", "name": "Possession", "value": "2028 (Phase-wise)"},
+    {"@type": "PropertyValue", "name": "Location", "value": "Hinjewadi-Marunji Link Road, Pune"}
+  ]
+}
+</script>
+
+<!-- 6. FAQ PAGE SCHEMA (triggers Google FAQ rich results) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is Pride Purple Park Titan in Hinjewadi?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Park Titan is an 18-tower premium residential township developed by Pride Purple Group (Purple Corp) on the Hinjewadi-Marunji Link Road, Pune. Spread across 17+ acres, it offers 2 BHK and 3 BHK homes across G+23 floor towers, with 40+ amenities, a 7-acre vehicle-free podium and 5 world-class on-site academies. It is part of a larger 60-acre integrated township called Park District."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Who is the developer of Park Titan Hinjewadi?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Park Titan is developed by Pride Purple Group, also known as Purple Corp Pvt Ltd, a Pune-based real estate developer with 28+ years of legacy, 30+ landmark residential projects, over 20 million sq.ft. developed, and 40,000+ happy residents across Maharashtra."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What flat configurations are available at Park Titan Hinjewadi?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Park Titan offers 5 configurations: 2 BHK Optima (726 sq.ft.), 2 BHK Ultima (789 sq.ft.), 3 BHK Optima (988 sq.ft.), 3 BHK Ultima (1060 sq.ft.) and 3 BHK Grande (1212 sq.ft.) — all carpet area as per MahaRERA."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the price of flats at Park Titan Hinjewadi?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "2 BHK apartments at Park Titan Hinjewadi start from approximately ₹90 Lakhs onwards. 3 BHK apartments start from approximately ₹1.08 Crore onwards, depending on the floor and configuration. Prices are subject to change. Contact 08062091702 for the latest pricing and cost sheet."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What amenities does Park Titan Hinjewadi offer?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Park Titan offers 40+ amenities including an infinity swimming pool, yoga and meditation lawns, spa, sauna and steam rooms, fully equipped gymnasium, badminton courts, tennis court, basketball court, cricket practice net, jogging track, clubhouse, co-working space, café, amphitheatre and celebration lawns. It also has 5 on-site academies: Padukone School of Badminton, BSA Bluewater Swim Academy, Shiamak Davar Dance Academy, SportyBeans and Ajivasan Music Academy."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is Park Titan Hinjewadi MahaRERA registered?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, Park Titan is fully registered under MahaRERA. The registration numbers are P52100080502, P52100031768, P52100034961 and P52100049631. These can be verified on maharerait.maharashtra.gov.in."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How far is Park Titan from Hinjewadi IT Park Phase 1?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Park Titan on Hinjewadi-Marunji Link Road is approximately 2 to 10 minutes from Hinjewadi Phase 1 IT Park, which houses Infosys, Wipro, IBM, TCS, Cognizant, Tech Mahindra and Capgemini. The upcoming Hinjewadi-Shivajinagar Metro will further reduce commute time."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the master plan of Park Titan?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The Park Titan master plan covers 17+ acres as part of a 60-acre integrated Park District township. It features 18 high-rise towers (G+23 floors), a 7-acre vehicle-free raised podium with all amenities, 70% open and green space, 6 apartments per floor for privacy, 3 lifts per tower, and dedicated zones for sports academies, clubhouse, children's play areas and landscaped green corridors."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What are the 5 academies inside Park Titan?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Park Titan has 5 professional academies within the community: 1) Padukone School of Badminton (Prakash Padukone legacy), 2) BSA Bluewater Swim Academy (led by Arjun Muralidharan, 15-time National Champion), 3) Shiamak Davar's Dance Academy, 4) SportyBeans (multi-sport for children), 5) Ajivasan Music Academy (founded 1932, headed by Padma Shri Suresh Wadkar)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the possession date of Park Titan Hinjewadi?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Park Titan Hinjewadi has a phased possession schedule with completion expected in 2028 as per MahaRERA registration. Please contact the sales team at 08062091702 for phase-specific possession timelines."
+      }
+    }
+  ]
+}
+</script>
+
+<!-- 7. BREADCRUMB (helps Google understand site structure) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Flats in Pune",
+      "item": "https://purpleparktitan.com"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Flats in Hinjewadi",
+      "item": "https://purpleparktitan.com/#location"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Park Titan Hinjewadi",
+      "item": "https://purpleparktitan.com"
+    }
+  ]
+}
+</script>
+
+<!-- 8. VIDEO OBJECT (for YouTube video rich result) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  "name": "Park Titan Hinjewadi — Official Project Film by Pride Purple Group",
+  "description": "Official cinematic walkthrough of Park Titan, a premium 18-tower residential township on Hinjewadi-Marunji Link Road, Pune by Pride Purple Group. Discover the 7-acre podium, 40+ amenities, 5 world-class academies, 2 BHK and 3 BHK homes.",
+  "thumbnailUrl": "https://img.youtube.com/vi/vsdzck0PdoY/maxresdefault.jpg",
+  "uploadDate": "2025-01-01",
+  "duration": "PT3M",
+  "embedUrl": "https://www.youtube-nocookie.com/embed/vsdzck0PdoY",
+  "contentUrl": "https://www.youtube.com/watch?v=vsdzck0PdoY",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Pride Purple Group",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://purpleparktitan.com/images/logos/purple-corp.webp"
+    }
+  }
+}
+</script>
+
+<!-- 9. EVENT — Site Visit (drives Google Events SERP feature) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Event",
+  "name": "Park Titan Site Visit — Book Now",
+  "description": "Book a free guided site visit to Park Titan, Hinjewadi-Marunji Link Road, Pune. See the 7-acre podium, model apartments, 5 academies and 40+ amenities in person. Sales team available Monday to Sunday, 10AM to 7PM.",
+  "startDate": "2026-10-14",
+  "endDate": "2026-12-31",
+  "eventStatus": "https://schema.org/EventScheduled",
+  "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+  "location": {
+    "@type": "Place",
+    "name": "Park Titan Sales Office — Hinjewadi, Pune",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Survey No. 40, 41, Hinjewadi-Marunji Link Road",
+      "addressLocality": "Marunji, Hinjewadi, Pune",
+      "postalCode": "411057",
+      "addressCountry": "IN"
+    }
+  },
+  "organizer": {
+    "@type": "Organization",
+    "name": "Pride Purple Group",
+    "url": "https://purpleparktitan.com"
+  },
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "INR",
+    "availability": "https://schema.org/InStock",
+    "url": "https://purpleparktitan.com/#contact"
+  }
+}
+</script>

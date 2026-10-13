@@ -1,0 +1,34 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /private/
+Disallow: /*.json$
+
+# Sitemap location
+Sitemap: https://purpleparktitan.com/sitemap.xml
+
+# Crawl-delay for secondary bots (Googlebot ignores this, but it's good practice)
+User-agent: Bingbot
+Crawl-delay: 10
+
+User-agent: Slurp
+Crawl-delay: 10
+
+# Allow all major search engines full access
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /images/
+
+User-agent: Googlebot-Video
+Allow: /
+
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /
