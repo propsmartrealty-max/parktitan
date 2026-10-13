@@ -1655,11 +1655,11 @@ em.gold, .t1 em, .t2 em, .hero-h1 em {
   right: 0;
   z-index: 700;
   padding: 0 5%;
-  height: 80px;
+  height: 96px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  transition: all .5s var(--ease1);
+  transition: all .4s var(--ease1);
 }
 .nav::after {
   content: '';
@@ -1674,9 +1674,10 @@ em.gold, .t1 em, .t2 em, .hero-h1 em {
   transform-origin: left;
 }
 .nav.scrolled {
-  background: rgba(8,8,10,.92);
-  backdrop-filter: blur(24px);
-  height: 66px;
+  background: rgba(8,8,10,.95);
+  backdrop-filter: blur(28px);
+  height: 76px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.6);
 }
 .nav.scrolled::after {
   transform: scaleX(1);
@@ -1684,12 +1685,19 @@ em.gold, .t1 em, .t2 em, .hero-h1 em {
 .nav-logo {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 14px;
 }
 .nav-logo img {
-  height: 44px;
+  height: 64px;
   width: auto;
-  filter: brightness(1.1);
+  filter: brightness(1.15) drop-shadow(0 2px 12px rgba(200,150,60,.2));
+  transition: height .4s var(--ease1), transform .3s ease;
+}
+.nav-logo:hover img {
+  transform: scale(1.03);
+}
+.nav.scrolled .nav-logo img {
+  height: 52px;
 }
 .nav-links {
   display: flex;
@@ -4464,7 +4472,10 @@ footer {
   }
   .nav {
     padding: 0 4% !important;
-    height: 70px !important;
+    height: 78px !important;
+  }
+  .nav-logo img {
+    height: 52px !important;
   }
   .nav-btn {
     display: none !important;
@@ -4557,7 +4568,7 @@ footer {
 <!-- 5. Navbar -->
 <nav class="nav" id="navbar">
   <div class="nav-logo">
-    <a href="#hero"><img src="images/logo-park-titan.png" alt="Park Titan Logo - Pride Purple Group Hinjewadi" height="44"/></a>
+    <a href="#hero"><img src="images/logo-park-titan.png" alt="Park Titan Logo - Pride Purple Group Hinjewadi" height="64"/></a>
   </div>
   <ul class="nav-links">
     <li><a href="#specs">Specs</a></li>
