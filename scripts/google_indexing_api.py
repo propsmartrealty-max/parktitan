@@ -34,11 +34,13 @@ DEFAULT_URLS = [
     "https://purpleparktitan.com/videos/",
     "https://purpleparktitan.com/explore/",
     "https://purpleparktitan.com/articles/",
-    "https://purpleparktitan.com/articles/pride-purple-park-titan-hinjewadi-ecosystem-master-review.html",
-    "https://purpleparktitan.com/articles/2bhk-3bhk-flats-hinjewadi-pune-market-guide.html",
-    "https://purpleparktitan.com/articles/pune-real-estate-investment-rental-yields-hinjewadi.html",
-    "https://purpleparktitan.com/articles/nri-guide-investing-in-pune-real-estate-park-titan.html",
-    "https://purpleparktitan.com/articles/hinjewadi-metro-line-3-impact-on-pune-real-estate-property-rates.html"
+    "https://purpleparktitan.com/articles/pride-purple-park-titan-hinjewadi-ecosystem-master-review",
+    "https://purpleparktitan.com/articles/2bhk-3bhk-flats-hinjewadi-pune-market-guide",
+    "https://purpleparktitan.com/articles/pune-real-estate-investment-rental-yields-hinjewadi",
+    "https://purpleparktitan.com/articles/nri-guide-investing-in-pune-real-estate-park-titan",
+    "https://purpleparktitan.com/articles/hinjewadi-metro-line-3-impact-on-pune-real-estate-property-rates",
+    "https://purpleparktitan.com/articles/pune-real-estate-market-guide-pride-purple-ecosystem",
+    "https://purpleparktitan.com/llms.txt"
 ]
 
 def extract_urls_from_sitemap(sitemap_path):
