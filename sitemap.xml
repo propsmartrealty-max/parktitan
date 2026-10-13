@@ -1,166 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
-        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
-
-  <!-- Homepage — Primary Landing Page & Authority Hub -->
-  <url>
-    <loc>https://purpleparktitan.com/</loc>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <sitemap>
+    <loc>https://purpleparktitan.com/sitemaps/sitemap-pages.xml</loc>
     <lastmod>2026-10-13</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>1.0</priority>
-    
-    <!-- Hero & Architectural Towers -->
-    <image:image>
-      <image:loc>https://purpleparktitan.com/images/hero-1.webp</image:loc>
-      <image:title>Pride Purple Park Titan Hinjewadi — 18 Towers Luxury Residences Pune</image:title>
-      <image:caption>Architectural elevation of Park Titan twin residential towers on Hinjewadi-Marunji Link Road, Pune</image:caption>
-    </image:image>
-    
-    <!-- Master Plan & Site Layout -->
-    <image:image>
-      <image:loc>https://purpleparktitan.com/images/plans/master-plan.jpeg</image:loc>
-      <image:title>Pride Purple Park Titan Master Layout Plan — 17+ Acres, 7-Acre Podium</image:title>
-      <image:caption>Master site plan showing 18 towers, vehicle-free podium, and 5 sports academies at Park Titan Hinjewadi</image:caption>
-    </image:image>
-    
-    <!-- 2 BHK Floor Plan -->
-    <image:image>
-      <image:loc>https://purpleparktitan.com/images/plans/floor-plan-2bhk.jpeg</image:loc>
-      <image:title>Park Titan 2 BHK Floor Plan Blueprint — 726 &amp; 789 sq.ft. Carpet Area</image:title>
-      <image:caption>Official 2 BHK Optima and Ultima floor plan layout at Park Titan Hinjewadi by Pride Purple Group</image:caption>
-    </image:image>
-    
-    <!-- 3 BHK Floor Plan -->
-    <image:image>
-      <image:loc>https://purpleparktitan.com/images/plans/floor-plan-3bhk.jpeg</image:loc>
-      <image:title>Park Titan 3 BHK Floor Plan Blueprint — 988, 1060 &amp; 1212 sq.ft. Carpet Area</image:title>
-      <image:caption>Official 3 BHK Optima, Ultima, and Grande floor plan layout at Park Titan Hinjewadi by Pride Purple Group</image:caption>
-    </image:image>
-    
-    <!-- 2 BHK Configuration Render -->
-    <image:image>
-      <image:loc>https://purpleparktitan.com/images/config-2bhk.webp</image:loc>
-      <image:title>Park Titan 2 BHK Model Apartment Interior Living &amp; Dining</image:title>
-      <image:caption>Model flat living room view of 2 BHK Ultima at Park Titan Hinjewadi Pune</image:caption>
-    </image:image>
-
-    <!-- 3 BHK Configuration Renders -->
-    <image:image>
-      <image:loc>https://purpleparktitan.com/images/config-3bhk-a.webp</image:loc>
-      <image:title>Park Titan 3 BHK Optima Master Bedroom Suite with Balcony</image:title>
-      <image:caption>3 BHK master bedroom suite with natural lighting and balcony at Park Titan Pune</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://purpleparktitan.com/images/config-3bhk-b.webp</image:loc>
-      <image:title>Park Titan 3 BHK Ultima Designer Kitchen &amp; Utility Balcony</image:title>
-      <image:caption>Modular kitchen setup in 3 BHK Ultima flat at Park Titan Hinjewadi</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://purpleparktitan.com/images/config-3bhk-c.webp</image:loc>
-      <image:title>Park Titan 3 BHK Grande Panoramic Living Deck</image:title>
-      <image:caption>Viewing deck of 3 BHK Grande apartment overlooking the 7-acre landscaped podium</image:caption>
-    </image:image>
-
-    <!-- Podium & Green Spaces -->
-    <image:image>
-      <image:loc>https://purpleparktitan.com/images/park-life.webp</image:loc>
-      <image:title>Park Titan 7-Acre Vehicle-Free Landscaped Podium &amp; Central Greens</image:title>
-      <image:caption>Elevated vehicle-free recreational podium with swimming pools and sports courts at Park Titan Hinjewadi</image:caption>
-    </image:image>
-
-    <!-- Academies -->
-    <image:image>
-      <image:loc>https://purpleparktitan.com/images/academy-badminton.webp</image:loc>
-      <image:title>Padukone School of Badminton at Park Titan Hinjewadi</image:title>
-      <image:caption>Indoor badminton courts and coaching academy at Pride Purple Park Titan Pune</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://purpleparktitan.com/images/academy-swimming.webp</image:loc>
-      <image:title>BSA Bluewater Swim Academy by Arjun Muralidharan at Park Titan</image:title>
-      <image:caption>Olympic-length swimming pool and training academy at Park Titan Hinjewadi</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://purpleparktitan.com/images/academy-dance.webp</image:loc>
-      <image:title>Shiamak Davar Dance Academy at Park Titan Hinjewadi</image:title>
-      <image:caption>Professional dance studio and training facilities inside Park Titan township</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://purpleparktitan.com/images/academy-sports.webp</image:loc>
-      <image:title>SportyBeans Multi-Sport Kids Academy at Park Titan</image:title>
-      <image:caption>Children multi-sport developmental infrastructure at Park Titan Hinjewadi</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://purpleparktitan.com/images/academy-music.webp</image:loc>
-      <image:title>Ajivasan Music Academy by Suresh Wadkar at Park Titan</image:title>
-      <image:caption>Classical and contemporary music training academy at Park Titan Pune</image:caption>
-    </image:image>
-
-    <!-- Locality & Connectivity -->
-    <image:image>
-      <image:loc>https://purpleparktitan.com/images/locality-hinjawadi.webp</image:loc>
-      <image:title>Hinjewadi Rajiv Gandhi Infotech Park Aerial View Pune</image:title>
-      <image:caption>Aerial panorama of Hinjewadi Phase 1 IT Park showing proximity to Park Titan on Marunji Link Road</image:caption>
-    </image:image>
-
-    <!-- Video Sitemap Entry -->
-    <video:video>
-      <video:thumbnail_loc>https://img.youtube.com/vi/vsdzck0PdoY/maxresdefault.jpg</video:thumbnail_loc>
-      <video:title>Pride Purple Park Titan Hinjewadi — Official Project Film &amp; Walkthrough</video:title>
-      <video:description>Walkthrough of Pride Purple Park Titan on Hinjewadi-Marunji Link Road, Pune. Explore the 7-acre vehicle-free podium, 5 world-class academies, 40+ lifestyle amenities, and 2 &amp; 3 BHK luxury residences.</video:description>
-      <video:player_loc>https://www.youtube-nocookie.com/embed/vsdzck0PdoY</video:player_loc>
-      <video:duration>180</video:duration>
-      <video:publication_date>2025-01-01T00:00:00+05:30</video:publication_date>
-      <video:family_friendly>yes</video:family_friendly>
-    </video:video>
-  </url>
-
-  <!-- Article 1: 2 BHK & 3 BHK Flats in Hinjewadi vs Mahalunge & Baner -->
-  <url>
-    <loc>https://purpleparktitan.com/articles/2bhk-3bhk-flats-hinjewadi-pune-market-guide.html</loc>
+  </sitemap>
+  <sitemap>
+    <loc>https://purpleparktitan.com/sitemaps/sitemap-articles.xml</loc>
     <lastmod>2026-10-13</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-  </url>
-
-  <!-- Article 2: Pride Purple Park Titan Hinjewadi Review -->
-  <url>
-    <loc>https://purpleparktitan.com/articles/pride-purple-park-titan-hinjewadi-ecosystem-master-review.html</loc>
+  </sitemap>
+  <sitemap>
+    <loc>https://purpleparktitan.com/sitemaps/sitemap-stories.xml</loc>
     <lastmod>2026-10-13</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-  </url>
-
-  <!-- Article 3: Pune Real Estate Investment & Rental Yields -->
-  <url>
-    <loc>https://purpleparktitan.com/articles/pune-real-estate-investment-rental-yields-hinjewadi.html</loc>
+  </sitemap>
+  <sitemap>
+    <loc>https://purpleparktitan.com/sitemaps/sitemap-media.xml</loc>
     <lastmod>2026-10-13</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-  </url>
-
-  <!-- Article 4: NRI Real Estate Guide Pune -->
-  <url>
-    <loc>https://purpleparktitan.com/articles/nri-guide-investing-in-pune-real-estate-park-titan.html</loc>
-    <lastmod>2026-10-13</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-  </url>
-
-  <!-- Article 5: Hinjewadi Metro Line 3 Property Impact -->
-  <url>
-    <loc>https://purpleparktitan.com/articles/hinjewadi-metro-line-3-impact-on-pune-real-estate-property-rates.html</loc>
-    <lastmod>2026-10-13</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-  </url>
-
-  <!-- Articles Index Hub -->
-  <url>
-    <loc>https://purpleparktitan.com/articles/</loc>
-    <lastmod>2026-10-13</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-</urlset>
+  </sitemap>
+</sitemapindex>

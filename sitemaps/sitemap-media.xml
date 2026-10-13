@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+  <url>
+    <loc>https://purpleparktitan.com/</loc>
+    <lastmod>2026-10-13</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://purpleparktitan.com/images/hero-1.webp</image:loc>
+      <image:title>Pride Purple Park Titan Hinjewadi Towers Elevation</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://purpleparktitan.com/images/plans/master-plan.jpeg</image:loc>
+      <image:title>Park Titan 17-Acre Master Site Plan Layout</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://purpleparktitan.com/images/plans/floor-plan-2bhk.jpeg</image:loc>
+      <image:title>Park Titan 2 BHK Architectural Floor Plan</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://purpleparktitan.com/images/plans/floor-plan-3bhk.jpeg</image:loc>
+      <image:title>Park Titan 3 BHK Architectural Floor Plan</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://purpleparktitan.com/images/park-life.webp</image:loc>
+      <image:title>Park Titan 7-Acre Vehicle-Free Elevated Podium</image:title>
+    </image:image>
+    <video:video>
+      <video:thumbnail_loc>https://img.youtube.com/vi/vsdzck0PdoY/maxresdefault.jpg</video:thumbnail_loc>
+      <video:title>Pride Purple Park Titan Hinjewadi Walkthrough Film</video:title>
+      <video:description>Cinematic walkthrough of Park Titan residences, 7-acre podium, and 5 sports academies.</video:description>
+      <video:player_loc>https://www.youtube-nocookie.com/embed/vsdzck0PdoY</video:player_loc>
+      <video:duration>180</video:duration>
+      <video:publication_date>2025-01-01T00:00:00+05:30</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+    </video:video>
+  </url>
+</urlset>

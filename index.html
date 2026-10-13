@@ -12,12 +12,15 @@
 <meta name="geo.placename" content="Hinjewadi, Pune"/>
 <meta name="geo.position" content="18.5975;73.7228"/>
 <meta name="ICBM" content="18.5975, 73.7228"/>
-<!-- Favicon & Brand Icons -->
+<!-- Favicon Suite (Authentic Pride Purple Logo) -->
 <link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"/>
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"/>
 <link rel="shortcut icon" href="/favicon.ico"/>
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"/>
-<meta name="theme-color" content="#2D082E"/>
+<meta name="theme-color" content="#3B1540"/>
+<meta name="msapplication-TileColor" content="#3B1540"/>
+
 <link rel="canonical" href="https://purpleparktitan.com/"/>
 
 <!-- Open Graph / Facebook -->
@@ -4446,6 +4449,79 @@ footer {
   transform: translateY(-1px);
 }
 
+
+/* ── Enhanced Mobile Responsive Styles (Fix Horizontal Scroll & Overflow) ── */
+@media (max-width: 768px) {
+  html, body {
+    overflow-x: hidden !important;
+    width: 100% !important;
+  }
+  .wrap, .bg-wrap, .art-body, .art-hero {
+    padding-left: 5% !important;
+    padding-right: 5% !important;
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+  }
+  .nav {
+    padding: 0 4% !important;
+    height: 70px !important;
+  }
+  .nav-btn {
+    display: none !important;
+  }
+  .hero-h1 {
+    font-size: clamp(36px, 9vw, 54px) !important;
+    line-height: 1.1 !important;
+  }
+  .hero-content {
+    padding: 100px 5% 40px !important;
+  }
+  .hero-cta {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 12px !important;
+  }
+  .hero-cta .btn-p, .hero-cta .btn-s {
+    width: 100% !important;
+    text-align: center !important;
+  }
+  .hstat-track {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 14px !important;
+  }
+  .pricing-table-wrap, .cmp-table-wrap, .art-table-wrap {
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    border-radius: 4px !important;
+  }
+  .pricing-table, .cmp-table, .art-table {
+    min-width: 580px !important;
+  }
+  .fp-pane {
+    flex-direction: column !important;
+  }
+  .fp-left, .fp-right {
+    width: 100% !important;
+  }
+  .conn-grid, .fin-grid, .port-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .fab-stack {
+    bottom: 20px !important;
+    right: 16px !important;
+  }
+  .wa {
+    bottom: 20px !important;
+    left: 16px !important;
+  }
+  #loader {
+    padding: 20px !important;
+  }
+  .loader-brand {
+    transform: scale(0.9) !important;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -4457,10 +4533,10 @@ footer {
 <!-- 2. Loader (Exact Logo Branding Element) -->
 <div id="loader" aria-label="Loading Pride Purple Park Titan">
   <div class="loader-brand">
-    <img src="/images/logo-park-titan.png" alt="Pride Purple Park Titan Logo" class="loader-logo-img"/>
-    <div class="loader-title">PARK <em>TITAN</em></div>
-    <div class="loader-line"></div>
-    <div class="loader-sub">PRIDE PURPLE · HINJEWADI, PUNE</div>
+    <img src="/images/purple-emblem.png" alt="Pride Purple Logo Emblem" class="loader-logo-img" style="width:110px;height:auto;filter:drop-shadow(0 0 28px rgba(138,43,226,.55)) drop-shadow(0 0 12px rgba(230,190,110,.45))"/>
+    <div class="loader-title" style="letter-spacing:5px">PRIDE <em>PURPLE</em></div>
+    <div class="loader-line" style="width:160px;background:rgba(255,255,255,.08)"></div>
+    <div class="loader-sub" style="letter-spacing:3px;color:#E6BE6E">PARK TITAN · HINJEWADI, PUNE</div>
   </div>
 </div>
 
@@ -6245,6 +6321,56 @@ footer {
 </section>
 
 
+
+<!-- 24C. Google Visual Web Stories Hub -->
+<section style="padding:60px 8% 80px;background:var(--ink2);border-bottom:1px solid var(--line)" id="web-stories">
+  <div style="max-width:1300px;margin:0 auto">
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:16px;margin-bottom:32px" data-reveal="up">
+      <div>
+        <div class="s-label">Visual Web Stories</div>
+        <h2 class="t2" style="color:var(--white);margin-top:6px">Google Visual Stories:<br><em style="font-style:italic;color:var(--gold2)">Immersive Tap-Through Highlights</em></h2>
+      </div>
+      <span style="font-family:var(--f-ui);font-size:11px;color:rgba(255,255,255,.4);letter-spacing:1px;text-transform:uppercase">Google Discover &amp; Web Stories Ready</span>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));gap:20px" data-reveal="fade">
+      <!-- Story 1 -->
+      <a href="/web-stories/5-academies-park-titan.html" target="_blank" style="position:relative;height:380px;border-radius:6px;overflow:hidden;border:1px solid var(--line);display:flex;flex-direction:column;justify-content:flex-end;padding:24px;text-decoration:none;transition:transform .3s ease">
+        <img src="/images/academy-badminton.webp" alt="5 Academies Story" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:brightness(.65);transition:transform .4s ease"/>
+        <div style="position:absolute;inset:0;background:linear-gradient(180deg, transparent 40%, rgba(8,8,10,.95) 100%)"></div>
+        <div style="position:relative;z-index:2">
+          <span style="font-family:var(--f-ui);font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold);display:inline-block;margin-bottom:6px">Sports Academies</span>
+          <h4 style="font-family:var(--f-serif);font-size:20px;color:var(--white);line-height:1.25;margin-bottom:8px">5 Iconic Academies Inside Your Gates</h4>
+          <span style="font-family:var(--f-ui);font-size:11px;color:var(--gold2);font-weight:600">Tap to View Story ⚡</span>
+        </div>
+      </a>
+
+      <!-- Story 2 -->
+      <a href="/web-stories/7-acre-podium-park-titan.html" target="_blank" style="position:relative;height:380px;border-radius:6px;overflow:hidden;border:1px solid var(--line);display:flex;flex-direction:column;justify-content:flex-end;padding:24px;text-decoration:none;transition:transform .3s ease">
+        <img src="/images/park-life.webp" alt="7-Acre Podium Story" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:brightness(.65);transition:transform .4s ease"/>
+        <div style="position:absolute;inset:0;background:linear-gradient(180deg, transparent 40%, rgba(8,8,10,.95) 100%)"></div>
+        <div style="position:relative;z-index:2">
+          <span style="font-family:var(--f-ui);font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold);display:inline-block;margin-bottom:6px">Sanctuary Living</span>
+          <h4 style="font-family:var(--f-serif);font-size:20px;color:var(--white);line-height:1.25;margin-bottom:8px">7-Acre Vehicle-Free Raised Podium</h4>
+          <span style="font-family:var(--f-ui);font-size:11px;color:var(--gold2);font-weight:600">Tap to View Story ⚡</span>
+        </div>
+      </a>
+
+      <!-- Story 3 -->
+      <a href="/web-stories/2bhk-3bhk-floor-plans-park-titan.html" target="_blank" style="position:relative;height:380px;border-radius:6px;overflow:hidden;border:1px solid var(--line);display:flex;flex-direction:column;justify-content:flex-end;padding:24px;text-decoration:none;transition:transform .3s ease">
+        <img src="/images/plans/floor-plan-2bhk.jpeg" alt="Floor Plans Story" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:brightness(.65);transition:transform .4s ease"/>
+        <div style="position:absolute;inset:0;background:linear-gradient(180deg, transparent 40%, rgba(8,8,10,.95) 100%)"></div>
+        <div style="position:relative;z-index:2">
+          <span style="font-family:var(--f-ui);font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold);display:inline-block;margin-bottom:6px">Zero-Wastage Layouts</span>
+          <h4 style="font-family:var(--f-serif);font-size:20px;color:var(--white);line-height:1.25;margin-bottom:8px">2 &amp; 3 BHK Zero-Wastage Blueprints</h4>
+          <span style="font-family:var(--f-ui);font-size:11px;color:var(--gold2);font-weight:600">Tap to View Story ⚡</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+
 <footer>
   <div class="ft-top">
     <div class="ft-brand">
@@ -6317,7 +6443,19 @@ footer {
         Verify online at: <a href="https://maharerait.maharashtra.gov.in/public/project/view/30727" target="_blank" rel="noopener">maharerait.maharashtra.gov.in</a>
       </p>
     </div>
-  </div>
+  
+    <div class="ft-col">
+      <h4>Google Web Stories</h4>
+      <ul>
+        <li><a href="/web-stories/5-academies-park-titan.html" target="_blank">⚡ 5 Academies Story</a></li>
+        <li><a href="/web-stories/7-acre-podium-park-titan.html" target="_blank">⚡ 7-Acre Podium Story</a></li>
+        <li><a href="/web-stories/2bhk-3bhk-floor-plans-park-titan.html" target="_blank">⚡ 2 &amp; 3 BHK Plans Story</a></li>
+        <li><a href="/sitemaps/sitemap-stories.xml">Stories XML Sitemap</a></li>
+        <li><a href="/sitemap.xml">Master Sitemap Index</a></li>
+      </ul>
+    </div>
+
+</div>
 
   <div class="ft-disc">
     <div class="wrap">
@@ -6417,12 +6555,15 @@ function dismissLoader() {
     });
   }
 }
-// Dismiss immediately on window load
-window.addEventListener('load', () => {
-  setTimeout(dismissLoader, 450);
+// Bulletproof Instant Loader Dismissal
+document.addEventListener('DOMContentLoaded', () => {
+  setTimeout(dismissLoader, 300);
 });
-// Fallback dismiss after 1.8s max so website NEVER gets stuck
-setTimeout(dismissLoader, 1800);
+window.addEventListener('load', () => {
+  dismissLoader();
+});
+// Absolute fallback: NEVER stay visible longer than 800ms
+setTimeout(dismissLoader, 800);
 
 /* ── Navbar & FAB on Scroll ── */
 const nav = document.getElementById('navbar');
@@ -6583,6 +6724,12 @@ async function handleEnq(e) {
   };
 
   try {
+    if (typeof gtag !== 'undefined') {
+      gtag('event', 'conversion', { send_to: 'AW-849058188' });
+    }
+    if (typeof fbq !== 'undefined') {
+      fbq('track', 'Lead');
+    }
     const res = await fetch('/api/submit-lead', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -6599,15 +6746,11 @@ async function handleEnq(e) {
     }
   } catch (err) {
     alert("Thank you for your enquiry! Our Pride Purple sales specialist will contact you shortly on " + formData.mobile);
+    form.reset();
     closeEnq();
   } finally {
     if (btn) { btn.textContent = originalText; btn.disabled = false; }
   }
-});
-    gtag('event', 'conversion', { send_to: 'AW-849058188' });
-  }
-  if (typeof fbq !== 'undefined') fbq('track', 'Lead');
-  e.target.reset();
 }
 
 /* Auto-trigger modal once upon deep scrolling */
