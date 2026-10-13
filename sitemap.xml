@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version='1.0' encoding='UTF-8'?>
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <sitemap>
     <loc>https://purpleparktitan.com/sitemaps/sitemap-pages.xml</loc>
@@ -14,6 +14,26 @@
   </sitemap>
   <sitemap>
     <loc>https://purpleparktitan.com/sitemaps/sitemap-media.xml</loc>
+    <lastmod>2026-10-13</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://purpleparktitan.com/sitemaps/sitemap-p-1.xml</loc>
+    <lastmod>2026-10-13</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://purpleparktitan.com/sitemaps/sitemap-p-2.xml</loc>
+    <lastmod>2026-10-13</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://purpleparktitan.com/sitemaps/sitemap-p-3.xml</loc>
+    <lastmod>2026-10-13</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://purpleparktitan.com/sitemaps/sitemap-p-4.xml</loc>
+    <lastmod>2026-10-13</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://purpleparktitan.com/sitemaps/sitemap-p-5.xml</loc>
     <lastmod>2026-10-13</lastmod>
   </sitemap>
 </sitemapindex>
