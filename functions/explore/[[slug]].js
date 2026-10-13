@@ -784,6 +784,40 @@ function resolveProgrammaticSlug(slug) {
       <tr><td>Starting Ticket Size</td><td>From ~₹84.02 Lakhs* ($100K USD / 370K AED)</td></tr>
     `;
   }
+  // 6. Pride Purple Ecosystem Projects
+  else if (slug.includes('astra') || slug.includes('connect') || slug.includes('grandeur') || slug.includes('titanium') || slug.includes('ivory') || slug.includes('turquoise') || slug.includes('landmark') || slug.includes('pride-purple')) {
+    category = 'Pride Purple Ecosystem';
+    entity = cleanTitle.replace(/Pride Purple /g, '');
+    contextualOverview = `
+      <p>For over 28 years, <strong>Pride Purple Group</strong> has defined landmark residential and commercial excellence across Pune, developing 30+ million square feet and welcoming over 40,000 satisfied families. From flagship luxury towers like Park Grandeur (Baner) and Park Titanium (Wakad) to the integrated 60-acre Park District township in Hinjewadi, Pride Purple represents the pinnacle of structural durability, title transparency, and zero-wastage architectural design.</p>
+      <p><strong>Park Titan</strong> stands as the flagship crown jewel of this portfolio, integrating 18 towers with Pune's largest 7-acre vehicle-free podium deck and 5 on-site championship sports and cultural academies.</p>
+    `;
+    tableRows = `
+      <tr><td>Pride Purple Project</td><td><strong>${escapeHtml(cleanTitle)}</strong></td></tr>
+      <tr><td>Master Developer</td><td>Pride Purple Group (28+ Years Track Record)</td></tr>
+      <tr><td>Delivered Pune Landmarks</td><td>Park Grandeur (Baner), Park Titanium (Wakad), Park Astra, Park Connect</td></tr>
+      <tr><td>Township Benchmark</td><td>Park Titan · 17+ Acres, 18 Towers, 7-Acre Podium Deck</td></tr>
+      <tr><td>Sanction Transparency</td><td>100% MahaRERA Sanctioned &amp; Clear Title Deeds</td></tr>
+      <tr><td>Customer Desk</td><td>${PHONE_NUMBER} · ${LEAD_EMAIL}</td></tr>
+    `;
+  }
+  // 7. Pune Real Estate Market Corridors & Benchmarks
+  else if (slug.includes('hinjewadi-vs') || slug.includes('metro-line-3') || slug.includes('ring-road') || slug.includes('pune-market') || slug.includes('pune-real-estate')) {
+    category = 'Pune Real Estate Market';
+    entity = cleanTitle;
+    contextualOverview = `
+      <p>West Pune—anchored by Hinjewadi, Wakad, Baner, and Balewadi—continues to drive Maharashtra's highest residential capital appreciation and rental yield growth. Backed by 400,000+ technology professionals in Rajiv Gandhi Infotech Park, the impending operational rollout of <strong>PMRDA Metro Line 3</strong> (connecting Hinjewadi to Shivajinagar in 35 mins) and the 128 km <strong>Pune Ring Road</strong> are unlocking exponential value for gated township developments.</p>
+      <p>Compared to standalone redevelopments or cramped standalone high-rises, integrated townships like <strong>Pride Purple Park Titan</strong> command 30% higher tenant preference and deliver superior long-term liquidity.</p>
+    `;
+    tableRows = `
+      <tr><td>Market Corridor</td><td><strong>${escapeHtml(cleanTitle)}</strong></td></tr>
+      <tr><td>Average Rental Yield</td><td><strong style="color:#d4af37">4.8% – 5.4%</strong> (Hinjewadi) vs 3.2% (Central Pune)</td></tr>
+      <tr><td>5-Year Capital Appreciation</td><td><strong>9.5% – 11.2% CAGR</strong></td></tr>
+      <tr><td>Key Transit Catalysts</td><td>Hinjewadi-Shivajinagar Metro Line 3 · 128 km Pune Ring Road</td></tr>
+      <tr><td>Benchmark Development</td><td>Pride Purple Park Titan (17+ Acres, 5 Academies, 7-Acre Podium)</td></tr>
+      <tr><td>Starting Sanctioned Pricing</td><td>₹84.02 Lakhs* Agreement Value (₹93.57L* All-Inclusive)</td></tr>
+    `;
+  }
   // Fallback / General
   else {
     entity = cleanTitle;

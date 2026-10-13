@@ -290,6 +290,55 @@ INVESTMENT_QUERY_TYPES = [
     "financial-calculator-and-yield-audit",
 ]
 
+# 8. PRIDE PURPLE ECOSYSTEM SISTER PROJECTS & MASTER TOWNSHIP
+PRIDE_PURPLE_ECOSYSTEM = [
+    ("Pride Purple Park Astra", "Hinjewadi Park District", "2 & 3 BHK Contemporary Residences", "Ongoing 60-acre master township development with sports & podium living"),
+    ("Pride Purple Park Connect", "Hinjewadi Phase 1", "2 & 3 BHK High-Yield Tech Homes", "High rental yield landmark directly adjacent to Phase 1 tech establishments"),
+    ("Pride Purple Park Grandeur", "Baner, West Pune", "3 & 4 BHK Palatial Residences", "Flagship ultra-luxury landmark defining premium architectural grandeur in Baner"),
+    ("Pride Purple Park Titanium", "Wakad Prime Sector", "3 & 4 BHK Ultra-Spacious Towers", "Iconic high-rise residences redefining luxury standards in Wakad"),
+    ("Pride Purple Park Ivory", "Wakad, Pune", "2 & 3 BHK Premium Gated Community", "Expansive community living with lush landscape and club amenities"),
+    ("Pride Purple Park Turquoise", "Wakad, Pune", "2 & 3 BHK Elegant Residences", "Prime residential enclave close to Mumbai-Pune highway corridor"),
+    ("Pride Purple Park Landmark", "Bibwewadi Salisbury Park", "2 & 3 BHK South Pune Landmark", "Premier residential enclave in South Pune with lush scenic surroundings"),
+    ("Pride Purple Park Xpress", "Balewadi High Street", "2 & 3 BHK Lifestyle Homes", "Prime location on Balewadi High Street surrounded by top dining and retail"),
+    ("Pride Purple Rubik", "Baner Commercial", "Grade-A Corporate Offices & Retail", "State-of-the-art corporate landmark on Baner commercial arterial road"),
+    ("Pride Purple Square", "Wakad Commercial", "Retail Showrooms & Corporate Suites", "Commercial hub serving West Pune IT leadership and retail patrons"),
+    ("Pride Purple 10 Kasturkunj", "Bhosale Nagar Shivajinagar", "Ultra-Luxury Bespoke Residences", "Bespoke palatial living at Pune's most prestigious old-money address"),
+    ("Pride Purple Five Gardens", "Viman Nagar East Pune", "Luxury Garden Residences", "Prime gated community adjacent to Pune International Airport corridor"),
+    ("Pride Purple Park Boulevard", "Hinjewadi Park District", "Luxury Boutique Residences", "Exclusive residential sanctuary inside the 60-acre Park District"),
+    ("Pride Purple Park District", "Hinjewadi-Marunji Link Road", "60-Acre Master Integrated Township", "Mega-township ecosystem encompassing Park Titan, Park Astra, and Park Connect"),
+]
+
+ECOSYSTEM_QUERY_TYPES = [
+    "overview-and-comparison-with-park-titan",
+    "rera-registration-and-possession-track-record",
+    "floor-plans-price-list-and-resale-value",
+    "pride-purple-builder-reputation-and-reviews",
+    "amenities-and-township-infrastructure-audit",
+    "why-park-titan-is-the-flagship-in-this-portfolio",
+]
+
+# 9. PUNE REAL ESTATE MARKET CORRIDORS & REGIONAL BENCHMARKS
+PUNE_MARKET_CORRIDORS = [
+    ("Hinjewadi vs Wakad Real Estate Investment", "Hinjewadi vs Wakad", "Price per sq.ft. comparison, rental yields (5.2% vs 4.2%), and Metro Line 3 access"),
+    ("Hinjewadi vs Baner Luxury Property Buying Guide", "Hinjewadi vs Baner", "Ticket size vs usable space: Park Titan 3 BHK vs Baner high-density redevelopment"),
+    ("Hinjewadi vs Balewadi Flats Price Trends", "Hinjewadi vs Balewadi", "Proximity to IT jobs, 7-acre vehicle-free podium vs cramped standalone plots"),
+    ("Hinjewadi vs Kharadi IT Corridor Investment Matrix", "Hinjewadi vs Kharadi", "West Pune vs East Pune IT corridors: 400K tech jobs, infrastructure & rental ROI"),
+    ("Hinjewadi vs Mahalunge Hi-Tech City Growth Analysis", "Hinjewadi vs Mahalunge", "Direct Phase 1 connectivity vs Mahalunge bridge bottleneck and road completion"),
+    ("Hinjewadi vs Punawale and Tathawade Affordability", "Hinjewadi vs Punawale/Tathawade", "Grade-A township amenities & 5 academies vs budget builder developments"),
+    ("Pune Metro Line 3 Hinjewadi to Shivajinagar 23 Stations", "Metro Line 3 Corridors", "Station-wise capital appreciation analysis and 35-min transit to Shivajinagar"),
+    ("128 Km Pune Ring Road Impact on West Pune Real Estate", "Pune Ring Road West Corridor", "Direct orbital connectivity connecting Hinjewadi to Chakan, Talegaon and expressway"),
+    ("Hinjewadi Phase 4 Expansion & PMRDA Master Plan 2026", "Hinjewadi Phase 4 & PMRDA 2026", "Upcoming corporate SEZs, planned commercial arteries and property appreciation"),
+    ("Pune Integrated Townships vs Standalone High-Rises", "Townships vs Standalone Buildings", "Why integrated townships like Park Titan deliver 40% higher resale liquidity"),
+]
+
+PUNE_MARKET_QUERY_TYPES = [
+    "comprehensive-market-guide-2026",
+    "property-rates-and-rental-yield-audit",
+    "capital-appreciation-forecast-5-years",
+    "infrastructure-catalysts-and-metro-impact",
+    "best-flats-to-buy-investment-ranking",
+]
+
 
 def slugify(text):
     text = text.lower().strip()
@@ -430,6 +479,41 @@ def generate_all_vectors():
                 "h1": f"Park Titan Investment Audit: {topic_title}",
                 "entity": topic_title,
                 "category": "ROI & Investment Analysis",
+            })
+
+    # Pillar 8: Pride Purple Ecosystem Sister Projects & Master Township
+    for proj_name, loc, cfg_type, desc in PRIDE_PURPLE_ECOSYSTEM:
+        proj_slug = slugify(proj_name)
+        for q_type in ECOSYSTEM_QUERY_TYPES:
+            slug = f"{proj_slug}-{q_type}"
+            vectors.append({
+                "pillar": "ecosystem",
+                "slug": slug,
+                "title": f"{proj_name} ({loc}) — {q_type.replace('-', ' ').title()}",
+                "meta_desc": f"Complete guide to {proj_name} in {loc}: {cfg_type}. {desc}. Compare with Park Titan Hinjewadi. Call 7744009295.",
+                "h1": f"{proj_name} ({loc}): {q_type.replace('-', ' ').title()}",
+                "entity": proj_name,
+                "location": loc,
+                "config": cfg_type,
+                "desc": desc,
+                "category": "Pride Purple Ecosystem",
+            })
+
+    # Pillar 9: Pune Real Estate Market Corridors & Regional Benchmarks
+    for corridor_title, short_name, desc in PUNE_MARKET_CORRIDORS:
+        corr_slug = slugify(corridor_title)
+        for q_type in PUNE_MARKET_QUERY_TYPES:
+            slug = f"{corr_slug}-{q_type}"
+            vectors.append({
+                "pillar": "pune-market",
+                "slug": slug,
+                "title": f"{corridor_title} — {q_type.replace('-', ' ').title()}",
+                "meta_desc": f"Authoritative Pune real estate market guide: {corridor_title}. {desc}. Park Titan Hinjewadi perspective. Call 7744009295.",
+                "h1": f"{corridor_title}: {q_type.replace('-', ' ').title()}",
+                "entity": short_name,
+                "corridor_title": corridor_title,
+                "desc": desc,
+                "category": "Pune Real Estate Market",
             })
 
     # Intent modifiers covering genuine buyer search queries
