@@ -868,7 +868,7 @@ function resolveProgrammaticSlug(slug) {
       
       <div class="faq-item">
         <div class="faq-q">What is the exact price structure and carpet area for Park Titan? <span>+</span></div>
-        <div class="faq-a">2 RLK Optima (726 sq.ft.) starts at ₹84,02,750 agreement value (₹93,57,088 all-inclusive). 2 RLK Ultima (789 sq.ft.) starts at ₹90,61,500. 3 RLK formats range from 988 to 1,212 sq.ft. starting ₹1.11 Cr to ₹1.48 Cr agreement value. All-inclusive costs cover 6% stamp duty, ₹30,000 registration, and 5% GST.</div>
+        <div class="faq-a">2 RLK Optima (726.44 sq.ft.) starts at ₹84,02,750 agreement value (₹93,57,088 all-inclusive). 2 RLK Ultima (789.54 sq.ft.) starts at ₹90,61,500 (₹1,00,88,275 all-inclusive). 3 RLK Optima (988.25 sq.ft.) starts at ₹1,11,38,500 (₹1,23,93,825 all-inclusive). 3 RLK Ultima (1,059.87 sq.ft.) starts at ₹1,23,27,600 (₹1,37,13,680 all-inclusive). 3 RLK Grande (1,212.22 sq.ft.) starts at ₹1,48,10,600 (₹1,64,69,830 all-inclusive). All-inclusive totals include 6% stamp duty, ₹30,000 registration, and 5% GST. Floor rise is ₹15,000/floor from second floor onwards. Advance maintenance deposit collected at possession: ₹1.35L to ₹2.15L.</div>
       </div>
 
       <div class="faq-item">
