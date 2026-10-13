@@ -380,7 +380,7 @@ def generate_all_vectors():
                 "pillar": "config",
                 "slug": slug,
                 "title": f"Pride Purple Park Titan {cfg['name']} ({cfg['total']}) — {q_type.replace('-', ' ').title()}",
-                "meta_desc": f"Official details for Park Titan {cfg['name']} ({cfg['total']} carpet + balcony). Agreement value {cfg['agreement']}*, All-inc {cfg['all_inc']}*. MahaRERA P52100049631. Direct desk: 7744009295.",
+                "meta_desc": f"Official details for Park Titan {cfg['name']} (Total Carpet {cfg['total']}). Final all-inclusive {cfg['all_inc']}*. MahaRERA Phase 1 (P52100028049), Phase 2 (P52100030567), Phase 5 (P52100047702). Direct desk: +91 7744009295.",
                 "h1": f"Park Titan {cfg['name']} ({cfg['total']}): {q_type.replace('-', ' ').title()}",
                 "entity": cfg['name'],
                 "carpet": cfg['carpet'],

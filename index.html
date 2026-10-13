@@ -5763,7 +5763,7 @@ em.gold, .t1 em, .t2 em, .hero-h1 em, .fiesta-amount {
     <span class="tick">40+ Curated Lifestyle Amenities</span>
     <span class="tick">Padukone · Shiamak · BSA · SportyBeans · Ajivasan</span>
     <span class="tick">28+ Years Pride Purple Trust</span>
-    <span class="tick">Starting ₹84.02 Lakhs* Agreement Value (₹93.57L* All-Inc.)</span>
+    <span class="tick">Starting ₹93.57 Lakhs* All-Inclusive (Total Carpet 726.44 sq.ft.)</span>
     <span class="tick">2 &amp; 3 BHK Premium Residences</span>
     <span class="tick">17+ Acres Integrated Township</span>
     <span class="tick">7-Acre Vehicle-Free Active Podium</span>
@@ -7050,7 +7050,7 @@ em.gold, .t1 em, .t2 em, .hero-h1 em, .fiesta-amount {
   </div>
   <div class="wrap">
     <p class="pricing-footnote" style="margin-top:16px;line-height:1.7">
-      *All-Inclusive Total includes Agreement Value + 6% Stamp Duty + ₹30,000 Registration + 5% GST. Floor rise applicable @ ₹15,000/floor from 2nd floor onwards. PLC applicable as per preference. Advance maintenance deposit collected at possession (2 RLK: ₹1.35L–₹1.45L · 3 RLK: ₹1.75L–₹2.15L). MNGL Gas Deposit: ₹6,000. Cheque favouring: <strong>PRIDE PURPLE INFRASTRUCTURE RERA DESIGNATED COLLECTION AC FOR PARK TITAN PHASE V</strong>.
+      *All-Inclusive Total includes 6% Stamp Duty + ₹30,000 Registration + 5% GST. Floor rise applicable @ ₹15,000/floor from 2nd floor onwards. PLC applicable as per preference. Advance maintenance deposit collected at possession (2 RLK: ₹1.35L–₹1.45L · 3 RLK: ₹1.75L–₹2.15L). MNGL Gas Deposit: ₹6,000. Cheque favouring: <strong>PRIDE PURPLE INFRASTRUCTURE RERA DESIGNATED COLLECTION AC FOR PARK TITAN PHASE V</strong>.
     </p>
   </div>
 </section>
@@ -7061,7 +7061,7 @@ em.gold, .t1 em, .t2 em, .hero-h1 em, .fiesta-amount {
     <div class="s-label">Interactive Pricing Engine · Official Pride Purple Matrix</div>
     <h2 class="t1" style="color:var(--white);margin-top:8px">Floor-Rise &amp; Total <em style="font-style:italic;color:var(--gold2)">Cost Estimator.</em></h2>
     <p class="t-body" style="max-width:720px;margin-top:10px">
-      Calculate the exact all-inclusive investment for your chosen Park Titan residence based on the official builder cost sheet. Adjust unit typologies and floor level to view live agreement value, stamp duty, registration, and GST.
+      Calculate the exact all-inclusive investment for your chosen Park Titan residence based on the official builder cost sheet. Adjust unit typologies and floor level to view live all-inclusive pricing, stamp duty, registration, and GST.
     </p>
 
     <div class="calc-grid">
@@ -7085,7 +7085,7 @@ em.gold, .t1 em, .t2 em, .hero-h1 em, .fiesta-amount {
           </div>
           <input type="range" class="calc-range-slider" id="floorSlider" min="2" max="23" value="2" step="1" oninput="updateFloorEstimate()" />
           <div style="display:flex;justify-content:space-between;font-size:11px;color:rgba(255,255,255,.45);margin-top:6px;font-family:var(--f-ui)">
-            <span>2nd Floor (Base Agreement)</span>
+            <span>2nd Floor (Base Cost)</span>
             <span>Floor Rise @ ₹15,000 / Floor</span>
             <span>23rd Floor</span>
           </div>
@@ -7095,10 +7095,10 @@ em.gold, .t1 em, .t2 em, .hero-h1 em, .fiesta-amount {
           <div style="font-size:12px;color:var(--gold2);font-weight:700;margin-bottom:6px">📌 Official Cost Sheet Parameters:</div>
           <p style="font-size:11px;color:rgba(255,255,255,.7);line-height:1.6">
             • Floor Rise: Applicable @ ₹15,000/floor from 2nd floor onwards.<br>
-            • Stamp Duty: 6% of Revised Agreement Value.<br>
+            • Stamp Duty: 6% (Govt. of Maharashtra).<br>
             • Registration Charges: Fixed @ ₹30,000 (Govt. of Maharashtra).<br>
             • GST: 5% input as applicable.<br>
-            • 1% TDS: Deducted by flat purchaser for agreement value &gt; ₹50 Lakhs (included in agreement cost).
+            • 1% TDS: Deducted by flat purchaser for property purchase &gt; ₹50 Lakhs (statutory compliance).
           </p>
         </div>
       </div>
@@ -7118,7 +7118,7 @@ em.gold, .t1 em, .t2 em, .hero-h1 em, .fiesta-amount {
             <strong style="color:var(--white)" id="dispBalconyArea">73.99 sq.ft. (6.87 m²)</strong>
           </div>
           <div class="calc-row-out">
-            <span>Base Agreement Value (2nd Floor)</span>
+            <span>Base Flat Cost (2nd Floor)</span>
             <strong style="color:var(--white)" id="dispBaseVal">₹84,02,750</strong>
           </div>
           <div class="calc-row-out">
@@ -7126,7 +7126,7 @@ em.gold, .t1 em, .t2 em, .hero-h1 em, .fiesta-amount {
             <strong style="color:var(--gold2)" id="dispFloorRiseVal">₹0</strong>
           </div>
           <div class="calc-row-out">
-            <span>Revised Agreement Value</span>
+            <span>Net Flat Cost (With Floor Rise)</span>
             <strong style="color:var(--white)" id="dispRevisedAgrVal">₹84,02,750</strong>
           </div>
           <div class="calc-row-out">
@@ -9085,9 +9085,9 @@ function shareCalcWhatsApp() {
     `Total Sanctioned Carpet (A+B): ${unit.totalArea}\n` +
     `Selected Floor: Floor ${floor}\n` +
     `--------------------------------\n` +
-    `Base Agreement Value: ${formatInr(unit.baseAgr)}\n` +
+    `Base Flat Cost: ${formatInr(unit.baseAgr)}\n` +
     `Floor Rise Premium: ${floorRiseVal > 0 ? ('+' + formatInr(floorRiseVal)) : '₹0'}\n` +
-    `Revised Agreement Value: ${formatInr(revisedAgr)}\n` +
+    `Net Flat Cost (With Floor Rise): ${formatInr(revisedAgr)}\n` +
     `Stamp Duty (6%): ${formatInr(stampDuty)}\n` +
     `Govt. Registration: ₹30,000\n` +
     `GST (5%): ${formatInr(gst)}\n` +

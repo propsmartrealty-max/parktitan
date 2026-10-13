@@ -827,18 +827,17 @@ function resolveProgrammaticSlug(slug) {
     entity = cleanTitle.replace(/Pride Purple Park Titan | Floor Plan And Sanctioned Layout| Cost Sheet And Price Breakdown/g, '');
     
     let allInc = '₹93,57,088*';
-    let agreement = '₹84,02,750';
     let total = '726.44 sq.ft.';
     price_val = '9357088';
     
     if (slug.includes('789')) {
-      allInc = '₹1,00,88,275*'; agreement = '₹90,61,500'; total = '789.54 sq.ft.'; price_val = '10088275';
+      allInc = '₹1,00,88,275*'; total = '789.54 sq.ft.'; price_val = '10088275';
     } else if (slug.includes('988')) {
-      allInc = '₹1,23,93,825*'; agreement = '₹1,11,38,500'; total = '988.25 sq.ft.'; price_val = '12393825';
+      allInc = '₹1,23,93,825*'; total = '988.25 sq.ft.'; price_val = '12393825';
     } else if (slug.includes('1060')) {
-      allInc = '₹1,37,13,680*'; agreement = '₹1,23,27,600'; total = '1,059.87 sq.ft.'; price_val = '13713680';
+      allInc = '₹1,37,13,680*'; total = '1,059.87 sq.ft.'; price_val = '13713680';
     } else if (slug.includes('1212')) {
-      allInc = '₹1,64,69,830*'; agreement = '₹1,48,10,600'; total = '1,212.22 sq.ft.'; price_val = '16469830';
+      allInc = '₹1,64,69,830*'; total = '1,212.22 sq.ft.'; price_val = '16469830';
     }
 
     contextualOverview = `
@@ -848,7 +847,6 @@ function resolveProgrammaticSlug(slug) {
     tableRows = `
       <tr><td>Configuration Format</td><td><strong>${escapeHtml(entity)}</strong></td></tr>
       <tr><td>Total Carpet Area</td><td><strong style="color:#d4af37;font-size:16px">${total}</strong></td></tr>
-      <tr><td>Agreement Value (Base)</td><td>${agreement}</td></tr>
       <tr><td>Final Price (All-Inclusive)*</td><td><strong style="color:#2ecc71;font-size:16px">${allInc}</strong></td></tr>
       <tr><td>Statutory Inclusions</td><td>6% Stamp Duty, ₹30,000 Registration, 5% GST Included</td></tr>
       <tr><td>Floor Rise Applicable</td><td>₹15,000 per floor (from 2nd floor onwards)</td></tr>
@@ -857,7 +855,7 @@ function resolveProgrammaticSlug(slug) {
     faqs = [
       {
         q: `What is the exact Total Carpet Area and All-Inclusive Price for ${entity}?`,
-        a: `The ${entity} configuration offers an exact Total Carpet Area of ${total}. The base agreement value is ${agreement}, bringing the final all-inclusive price to ${allInc} (including 6% stamp duty, ₹30,000 registration, and 5% GST).`
+        a: `The ${entity} configuration offers an exact Total Carpet Area of ${total} with a final all-inclusive price of ${allInc} (including 6% stamp duty, ₹30,000 registration, and 5% GST).`
       },
       {
         q: "What is the floor rise charge at Park Titan?",
@@ -1028,7 +1026,7 @@ function resolveProgrammaticSlug(slug) {
       <tr><td>Key Transit Catalysts</td><td>Hinjewadi-Shivajinagar Metro Line 3 · 128 km Pune Ring Road</td></tr>
       <tr><td>Benchmark Development</td><td>Pride Purple Park Titan (17+ Acres, 5 Academies, 7-Acre Podium)</td></tr>
       <tr><td>Total Carpet Area Options</td><td>726.44 sq.ft. to 1,212.22 sq.ft. (2 &amp; 3 RLK)</td></tr>
-      <tr><td>Starting Sanctioned Pricing</td><td>₹93.57L* All-Inclusive (₹84.02L* Agreement Value)</td></tr>
+      <tr><td>Starting Sanctioned Pricing</td><td><strong style="color:#2ecc71">₹93.57L* All-Inclusive</strong> (Total Carpet 726.44 sq.ft.)</td></tr>
       <tr><td>MahaRERA Certifications</td><td>${RERA_NUMBER}</td></tr>
     `;
     faqs = [
