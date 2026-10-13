@@ -12,6 +12,7 @@ const PHONE_RAW = '7744009295';
 const WHATSAPP_LINK = 'https://wa.me/917744009295?text=Hi%20Pride%20Purple%20Team%2C%20I%20am%20interested%20in%20Park%20Titan%20Hinjewadi.%20Please%20share%20cost%20sheet%20and%20floor%20plans.';
 const LEAD_EMAIL = 'propsmartrealty@gmail.com';
 const RERA_NUMBER = 'P52100049631';
+const GOOGLE_MAPS_URL = 'https://www.google.com/maps/place/Pride+Purple/@18.6022775,73.7252633,17z/data=!3m1!4b1!4m6!3m5!1s0x3bc2bbe16bf80081:0x3e5e7c84298f3dcf!8m2!3d18.6022775!4d73.7278382!16s%2Fg%2F11fv4jxp10';
 
 // Base HTML Shell for Edge Transformation
 const EDGE_HTML_TEMPLATE = `<!DOCTYPE html>
@@ -572,7 +573,13 @@ export async function onRequest(context) {
           "price": "${seoData.price_val || '8402750'}",
           "availability": "https://schema.org/InStock",
           "validFrom": "2026-01-01"
-        }
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 18.6022775,
+          "longitude": 73.7278382
+        },
+        "hasMap": "${GOOGLE_MAPS_URL}"
       },
       {
         "@type": "BreadcrumbList",
