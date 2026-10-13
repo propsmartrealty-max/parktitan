@@ -11,7 +11,7 @@ import xml.etree.ElementTree as ET
 from datetime import datetime
 
 BASE_URL = "https://purpleparktitan.com"
-TODAY = datetime.utcnow().strftime("%Y-%m-%d")
+TODAY = datetime.now().strftime("%Y-%m-%d")
 
 # 1. TECH CORRIDOR & COMMUTE DATA (Phase 1, Phase 2, Phase 3 IT Companies & Tech Parks)
 TECH_COMPANIES = [
@@ -68,7 +68,7 @@ CONFIGS = [
         "balcony": "73.99 sq.ft.",
         "total": "726.44 sq.ft.",
         "short_size": "726-sqft",
-        "agreement": "₹84,02,750",
+        "base_cost": "₹84,02,750",
         "all_inc": "₹93,57,088",
         "stamp": "₹5,04,200",
         "maint": "₹1,35,000",
@@ -81,7 +81,7 @@ CONFIGS = [
         "balcony": "109.40 sq.ft.",
         "total": "789.54 sq.ft.",
         "short_size": "789-sqft",
-        "agreement": "₹90,61,500",
+        "base_cost": "₹90,61,500",
         "all_inc": "₹1,00,88,275",
         "stamp": "₹5,43,700",
         "maint": "₹1,45,000",
@@ -94,7 +94,7 @@ CONFIGS = [
         "balcony": "81.85 sq.ft.",
         "total": "988.25 sq.ft.",
         "short_size": "988-sqft",
-        "agreement": "₹1,11,38,500",
+        "base_cost": "₹1,11,38,500",
         "all_inc": "₹1,23,93,825",
         "stamp": "₹6,68,400",
         "maint": "₹1,75,000",
@@ -107,7 +107,7 @@ CONFIGS = [
         "balcony": "123.70 sq.ft.",
         "total": "1,059.87 sq.ft.",
         "short_size": "1060-sqft",
-        "agreement": "₹1,23,27,600",
+        "base_cost": "₹1,23,27,600",
         "all_inc": "₹1,37,13,680",
         "stamp": "₹7,39,700",
         "maint": "₹1,90,000",
@@ -120,7 +120,7 @@ CONFIGS = [
         "balcony": "148.76 sq.ft.",
         "total": "1,212.22 sq.ft.",
         "short_size": "1212-sqft",
-        "agreement": "₹1,48,10,600",
+        "base_cost": "₹1,48,10,600",
         "all_inc": "₹1,64,69,830",
         "stamp": "₹8,88,700",
         "maint": "₹2,15,000",
@@ -386,7 +386,7 @@ def generate_all_vectors():
                 "carpet": cfg['carpet'],
                 "balcony": cfg['balcony'],
                 "total": cfg['total'],
-                "agreement": cfg['agreement'],
+                "base_cost": cfg['base_cost'],
                 "all_inc": cfg['all_inc'],
                 "stamp": cfg['stamp'],
                 "maint": cfg['maint'],
