@@ -1674,7 +1674,7 @@ em.gold, .t1 em, .t2 em, .hero-h1 em {
   right: 3%;
   z-index: 999;
   padding: 0 32px;
-  height: 104px;
+  height: 112px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -1710,7 +1710,7 @@ em.gold, .t1 em, .t2 em, .hero-h1 em {
   top: 10px;
   left: 2%;
   right: 2%;
-  height: 84px;
+  height: 88px;
   background: rgba(10, 5, 12, 0.78);
   backdrop-filter: blur(36px) saturate(210%);
   -webkit-backdrop-filter: blur(36px) saturate(210%);
@@ -1732,17 +1732,20 @@ em.gold, .t1 em, .t2 em, .hero-h1 em {
   text-decoration: none;
 }
 .nav-logo img {
-  height: 72px;
+  height: 84px;
+  max-height: 84px;
   width: auto;
-  filter: brightness(1.18) drop-shadow(0 4px 18px rgba(200,150,60,.35)) drop-shadow(0 2px 8px rgba(110,34,115,.4));
+  object-fit: contain;
+  filter: brightness(1.2) drop-shadow(0 4px 18px rgba(200,150,60,.4)) drop-shadow(0 2px 10px rgba(110,34,115,.45));
   transition: all .4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .nav-logo:hover img {
   transform: scale(1.04) translateY(-1px);
-  filter: brightness(1.28) drop-shadow(0 6px 24px rgba(230,190,110,.5));
+  filter: brightness(1.28) drop-shadow(0 6px 24px rgba(230,190,110,.55));
 }
 .nav.scrolled .nav-logo img {
-  height: 58px;
+  height: 68px;
+  max-height: 68px;
 }
 .nav-links {
   display: flex;
@@ -4602,15 +4605,33 @@ footer {
     overflow-x: hidden !important;
   }
   .nav {
-    top: 10px !important;
-    left: 3% !important;
-    right: 3% !important;
-    padding: 0 18px !important;
-    height: 82px !important;
-    border-radius: 16px !important;
+    top: 8px !important;
+    left: 2.5% !important;
+    right: 2.5% !important;
+    padding: 0 16px !important;
+    height: 80px !important;
+    border-radius: 18px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+  }
+  .nav-logo {
+    display: flex !important;
+    align-items: center !important;
+    height: 100% !important;
+  }
+  .nav-logo a {
+    display: inline-flex !important;
+    align-items: center !important;
+    height: 100% !important;
   }
   .nav-logo img {
-    height: 54px !important;
+    height: 62px !important;
+    max-height: 62px !important;
+    width: auto !important;
+    max-width: 140px !important;
+    object-fit: contain !important;
+    filter: brightness(1.22) drop-shadow(0 3px 12px rgba(200,150,60,.35)) !important;
   }
   .nav-links {
     display: none !important;
@@ -5245,6 +5266,123 @@ em.gold, .t1 em, .t2 em, .hero-h1 em, .fiesta-amount {
   .tp-matrix { padding: 24px 16px; }
 }
 
+
+/* ── Mobile Navigation Drawer (.mob-nav) & Hamburger Active State ── */
+.ham.open span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.ham.open span:nth-child(2) {
+  opacity: 0;
+}
+.ham.open span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+.mob-nav {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  background: rgba(8, 8, 12, 0.98);
+  backdrop-filter: blur(28px);
+  -webkit-backdrop-filter: blur(28px);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 30px 24px 40px;
+  overflow-y: auto;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-16px);
+  transition: opacity .35s ease, transform .35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.mob-nav.open {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+.mob-nav-brand {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 20px;
+  margin-bottom: 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+.mob-nav-brand img {
+  height: 54px;
+  width: auto;
+  object-fit: contain;
+  filter: brightness(1.2);
+}
+.mob-nav-close {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(230, 190, 110, 0.3);
+  color: var(--gold);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.mob-nav-links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+}
+.mob-nav-links a {
+  font-family: var(--f-google);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 2.2px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.85);
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: 20px;
+  transition: all .3s ease;
+  text-align: center;
+}
+.mob-nav-links a:hover, .mob-nav-links a:active {
+  color: var(--gold2);
+  background: rgba(200, 150, 60, 0.12);
+  transform: scale(1.04);
+}
+.mob-nav-cta {
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  max-width: 300px;
+}
+.mob-nav-cta .btn-p {
+  width: 100%;
+  text-align: center;
+}
+
+@media (max-width: 480px) {
+  .nav {
+    top: 6px !important;
+    left: 2% !important;
+    right: 2% !important;
+    padding: 0 14px !important;
+    height: 76px !important;
+    border-radius: 16px !important;
+  }
+  .nav-logo img {
+    height: 58px !important;
+    max-height: 58px !important;
+    max-width: 125px !important;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -5268,22 +5406,33 @@ em.gold, .t1 em, .t2 em, .hero-h1 em, .fiesta-amount {
 
 <!-- 4. Mobile Navigation Overlay -->
 <nav class="mob-nav" id="mobNav">
-  <a href="#hero" onclick="closeMob()">HOME</a>
-  <a href="#specs" onclick="closeMob()">TOWNSHIP SPECS</a>
-  <a href="#academies" onclick="closeMob()">5 ACADEMIES</a>
-  <a href="#lifestyle" onclick="closeMob()">LIFESTYLE AMENITIES</a>
-  <a href="#master-layout" onclick="closeMob()">MASTER PLAN</a>
-  <a href="#floor-plans" onclick="closeMob()">FLOOR PLANS</a>
-  <a href="#pricing" onclick="closeMob()">UNIT PRICING</a>
-  <a href="#location" onclick="closeMob()">LOCATION &amp; MAP</a>
-  <a href="#buyer-guide" onclick="closeMob()">BUYER GUIDE</a>
-  <a href="#faq" onclick="closeMob()">FAQS</a>
+  <div class="mob-nav-brand">
+    <img src="images/logo-park-titan.png" alt="Pride Purple Park Titan Logo" style="height:56px;width:auto;object-fit:contain;filter:brightness(1.2)"/>
+    <button class="mob-nav-close" onclick="closeMob()" aria-label="Close Menu">✕</button>
+  </div>
+  <div class="mob-nav-links">
+    <a href="#hero" onclick="closeMob()">HOME</a>
+    <a href="#specs" onclick="closeMob()">TOWNSHIP SPECS</a>
+    <a href="#township-advantage" onclick="closeMob()">4 PILLARS BENCHMARK</a>
+    <a href="#academies" onclick="closeMob()">5 ACADEMIES</a>
+    <a href="#lifestyle" onclick="closeMob()">LIFESTYLE AMENITIES</a>
+    <a href="#master-layout" onclick="closeMob()">MASTER PLAN</a>
+    <a href="#floor-plans" onclick="closeMob()">FLOOR PLANS</a>
+    <a href="#pricing" onclick="closeMob()">UNIT PRICING</a>
+    <a href="#location" onclick="closeMob()">LOCATION &amp; MAP</a>
+    <a href="#buyer-guide" onclick="closeMob()">BUYER GUIDE</a>
+    <a href="#faq" onclick="closeMob()">FAQS</a>
+  </div>
+  <div class="mob-nav-cta">
+    <button class="btn-p" onclick="closeMob();openEnq()"><span>Book a Site Visit</span></button>
+    <a href="tel:7744009295" class="btn-s" style="color:var(--gold2);padding:10px 0;font-size:11px">📞 Call: 7744009295</a>
+  </div>
 </nav>
 
 <!-- 5. Navbar -->
 <nav class="nav" id="navbar">
   <div class="nav-logo">
-    <a href="#hero"><img src="images/logo-park-titan.png" alt="Park Titan Logo - Pride Purple Group Hinjewadi" height="72"/></a>
+    <a href="#hero"><img src="images/logo-park-titan.png" alt="Park Titan Logo - Pride Purple Group Hinjewadi" height="84"/></a>
   </div>
   <ul class="nav-links">
     <li><a href="#specs">SPECS</a></li>
