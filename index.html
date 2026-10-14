@@ -52,33 +52,54 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&amp;family=Bodoni+Moda:ital,opsz,wght@0,6..96,300;0,6..96,400;0,6..96,500;1,6..96,300;1,6..96,400;1,6..96,500&amp;family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&amp;family=Inter:wght@300;400;500;600&amp;family=Jost:wght@300;400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600;700&amp;display=swap"/>
 </noscript>
 
-<!-- Analytics: GA4 & Google Ads -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-18LEE0HXP5"></script>
+<!-- Optimized Asynchronous Marketing Analytics Loader (Zero CWV Main-Thread Impact) -->
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'G-18LEE0HXP5');
-  gtag('config', 'AW-849058188');
-</script>
+  window._fbq = window._fbq || [];
+  window.fbq = window.fbq || function(){(fbq.q=fbq.q||[]).push(arguments)};
 
-<!-- Google Tag Manager -->
-<script>
-  (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});
-  var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;
-  j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-KBL2TR98');
-</script>
+  (function() {
+    var analyticsTriggered = false;
+    function activateAnalytics() {
+      if (analyticsTriggered) return;
+      analyticsTriggered = true;
+      ['scroll', 'touchstart', 'mousemove', 'click', 'keydown'].forEach(function(ev) {
+        window.removeEventListener(ev, activateAnalytics, { passive: true });
+      });
 
-<!-- Meta Pixel -->
-<script>
-  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-  n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
-  n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
-  t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
-  document,'script','https://connect.facebook.net/en_US/fbevents.js');
-  fbq('init', '1243398972890613');
-  fbq('track', 'PageView');
+      // GA4 & Google Ads
+      var sGtag = document.createElement('script');
+      sGtag.async = true;
+      sGtag.src = 'https://www.googletagmanager.com/gtag/js?id=G-18LEE0HXP5';
+      sGtag.onload = function() {
+        gtag('config', 'G-18LEE0HXP5');
+        gtag('config', 'AW-849058188');
+      };
+      document.head.appendChild(sGtag);
+
+      // Google Tag Manager
+      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});
+      var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;
+      j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-KBL2TR98');
+
+      // Meta Pixel
+      !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+      n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+      document,'script','https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', '1243398972890613');
+      fbq('track', 'PageView');
+    }
+
+    ['scroll', 'touchstart', 'mousemove', 'click', 'keydown'].forEach(function(ev) {
+      window.addEventListener(ev, activateAnalytics, { passive: true, once: true });
+    });
+    setTimeout(activateAnalytics, 4000);
+  })();
 </script>
 
 <!-- ============================================================
@@ -5613,6 +5634,105 @@ em.gold, .t1 em, .t2 em, .hero-h1 em, .fiesta-amount {
   font-weight: 700;
 }
 
+
+/* ── SCREEN READER ACCESSIBILITY UTILITY ── */
+.sr-only {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+/* ── TOUCH TARGET HARDENING (MIN 48PX x 48PX) ── */
+.fsoc {
+  min-width: 48px !important;
+  min-height: 48px !important;
+  width: 48px !important;
+  height: 48px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-size: 15px !important;
+  margin: 4px !important;
+  border-radius: 6px !important;
+}
+.fp-cat-pill, .vid-tab-btn, .lchip, .bg-tab-btn {
+  min-height: 48px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+.ap-dot {
+  min-width: 32px !important;
+  min-height: 32px !important;
+  border: none !important;
+  background: transparent !important;
+  padding: 0 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+.ap-dot::after {
+  content: '';
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(8,8,10,.4);
+  transition: all .3s;
+}
+.ap-dot.active::after {
+  width: 26px;
+  border-radius: 4px;
+  background: var(--gold3);
+}
+
+/* ── MOBILE CWV PERFORMANCE & INSTANT PAINT ARCHITECTURE ── */
+@media (max-width: 900px) {
+  /* Instant hero render - zero animation delay penalty */
+  .hero-h1 .line {
+    transform: none !important;
+    animation: none !important;
+  }
+  .hero-sub, .hero-desc, .hero-actions, .hstat {
+    opacity: 1 !important;
+    animation: none !important;
+  }
+  /* Eliminate unused background hero images on mobile (save 361 KiB) */
+  #hp1, #hp2 {
+    display: none !important;
+  }
+  .hero-panels {
+    grid-template-columns: 1fr !important;
+  }
+  /* Kill continuous non-composited animations on mobile to free main thread */
+  .btn-p::after, .btn-gold::after, .enq-sub::after, .art-btn::after {
+    animation: none !important;
+    display: none !important;
+  }
+  em.gold, .t1 em, .t2 em, .hero-h1 em, .fiesta-amount {
+    animation: none !important;
+    -webkit-text-fill-color: #E6BE6E !important;
+    color: #E6BE6E !important;
+  }
+  #scrollProgressBar, .fiesta-bg-glow, .tcard-play::before, .wa, .wa::before {
+    animation: none !important;
+  }
+  .fab {
+    min-width: 48px !important;
+    min-height: 48px !important;
+    width: 52px !important;
+    height: 52px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+}
+
 </style>
 <link rel="manifest" href="/manifest.json"/>
 </head>
@@ -5626,13 +5746,7 @@ em.gold, .t1 em, .t2 em, .hero-h1 em, .fiesta-amount {
 <div id="cursor-ring"></div>
 
 <!-- 2. Loader (Exact Logo Branding Element) -->
-<div id="loader" aria-label="Loading Pride Purple Park Titan" style="display:none!important">
-  <div class="loader-brand">
-    <img height="256" width="256" decoding="async" src="/images/purple-emblem.png" alt="Pride Purple Logo Emblem" class="loader-logo-img" style="width:110px;height:auto;filter:drop-shadow(0 0 28px rgba(138,43,226,.55)) drop-shadow(0 0 12px rgba(230,190,110,.45))"/>
-    <div class="loader-title" style="letter-spacing:5px">PRIDE <em>PURPLE</em></div>
-    <div class="loader-line" style="width:160px;background:rgba(255,255,255,.08)"></div>
-    <div class="loader-sub" style="letter-spacing:3px;color:#E6BE6E">PARK TITAN · HINJEWADI, PUNE</div>
-  </div>
+<!-- Loader Removed for Instant First Paint -->
 </div>
 
 <!-- 4. Mobile Navigation Overlay -->
@@ -6120,11 +6234,11 @@ em.gold, .t1 em, .t2 em, .hero-h1 em, .fiesta-amount {
     </div>
   </div>
   <div class="acad-progress" id="acadProg">
-    <div class="ap-dot active"></div>
-    <div class="ap-dot"></div>
-    <div class="ap-dot"></div>
-    <div class="ap-dot"></div>
-    <div class="ap-dot"></div>
+    <button type="button" class="ap-dot active" aria-label="View Amenity Slide 1"></button>
+    <button type="button" class="ap-dot" aria-label="View Amenity Slide 2"></button>
+    <button type="button" class="ap-dot" aria-label="View Amenity Slide 3"></button>
+    <button type="button" class="ap-dot" aria-label="View Amenity Slide 4"></button>
+    <button type="button" class="ap-dot" aria-label="View Amenity Slide 5"></button>
   </div>
 </section>
 
@@ -6423,7 +6537,7 @@ em.gold, .t1 em, .t2 em, .hero-h1 em, .fiesta-amount {
           <div class="fp-title-row">
             <div>
               <h3 class="fp-name">2 RLK Optima</h3>
-              <span style="font-family:var(--f-ui);font-size:11px;color:rgba(8,8,10,.5);text-transform:uppercase;letter-spacing:1px">Tower Wings: T1–T6 · Non-Garden</span>
+              <span style="font-family:var(--f-ui);font-size:11px;color:#242429;text-transform:uppercase;letter-spacing:1px">Tower Wings: T1–T6 · Non-Garden</span>
             </div>
             <span class="fp-area">726.44 sq.ft. (67.49 m²) Total</span>
           </div>
@@ -6473,7 +6587,7 @@ em.gold, .t1 em, .t2 em, .hero-h1 em, .fiesta-amount {
           <div class="fp-title-row">
             <div>
               <h3 class="fp-name">2 RLK Ultima</h3>
-              <span style="font-family:var(--f-ui);font-size:11px;color:rgba(8,8,10,.5);text-transform:uppercase;letter-spacing:1px">Tower Wings: T4–T10 · Non-Garden</span>
+              <span style="font-family:var(--f-ui);font-size:11px;color:#242429;text-transform:uppercase;letter-spacing:1px">Tower Wings: T4–T10 · Non-Garden</span>
             </div>
             <span class="fp-area">789.54 sq.ft. (73.35 m²) Total</span>
           </div>
@@ -6523,7 +6637,7 @@ em.gold, .t1 em, .t2 em, .hero-h1 em, .fiesta-amount {
           <div class="fp-title-row">
             <div>
               <h3 class="fp-name">3 RLK Optima</h3>
-              <span style="font-family:var(--f-ui);font-size:11px;color:rgba(8,8,10,.5);text-transform:uppercase;letter-spacing:1px">Tower Wings: T7–T14 · 3 Bathrooms · Non-Garden</span>
+              <span style="font-family:var(--f-ui);font-size:11px;color:#242429;text-transform:uppercase;letter-spacing:1px">Tower Wings: T7–T14 · 3 Bathrooms · Non-Garden</span>
             </div>
             <span class="fp-area">988.25 sq.ft. (91.81 m²) Total</span>
           </div>
@@ -6573,7 +6687,7 @@ em.gold, .t1 em, .t2 em, .hero-h1 em, .fiesta-amount {
           <div class="fp-title-row">
             <div>
               <h3 class="fp-name">3 RLK Ultima</h3>
-              <span style="font-family:var(--f-ui);font-size:11px;color:rgba(8,8,10,.5);text-transform:uppercase;letter-spacing:1px">Tower Wings: T8–T16 · Dual Suites · Non-Garden</span>
+              <span style="font-family:var(--f-ui);font-size:11px;color:#242429;text-transform:uppercase;letter-spacing:1px">Tower Wings: T8–T16 · Dual Suites · Non-Garden</span>
             </div>
             <span class="fp-area">1,059.87 sq.ft. (98.47 m²) Total</span>
           </div>
@@ -6623,7 +6737,7 @@ em.gold, .t1 em, .t2 em, .hero-h1 em, .fiesta-amount {
           <div class="fp-title-row">
             <div>
               <h3 class="fp-name">3 RLK Grande</h3>
-              <span style="font-family:var(--f-ui);font-size:11px;color:rgba(8,8,10,.5);text-transform:uppercase;letter-spacing:1px">Flagship Format · Triple Ensuite · Non-Garden</span>
+              <span style="font-family:var(--f-ui);font-size:11px;color:#242429;text-transform:uppercase;letter-spacing:1px">Flagship Format · Triple Ensuite · Non-Garden</span>
             </div>
             <span class="fp-area">1,212.22 sq.ft. (112.62 m²) Total</span>
           </div>
@@ -6781,7 +6895,7 @@ em.gold, .t1 em, .t2 em, .hero-h1 em, .fiesta-amount {
 <!-- Testimonial Video Modal -->
 <div class="testi-modal" id="testiModal" role="dialog" aria-label="Testimonial Video Modal">
   <div class="tm-inner">
-    <button class="tm-x" onclick="closeTesti()">✕ &nbsp;Close</button>
+    <button class="tm-x" onclick="closeTesti()" aria-label="Close Testimonial Video Dialog">✕ &nbsp;Close</button>
     <div class="tm-frame" id="tmFrame"></div>
   </div>
 </div>
@@ -7080,7 +7194,8 @@ em.gold, .t1 em, .t2 em, .hero-h1 em, .fiesta-amount {
             <span>2. Select Residence Floor (Floors 2 to 23)</span>
             <span class="calc-ctrl-val" id="dispFloorVal">Floor 2</span>
           </div>
-          <input type="range" class="calc-range-slider" id="floorSlider" min="2" max="23" value="2" step="1" oninput="updateFloorEstimate()" />
+          <label for="floorSlider" class="sr-only">Select Residence Floor from 2 to 23</label>
+          <input type="range" class="calc-range-slider" id="floorSlider" aria-label="Select Residence Floor from 2 to 23" min="2" max="23" value="2" step="1" oninput="updateFloorEstimate()" />
           <div style="display:flex;justify-content:space-between;font-size:11px;color:rgba(255,255,255,.82);margin-top:6px;font-family:var(--f-ui)">
             <span>2nd Floor (Base Cost)</span>
             <span>Floor Rise @ ₹15,000 / Floor</span>
@@ -7238,7 +7353,8 @@ em.gold, .t1 em, .t2 em, .hero-h1 em, .fiesta-amount {
             <span>Loan Sanction Amount (₹)</span>
             <span class="calc-ctrl-val" id="dispLoanVal">₹75,00,000</span>
           </div>
-          <input type="range" class="calc-range-slider" id="loanSlider" min="3000000" max="15000000" value="7500000" step="100000" oninput="calcEmi()" />
+          <label for="loanSlider" class="sr-only">Loan Sanction Amount in Rupees</label>
+          <input type="range" class="calc-range-slider" id="loanSlider" aria-label="Loan Sanction Amount in Rupees" min="3000000" max="15000000" value="7500000" step="100000" oninput="calcEmi()" />
           <div style="display:flex;justify-content:space-between;font-size:11px;color:rgba(255,255,255,.82);margin-top:6px;font-family:var(--f-ui)">
             <span>₹30 Lakhs</span>
             <span>80%–85% Typical Eligibility</span>
@@ -7251,7 +7367,8 @@ em.gold, .t1 em, .t2 em, .hero-h1 em, .fiesta-amount {
             <span>Annual Interest Rate (%)</span>
             <span class="calc-ctrl-val" id="dispRateVal">8.50%</span>
           </div>
-          <input type="range" class="calc-range-slider" id="rateSlider" min="7.5" max="11.0" value="8.5" step="0.05" oninput="calcEmi()" />
+          <label for="rateSlider" class="sr-only">Annual Interest Rate Percentage</label>
+          <input type="range" class="calc-range-slider" id="rateSlider" aria-label="Annual Interest Rate Percentage" min="7.5" max="11.0" value="8.5" step="0.05" oninput="calcEmi()" />
           <div style="display:flex;justify-content:space-between;font-size:11px;color:rgba(255,255,255,.82);margin-top:6px;font-family:var(--f-ui)">
             <span>7.50% (Repo-Linked Floating)</span>
             <span>Special Builder Tied-in Rate</span>
@@ -7264,7 +7381,8 @@ em.gold, .t1 em, .t2 em, .hero-h1 em, .fiesta-amount {
             <span>Loan Repayment Tenure (Years)</span>
             <span class="calc-ctrl-val" id="dispTenureVal">20 Years</span>
           </div>
-          <input type="range" class="calc-range-slider" id="tenureSlider" min="5" max="30" value="20" step="1" oninput="calcEmi()" />
+          <label for="tenureSlider" class="sr-only">Loan Repayment Tenure in Years</label>
+          <input type="range" class="calc-range-slider" id="tenureSlider" aria-label="Loan Repayment Tenure in Years" min="5" max="30" value="20" step="1" oninput="calcEmi()" />
           <div style="display:flex;justify-content:space-between;font-size:11px;color:rgba(255,255,255,.82);margin-top:6px;font-family:var(--f-ui)">
             <span>5 Years</span>
             <span>Flexible Foreclosure Allowed</span>
@@ -8257,10 +8375,17 @@ em.gold, .t1 em, .t2 em, .hero-h1 em, .fiesta-amount {
       <div style="font-family:var(--f-ui);font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:6px">Official Project Desk</div>
       <h3 style="font-family:var(--f-display);font-size:24px;color:var(--white);font-weight:400;margin-bottom:18px">Register for <em>Cost Sheet &amp; Site Visit</em></h3>
       <form class="enq-form" onsubmit="handleEnq(event)">
-        <input type="text" name="name" placeholder="Your Full Name" required/>
-        <input type="email" name="email" placeholder="Email Address" required/>
-        <input type="tel" name="mobile" placeholder="Mobile Number (10 digits)" maxlength="10" minlength="10" pattern="[0-9]{10}" required/>
-        <select name="config" required>
+        <label for="contact_name" class="sr-only">Your Full Name</label>
+        <input type="text" id="contact_name" name="name" placeholder="Your Full Name" aria-label="Your Full Name" required/>
+        
+        <label for="contact_email" class="sr-only">Email Address</label>
+        <input type="email" id="contact_email" name="email" placeholder="Email Address" aria-label="Email Address" required/>
+        
+        <label for="contact_mobile" class="sr-only">Mobile Number</label>
+        <input type="tel" id="contact_mobile" name="mobile" placeholder="Mobile Number (10 digits)" aria-label="Mobile Number" maxlength="10" minlength="10" pattern="[0-9]{10}" required/>
+        
+        <label for="contact_config" class="sr-only">Select Configuration</label>
+        <select id="contact_config" name="config" aria-label="Select Configuration" required>
           <option value="" disabled selected>Select Configuration</option>
           <option>2 BHK Optima — 726 sq.ft. (₹93.57L* Final Price)</option>
           <option>2 BHK Ultima — 789 sq.ft. (₹1.01 Cr* Final Price)</option>
@@ -8268,15 +8393,19 @@ em.gold, .t1 em, .t2 em, .hero-h1 em, .fiesta-amount {
           <option>3 BHK Ultima — 1060 sq.ft. (₹1.37 Cr* Final Price)</option>
           <option>3 BHK Grande — 1212 sq.ft. (₹1.65 Cr* Final Price)</option>
         </select>
-        <select name="budget" required>
+        
+        <label for="contact_budget" class="sr-only">Select Budget Range</label>
+        <select id="contact_budget" name="budget" aria-label="Select Budget Range" required>
           <option value="" disabled selected>Select Budget Range</option>
           <option>₹90 Lakhs to ₹1.05 Cr</option>
           <option>₹1.05 Cr to ₹1.25 Cr</option>
           <option>₹1.25 Cr to ₹1.50 Cr</option>
           <option>Above ₹1.50 Cr</option>
         </select>
-        <textarea name="msg" placeholder="Message or preferred visit time (optional)" rows="2"></textarea>
-        <button class="enq-sub" type="submit">Submit Enquiry</button>
+        
+        <label for="contact_msg" class="sr-only">Message or preferred visit time</label>
+        <textarea id="contact_msg" name="msg" placeholder="Message or preferred visit time (optional)" aria-label="Message or preferred visit time" rows="2"></textarea>
+        <button class="enq-sub" type="submit" aria-label="Submit Enquiry Form">Submit Enquiry</button>
       </form>
       <div style="margin-top:16px;text-align:center;font-size:12px;color:rgba(255,255,255,.82);font-family:var(--f-ui)">
         Prefer to speak directly? <a href="tel:7744009295" style="color:var(--gold2);font-weight:700">📞 Call Sales Desk</a> · <a href="https://wa.me/917744009295?text=Hi%2C%20I%27m%20interested%20in%20Park%20Titan%20Hinjewadi." target="_blank" rel="noopener" style="color:#25d366;font-weight:700">💬 Chat on WhatsApp</a>
@@ -8502,7 +8631,7 @@ em.gold, .t1 em, .t2 em, .hero-h1 em, .fiesta-amount {
 
 <!-- 26. Floating Action Buttons (FABs) & WhatsApp -->
 <div class="fab-stack" id="fabStack">
-  <button class="fab fab-e" onclick="openEnq()">
+  <button class="fab fab-e" onclick="openEnq()" aria-label="Open Project Enquiry Form">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/><path d="M22 6l-10 7L2 6"/></svg>
     <span class="fab-lbl">Enquire Now</span>
   </button>
@@ -8520,15 +8649,22 @@ em.gold, .t1 em, .t2 em, .hero-h1 em, .fiesta-amount {
 <!-- 27. Enquiry Modal -->
 <div class="enq" id="enqOverlay" role="dialog" aria-modal="true" aria-label="Site Visit and Brochure Enquiry">
   <div class="enq-panel">
-    <button class="enq-x" onclick="closeEnq()">✕ &nbsp;Close</button>
+    <button class="enq-x" onclick="closeEnq()" aria-label="Close Enquiry Dialog">✕ &nbsp;Close</button>
     <div class="enq-eye">Pride Purple Group</div>
     <div class="enq-title">Enquire <em>Now</em></div>
     <span class="enq-dash"></span>
     <form class="enq-form" onsubmit="handleEnq(event)">
-      <input type="text" name="name" placeholder="Your Full Name" required/>
-      <input type="email" name="email" placeholder="Email Address" required/>
-      <input type="tel" name="mobile" placeholder="Mobile Number (10 digits)" maxlength="10" minlength="10" pattern="[0-9]{10}" required/>
-      <select name="config" required>
+      <label for="modal_name" class="sr-only">Your Full Name</label>
+      <input type="text" id="modal_name" name="name" placeholder="Your Full Name" aria-label="Your Full Name" required/>
+      
+      <label for="modal_email" class="sr-only">Email Address</label>
+      <input type="email" id="modal_email" name="email" placeholder="Email Address" aria-label="Email Address" required/>
+      
+      <label for="modal_mobile" class="sr-only">Mobile Number</label>
+      <input type="tel" id="modal_mobile" name="mobile" placeholder="Mobile Number (10 digits)" aria-label="Mobile Number" maxlength="10" minlength="10" pattern="[0-9]{10}" required/>
+      
+      <label for="modal_config" class="sr-only">Select Configuration</label>
+      <select id="modal_config" name="config" aria-label="Select Configuration" required>
         <option value="" disabled selected>Select Configuration</option>
         <option>2 BHK Optima — 726 sq.ft.</option>
         <option>2 BHK Ultima — 789 sq.ft.</option>
@@ -8536,15 +8672,19 @@ em.gold, .t1 em, .t2 em, .hero-h1 em, .fiesta-amount {
         <option>3 BHK Ultima — 1060 sq.ft.</option>
         <option>3 BHK Grande — 1212 sq.ft.</option>
       </select>
-      <select name="budget" required>
+      
+      <label for="modal_budget" class="sr-only">Select Budget Range</label>
+      <select id="modal_budget" name="budget" aria-label="Select Budget Range" required>
         <option value="" disabled selected>Select Budget Range</option>
         <option>₹90 Lakhs to ₹1.05 Cr</option>
         <option>₹1.05 Cr to ₹1.25 Cr</option>
         <option>₹1.25 Cr to ₹1.50 Cr</option>
         <option>Above ₹1.50 Cr</option>
       </select>
-      <textarea name="msg" placeholder="Message or preferred visit time (optional)"></textarea>
-      <button class="enq-sub" type="submit">Submit Enquiry</button>
+      
+      <label for="modal_msg" class="sr-only">Message or preferred visit time</label>
+      <textarea id="modal_msg" name="msg" placeholder="Message or preferred visit time (optional)" aria-label="Message or preferred visit time"></textarea>
+      <button class="enq-sub" type="submit" aria-label="Submit Modal Enquiry">Submit Enquiry</button>
     </form>
     <p class="enq-note">Prefer to speak directly? <a href="tel:7744009295" style="color:var(--gold2);font-weight:700" aria-label="Call Sales Desk">📞 Call Official Sales Desk</a></p>
   </div>
@@ -9223,7 +9363,7 @@ document.addEventListener('DOMContentLoaded', () => {
       <div class="bpm-title" id="bpmTitle">Pride Purple Park Titan Architectural Plan</div>
       <div class="bpm-actions">
         <a id="bpmDownload" href="images/plans/master-plan.jpeg" download class="bpm-btn bpm-btn--dl">⬇ Download Blueprint</a>
-        <button class="bpm-btn bpm-btn--close" onclick="closeBlueprint()">✕ Close</button>
+        <button class="bpm-btn bpm-btn--close" onclick="closeBlueprint()" aria-label="Close Blueprint Modal">✕ Close</button>
       </div>
     </div>
     <div class="bpm-body">
