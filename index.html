@@ -44,7 +44,8 @@
 
 <!-- Complete Typography System Google Fonts Imports -->
 <!-- High-Priority LCP Hero Preload & Non-Blocking Font Architecture -->
-<link rel="preload" as="image" href="/images/hero-1.webp" type="image/webp" fetchpriority="high"/>
+<link rel="preload" as="image" href="/images/hero-1-mobile.webp" type="image/webp" media="(max-width: 600px)" fetchpriority="high"/>
+<link rel="preload" as="image" href="/images/hero-1.webp" type="image/webp" media="(min-width: 601px)" fetchpriority="high"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&amp;family=Bodoni+Moda:ital,opsz,wght@0,6..96,300;0,6..96,400;0,6..96,500;1,6..96,300;1,6..96,400;1,6..96,500&amp;family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&amp;family=Inter:wght@300;400;500;600&amp;family=Jost:wght@300;400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600;700&amp;display=swap" onload="this.onload=null;this.rel='stylesheet'"/>
@@ -93,6 +94,13 @@
       document,'script','https://connect.facebook.net/en_US/fbevents.js');
       fbq('init', '1243398972890613');
       fbq('track', 'PageView');
+
+      // Cloudflare Web Analytics Beacon
+      var sCf = document.createElement('script');
+      sCf.defer = true;
+      sCf.src = 'https://static.cloudflareinsights.com/beacon.min.js';
+      sCf.setAttribute('data-cf-beacon', '{"token": "09e9a3bfa8cc4892b8e71953362447ea"}');
+      document.head.appendChild(sCf);
     }
 
     ['scroll', 'touchstart', 'mousemove', 'click', 'keydown'].forEach(function(ev) {
@@ -5810,7 +5818,10 @@ em.gold, .t1 em, .t2 em, .hero-h1 em, .fiesta-amount {
 <section class="hero" id="hero">
   <div class="hero-panels" id="heroPanels">
     <div class="hpanel" id="hp0">
-      <img fetchpriority="high" decoding="async" src="images/hero-1.webp" alt="Park Titan Residential High-Rise Towers Hinjewadi Pune" width="1920" height="1080"/>
+      <picture>
+        <source media="(max-width: 600px)" srcset="/images/hero-1-mobile.webp" width="800" height="450" type="image/webp"/>
+        <img fetchpriority="high" decoding="async" src="images/hero-1.webp" alt="Park Titan Residential High-Rise Towers Hinjewadi Pune" width="1920" height="1080"/>
+      </picture>
       <div class="hpanel-veil"></div>
     </div>
     <div class="hpanel" id="hp1">
@@ -8745,13 +8756,19 @@ window.addEventListener('load', () => {
 // Absolute fallback: NEVER stay visible longer than 800ms
 setTimeout(dismissLoader, 800);
 
-/* ── Navbar & FAB on Scroll ── */
+/* ── Navbar & FAB on Scroll (RAF Throttled for Zero Reflow) ── */
 const nav = document.getElementById('navbar');
 const fab = document.getElementById('fabStack');
+let scrollRafId = null;
 window.addEventListener('scroll', () => {
-  const y = window.scrollY;
-  nav.classList.toggle('scrolled', y > 80);
-  fab.style.opacity = y > 240 ? '1' : '0';
+  if (!scrollRafId) {
+    scrollRafId = requestAnimationFrame(() => {
+      const y = window.scrollY;
+      nav.classList.toggle('scrolled', y > 80);
+      fab.style.opacity = y > 240 ? '1' : '0';
+      scrollRafId = null;
+    });
+  }
 }, { passive: true });
 
 /* ── Mobile Nav ── */
@@ -8776,7 +8793,7 @@ function setPanel(n) {
   activePanel = n;
 }
 setPanel(0);
-setInterval(() => setPanel((activePanel + 1) % panels.length), 5000);
+if (window.innerWidth > 900) { setInterval(() => setPanel((activePanel + 1) % panels.length), 5000); }
 
 /* ── Compare Slider Guarded ── */
 (function() {
@@ -8798,8 +8815,6 @@ setInterval(() => setPanel((activePanel + 1) % panels.length), 5000);
   window.addEventListener('touchend', () => drag = false);
   window.addEventListener('mousemove', e => { if (drag) set(e.clientX); });
   window.addEventListener('touchmove', e => { if (drag) set(e.touches[0].clientX); }, { passive: true });
-  const r = el.getBoundingClientRect();
-  set(r.left + r.width * 0.5);
 })();
 
 /* ── Academy Drag Scroll ── */
@@ -9427,8 +9442,6 @@ if ('serviceWorker' in navigator) {
   });
 }
 </script>
-<!-- Cloudflare Web Analytics (RUM - Zero-Cookie Real User Monitoring) -->
-<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "09e9a3bfa8cc4892b8e71953362447ea"}'></script>
-<!-- End Cloudflare Web Analytics -->
+<!-- Cloudflare Web Analytics (Loaded upon interaction) -->
 </body>
 </html>
