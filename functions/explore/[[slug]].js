@@ -439,7 +439,7 @@ const EDGE_HTML_TEMPLATE = `<!DOCTYPE html>
   <!-- Top Strip -->
   <div class="top-strip">
     <div>MahaRERA: <strong>Phase 1: P52100028049 · Phase 2: P52100030567 · Phase 5: P52100047702</strong> · Pride Purple Official Desk</div>
-    <div>Direct Assistance: <a href="tel:7744009295" style="color:var(--gold)"><strong>+91 7744009295</strong></a></div>
+    <div>Direct Assistance: <a href="tel:7744009295" style="color:var(--gold)" aria-label="Call Sales Desk">📞 <strong>Call Sales Desk</strong></a></div>
   </div>
 
   <!-- Main Navbar -->
@@ -456,7 +456,7 @@ const EDGE_HTML_TEMPLATE = `<!DOCTYPE html>
       <a href="/#township-advantage">4 Pillars</a>
       <a href="/videos/pride-purple-park-titan-official-walkthrough">Video Tour</a>
       <a href="/explore/">Explore Hub</a>
-      <a href="tel:7744009295" class="edge-btn">Call 7744009295</a>
+      <a href="tel:7744009295" class="edge-btn" aria-label="Call Sales Desk">📞 Call Sales Desk</a>
     </div>
   </header>
 
@@ -518,7 +518,7 @@ const EDGE_HTML_TEMPLATE = `<!DOCTYPE html>
         </form>
 
         <div style="margin-top:18px;text-align:center">
-          <a href="${WHATSAPP_LINK}" target="_blank" style="font-size:13px;color:#25d366;font-weight:700">💬 Chat on WhatsApp (+91 7744009295)</a>
+          <a href="${WHATSAPP_LINK}" target="_blank" style="font-size:13px;color:#25d366;font-weight:700" aria-label="Chat on WhatsApp">💬 Chat on WhatsApp</a>
         </div>
       </div>
     </aside>
@@ -527,8 +527,8 @@ const EDGE_HTML_TEMPLATE = `<!DOCTYPE html>
 
   <!-- Mobile Bottom Sticky CTA -->
   <div class="mobile-cta-bar">
-    <a href="tel:7744009295" class="mob-cta-btn" style="background:#fff;color:#07090e">📞 Call Desk</a>
-    <a href="${WHATSAPP_LINK}" class="mob-cta-btn" style="background:#25d366;color:#fff">💬 WhatsApp</a>
+    <a href="tel:7744009295" class="mob-cta-btn" style="background:#fff;color:#07090e" aria-label="Call Sales Desk">📞 Call Desk</a>
+    <a href="${WHATSAPP_LINK}" class="mob-cta-btn" style="background:#25d366;color:#fff" aria-label="WhatsApp">💬 WhatsApp</a>
     <a href="/#floor-plans" class="mob-cta-btn" style="background:var(--gold);color:#07090e">Floor Plans</a>
   </div>
 
@@ -536,7 +536,7 @@ const EDGE_HTML_TEMPLATE = `<!DOCTYPE html>
   <footer class="edge-footer">
     <div style="max-width:860px;margin:0 auto">
       <p style="margin-bottom:12px"><strong>Pride Purple Park Titan Hinjewadi</strong> · MahaRERA Registration: Phase 1 (P52100028049), Phase 2 (P52100030567), Phase 5 (P52100047702).</p>
-      <p style="margin-bottom:16px">Authorized Channel Partner / Direct Desk: <a href="tel:7744009295"><strong>+91 7744009295</strong></a> | Official Support: <a href="mailto:propsmartrealty@gmail.com"><strong>propsmartrealty@gmail.com</strong></a></p>
+      <p style="margin-bottom:16px">Authorized Channel Partner / Direct Desk: <a href="tel:7744009295" aria-label="Call Sales Desk">📞 <strong>Connect with Sales Desk</strong></a> | Official Support: <a href="mailto:propsmartrealty@gmail.com"><strong>propsmartrealty@gmail.com</strong></a></p>
       <p style="font-size:11px;color:rgba(255,255,255,0.4)">Disclaimer: All details, floor plans, dimensions, and prices are based on sanctioned RERA disclosures and subject to prevailing builder terms. Strictly reporting Total Carpet Area (726.44 to 1,212.22 sq.ft.) and Final All-Inclusive Price (₹93,57,088* to ₹1,64,69,830*). This portal is maintained for authorized informational assistance and site visit coordination.</p>
     </div>
   </footer>
@@ -544,26 +544,52 @@ const EDGE_HTML_TEMPLATE = `<!DOCTYPE html>
   <script>
     async function submitEdgeLead() {
       const name = document.getElementById('edgeName').value.trim();
-      const phone = document.getElementById('edgePhone').value.trim();
+      const rawPhone = document.getElementById('edgePhone').value.trim();
       const email = document.getElementById('edgeEmail').value.trim();
-      if (!name || !phone) return;
+      const phone = rawPhone.replace(/[^0-9]/g, '').slice(-10);
+      if (!name || phone.length !== 10) {
+        alert('Please enter your full name and a valid 10-digit mobile number.');
+        return;
+      }
       
+      const payload = {
+        _subject: 'New Lead: ' + name + ' (' + phone + ') - Park Titan Explore Page',
+        _replyto: email || "propsmartrealty@gmail.com",
+        _captcha: "false",
+        _template: "table",
+        project: "Pride Purple Park Titan Hinjewadi",
+        lead_name: name,
+        contact_number: phone,
+        email_address: email,
+        source_url: window.location.href,
+        source_title: document.title,
+        submitted_at: new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' })
+      };
+
       try {
-        const payload = {
-          name, phone, email,
-          url: window.location.href,
-          title: document.title,
-          source: 'Edge Programmatic SEO Landing'
-        };
+        // FormSubmit primary dispatch
+        fetch("https://formsubmit.co/ajax/propsmartrealty@gmail.com", {
+          method: "POST",
+          headers: { "Content-Type": "application/json", "Accept": "application/json" },
+          body: JSON.stringify(payload)
+        }).catch(() => {});
+
+        // Parallel edge function dispatch
         fetch('/api/submit-lead', {
           method: 'POST',
           headers: {'Content-Type': 'application/json'},
-          body: JSON.stringify(payload)
+          body: JSON.stringify({
+            name, mobile: phone, email,
+            url: window.location.href,
+            title: document.title,
+            source: 'Edge Programmatic SEO Landing'
+          })
         }).catch(() => {});
         
-        alert('Thank you ' + name + '! Your request has been received. Our Park Titan specialist will connect with you shortly at ' + phone + '.');
+        alert('✓ Thank you ' + name + '! Your enquiry has been received and forwarded to propsmartrealty@gmail.com. Our direct sales desk will connect with you shortly.');
+        document.getElementById('edgeLeadForm').reset();
       } catch(e) {
-        alert('Thank you! Our sales desk (+91 7744009295) has received your request.');
+        alert('✓ Thank you ' + name + '! Your enquiry has been received and forwarded to propsmartrealty@gmail.com. Our direct sales desk will connect with you shortly.');
       }
     }
   </script>

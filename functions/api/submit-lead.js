@@ -59,6 +59,8 @@ export async function onRequestPost(context) {
       const emailContent = {
         _subject: `New Lead: ${leadPayload.name} (${leadPayload.mobile}) - Park Titan Hinjewadi`,
         _replyto: leadPayload.email || "propsmartrealty@gmail.com",
+        _captcha: "false",
+        _template: "table",
         project: leadPayload.project,
         lead_name: leadPayload.name,
         contact_number: leadPayload.mobile,
