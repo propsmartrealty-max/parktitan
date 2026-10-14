@@ -69,7 +69,14 @@ TIER_1_CORE_URLS = [
     "https://purpleparktitan.com/.well-known/llms.txt",
     "https://purpleparktitan.com/web-stories/5-academies-park-titan",
     "https://purpleparktitan.com/web-stories/7-acre-podium-park-titan",
-    "https://purpleparktitan.com/web-stories/2bhk-3bhk-floor-plans-park-titan"
+    "https://purpleparktitan.com/web-stories/2bhk-3bhk-floor-plans-park-titan",
+    "https://purpleparktitan.com/explore/pride-purple-hinjewadi-official-overview-and-booking-guide",
+    "https://purpleparktitan.com/explore/pride-purple-park-titan-hinjewadi-all-inclusive-price-and-cost-sheet",
+    "https://purpleparktitan.com/explore/park-titan-hinjewadi-sanctioned-carpet-area-and-floor-plans",
+    "https://purpleparktitan.com/explore/pride-purple-2-bhk-flats-hinjewadi-official-overview-and-booking-guide",
+    "https://purpleparktitan.com/explore/pride-purple-3-bhk-flats-hinjewadi-all-inclusive-price-and-cost-sheet",
+    "https://purpleparktitan.com/explore/park-titan-hinjewadi-7-acre-podium-7-acre-podium-and-5-sports-academies",
+    "https://purpleparktitan.com/explore/park-titan-hinjewadi-sales-office-direct-sales-desk-and-site-visit",
 ]
 
 def get_pst_reset_time():

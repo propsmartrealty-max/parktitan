@@ -821,8 +821,54 @@ function resolveProgrammaticSlug(slug) {
   let contextualOverview = '';
   let faqs = [];
 
+  // 0. Pride Purple Hinjewadi & Park Titan Exact Brand Authority Slugs
+  if (slug.includes('pride-purple-hinjewadi') || slug.includes('park-titan-hinjewadi') || slug.includes('pride-purple-park-titan') || slug.includes('pride-park-titan') || slug.includes('park-titan-pride-purple') || slug.includes('flats-in-pride-purple')) {
+    category = 'Pride Purple Hinjewadi Brand Authority';
+    entity = cleanTitle.replace(/Official Overview And Booking Guide|Final All Inclusive Price And Cost Sheet|Sanctioned Carpet Area And Floor Plans|Maharera Sanctions And Possession Timeline|Sample Flat Virtual Tour And Walkthrough|7 Acre Podium And 5 Sports Academies|Location Map And Metro Connectivity|Direct Sales Desk And Site Visit|Verified Buyer Reviews And Rating|Rental Income And Resale Value/g, '').trim();
+    if (!entity) entity = 'Pride Purple Park Titan Hinjewadi';
+    
+    price_val = '9357088';
+    contextualOverview = `
+      <p><strong>Pride Purple Park Titan Hinjewadi</strong> is the crown-jewel luxury township by Pride Purple Group, strategically located on the prime Hinjewadi-Marunji Link Road, Phase 1, Hinjewadi, Pune. Spanning 17+ acres within the expansive 60-acre Park District, Park Titan features 18 high-rise towers designed with monolithic aluminum formwork (Mivan RCC) technology.</p>
+      <p>Elevated 25 feet above surface traffic, Park Titan houses a colossal <strong>7-acre vehicle-free active podium deck</strong>—the largest in West Pune. It is also the first integrated township in Pune to feature five nationally certified sports and cultural development academies on-site: Padukone School of Badminton, BSA Bluewater Swim Academy, Shiamak Davar Dance Academy, SportyBeans, and Suresh Wadkar's Ajivasan Music Academy.</p>
+    `;
+    tableRows = `
+      <tr><td>Project Entity</td><td><strong>${escapeHtml(entity)}</strong></td></tr>
+      <tr><td>Master Developer</td><td>Pride Purple Group (28+ Years Legacy · 30+ Million Sq.Ft. Delivered)</td></tr>
+      <tr><td>Location Benchmark</td><td>Hinjewadi-Marunji Link Road, Phase 1, Hinjewadi, Pune 411057 (0.8 km to Wipro)</td></tr>
+      <tr><td>Township Scale</td><td>18 High-Rise Towers across 17+ Acres (Part of 60-Acre Park District)</td></tr>
+      <tr><td>Active Open Space</td><td><strong style="color:#d4af37">7-Acre Raised Vehicle-Free Active Podium Deck</strong></td></tr>
+      <tr><td>Sports Academies</td><td>5 On-Site Professional Academies (Badminton, Swim, Dance, Sports, Music)</td></tr>
+      <tr><td>Sanctioned Carpet Area</td><td>2 RLK (726.44 &amp; 789.54 sq.ft.) | 3 RLK (988.25, 1,059.87 &amp; 1,212.22 sq.ft.)</td></tr>
+      <tr><td>Final Pricing (All-Inclusive)*</td><td><strong style="color:#2ecc71;font-size:16px">₹93.57 Lakhs* to ₹1.65 Crore*</strong></td></tr>
+      <tr><td>Transit &amp; Connectivity</td><td>1.0 km to PMRDA Metro Line 3 Station · 15 mins to Mumbai-Pune Expressway</td></tr>
+      <tr><td>MahaRERA Certifications</td><td>Phase 1 (P52100028049) · Phase 2 (P52100030567) · Phase 5 (P52100047702)</td></tr>
+    `;
+    faqs = [
+      {
+        q: "What makes Pride Purple Park Titan the #1 township in Hinjewadi, Pune?",
+        a: "Park Titan combines 17+ acres of master township development with West Pune's largest 7-acre vehicle-free active podium, low core density of only 6 flats per floor, 5 on-site championship academies, and prime location on Hinjewadi-Marunji Link Road just 0.8 km from Wipro Circle."
+      },
+      {
+        q: "What are the exact carpet areas and all-inclusive prices at Park Titan Hinjewadi?",
+        a: "Park Titan offers 100% sanctioned RERA carpet: 2 RLK Optima (726.44 sq.ft.) at ₹93.57L*, 2 RLK Ultima (789.54 sq.ft.) at ₹1.01 Cr*, 3 RLK Optima (988.25 sq.ft.) at ₹1.24 Cr*, 3 RLK Ultima (1,059.87 sq.ft.) at ₹1.37 Cr*, and 3 RLK Grande (1,212.22 sq.ft.) at ₹1.65 Cr*."
+      },
+      {
+        q: "What are the MahaRERA registration numbers for Pride Purple Park Titan?",
+        a: "Pride Purple Park Titan is officially registered across Phase 1 (P52100028049), Phase 2 (P52100030567), and Phase 5 (P52100047702)."
+      },
+      {
+        q: "Which 5 sports academies are operational inside Park Titan?",
+        a: "Park Titan features Padukone School of Badminton (Prakash Padukone), BSA Bluewater Swim Academy (Arjun Muralidharan), Shiamak Davar Dance Academy, SportyBeans multi-sport academy, and Ajivasan Music Academy (Suresh Wadkar)."
+      },
+      {
+        q: "How can I book an official site visit or speak with the sales desk?",
+        a: "You can connect directly with the official Pride Purple sales desk via the interactive Call or WhatsApp options on this portal to schedule a private tour and review sanctioned blueprints."
+      }
+    ];
+  }
   // 1. Commute Slugs
-  if (slug.includes('commute') || slug.includes('distance') || slug.includes('driving-time') || slug.includes('flats-near') || slug.includes('near-infosys')) {
+  else if (slug.includes('commute') || slug.includes('distance') || slug.includes('driving-time') || slug.includes('flats-near') || slug.includes('near-infosys')) {
     category = 'Tech Corridor & Commute';
     entity = cleanTitle.replace(/Commute From Pride Purple Park Titan To |Flats Near |Distance From Park Titan Hinjewadi To /g, '');
     contextualOverview = `
@@ -1257,6 +1303,20 @@ function renderMasterDirectory(url) {
     </div>
 
     <div class="hub-grid">
+      <!-- Pillar 0: Pride Purple Hinjewadi Brand Permutations -->
+      <div class="hub-card" style="border-color:#d4af37;background:linear-gradient(180deg, #121927 0%, #0f1420 100%);">
+        <h2>👑 Pride Purple Hinjewadi &amp; Park Titan</h2>
+        <div class="hub-links">
+          <a href="/explore/pride-purple-hinjewadi-official-overview-and-booking-guide" style="color:#f3e5ab;font-weight:600">Pride Purple Hinjewadi (Master Township Guide)</a>
+          <a href="/explore/pride-purple-park-titan-hinjewadi-all-inclusive-price-and-cost-sheet" style="color:#f3e5ab;font-weight:600">Pride Purple Park Titan Hinjewadi Price List</a>
+          <a href="/explore/park-titan-hinjewadi-sanctioned-carpet-area-and-floor-plans">Park Titan Hinjewadi Sanctioned Floor Plans</a>
+          <a href="/explore/pride-purple-2-bhk-flats-hinjewadi-official-overview-and-booking-guide">Pride Purple 2 BHK Flats Hinjewadi (726-789 sq.ft.)</a>
+          <a href="/explore/pride-purple-3-bhk-flats-hinjewadi-all-inclusive-price-and-cost-sheet">Pride Purple 3 BHK Flats Hinjewadi (988-1212 sq.ft.)</a>
+          <a href="/explore/park-titan-hinjewadi-7-acre-podium-7-acre-podium-and-5-sports-academies">Park Titan 7-Acre Podium &amp; 5 Academies</a>
+          <a href="/explore/park-titan-hinjewadi-sales-office-direct-sales-desk-and-site-visit">Park Titan Sales Office &amp; Site Visit Desk</a>
+        </div>
+      </div>
+
       <!-- Pillar 1 -->
       <div class="hub-card">
         <h2>🚗 Tech Corridor Commute Hub</h2>

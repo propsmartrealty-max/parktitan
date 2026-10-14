@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-10-14",
-  "total_vectors": 13026,
+  "generated_at": "2026-10-15",
+  "total_vectors": 18226,
   "pillars": [
     "commute",
     "config",
@@ -8,6 +8,9 @@
     "academy",
     "nri",
     "locality",
-    "investment"
+    "investment",
+    "ecosystem",
+    "pune-market",
+    "brand-authority"
   ]
 }

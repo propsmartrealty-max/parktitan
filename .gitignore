@@ -11,3 +11,5 @@ keys/*.json
 !keys/README.md
 .indexing_state.json
 indexing_report.json
+__pycache__/
+*.pyc

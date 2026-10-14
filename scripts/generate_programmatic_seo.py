@@ -339,6 +339,63 @@ PUNE_MARKET_QUERY_TYPES = [
     "best-flats-to-buy-investment-ranking",
 ]
 
+# 10. PRIDE PURPLE HINJEWADI & PARK TITAN EXACT SEARCH PERMUTATIONS
+PRIDE_PURPLE_HINJEWADI_ENTITIES = [
+    ("Pride Purple Hinjewadi", "Pride Purple Hinjewadi Mega-Township Ecosystem"),
+    ("Pride Purple Park Titan", "Pride Purple Park Titan 17-Acre Township"),
+    ("Pride Purple Park Titan Hinjewadi", "Pride Purple Park Titan Hinjewadi Flagship"),
+    ("Park Titan Hinjewadi", "Park Titan Hinjewadi Luxury Township"),
+    ("Pride Park Titan", "Pride Park Titan Hinjewadi Pune"),
+    ("Pride Purple Group Hinjewadi", "Pride Purple Group Hinjewadi Real Estate Developer"),
+    ("Pride Purple Park District Hinjewadi", "Pride Purple 60-Acre Park District Hinjewadi"),
+    ("Pride Purple Flats in Hinjewadi", "Pride Purple 2 & 3 BHK Flats in Hinjewadi"),
+    ("Pride Purple 2 BHK Flats Hinjewadi", "Pride Purple 2 BHK Flats Hinjewadi (726-789 sq.ft.)"),
+    ("Pride Purple 3 BHK Flats Hinjewadi", "Pride Purple 3 BHK Flats Hinjewadi (988-1212 sq.ft.)"),
+    ("Pride Purple Luxury Apartments Hinjewadi", "Pride Purple Luxury High-Rise Apartments Hinjewadi"),
+    ("Pride Purple Hinjewadi Phase 1", "Pride Purple Properties Near Hinjewadi Phase 1"),
+    ("Pride Purple Hinjewadi Phase 2", "Pride Purple Properties Connecting to Hinjewadi Phase 2"),
+    ("Pride Purple Hinjewadi Phase 5", "Pride Purple Park Titan Phase 5 MahaRERA P52100047702"),
+    ("Pride Purple Marunji Link Road", "Pride Purple Projects on Hinjewadi-Marunji Link Road"),
+    ("Park Titan by Pride Purple Pune", "Park Titan by Pride Purple Pune Luxury Enclave"),
+    ("Park Titan Hinjewadi 2 RLK Optima", "Park Titan 2 RLK Optima (726.44 sq.ft. Carpet)"),
+    ("Park Titan Hinjewadi 2 RLK Ultima", "Park Titan 2 RLK Ultima (789.54 sq.ft. Carpet)"),
+    ("Park Titan Hinjewadi 3 RLK Optima", "Park Titan 3 RLK Optima (988.25 sq.ft. Carpet)"),
+    ("Park Titan Hinjewadi 3 RLK Ultima", "Park Titan 3 RLK Ultima (1,059.87 sq.ft. Carpet)"),
+    ("Park Titan Hinjewadi 3 RLK Grande", "Park Titan 3 RLK Grande (1,212.22 sq.ft. Carpet)"),
+    ("Park Titan Hinjewadi 7 Acre Podium", "Park Titan 7-Acre Continuous Vehicle-Free Active Podium"),
+    ("Park Titan Hinjewadi 5 Sports Academies", "Park Titan 5 On-Site Professional National Academies"),
+    ("Park Titan Hinjewadi 18 High Rise Towers", "Park Titan 18 High-Rise Towers across 17+ Acres"),
+    ("Park Titan Hinjewadi Mivan Construction", "Park Titan Monolithic Aluminum Formwork Mivan RCC Technology"),
+    ("Park Titan Hinjewadi Metro Line 3", "Park Titan Proximity to Upcoming PMRDA Metro Line 3 Station"),
+    ("Park Titan Hinjewadi Wipro Circle", "Park Titan 0.8 km Direct Connectivity to Wipro Circle"),
+    ("Park Titan Hinjewadi Infosys Phase 1", "Park Titan Fast Transit to Infosys Hinjewadi Phase 1"),
+    ("Park Titan Hinjewadi Sales Office", "Park Titan Hinjewadi Official Direct Sales & Experience Centre"),
+    ("Park Titan Hinjewadi Official Brochure", "Park Titan Hinjewadi Sanctioned Brochure & Master Layout PDF"),
+    ("Park Titan Hinjewadi Cost Sheet Breakdown", "Park Titan Hinjewadi Final All-Inclusive Cost Sheet Breakdown"),
+    ("Park Titan Hinjewadi MahaRERA Sanctions", "Park Titan MahaRERA Registration P52100028049 P52100030567 P52100047702"),
+    ("Park Titan Hinjewadi Possession Timeline", "Park Titan Possession Timeline & Tower Wings Construction Status"),
+    ("Park Titan Hinjewadi Sample Flat Walkthrough", "Park Titan Sample Flat 3D Virtual Tour & Drone Walkthrough"),
+    ("Park Titan Hinjewadi Rental Yield Analysis", "Park Titan Hinjewadi 4.8% to 5.4% Rental Yield & ROI Analysis"),
+    ("Park Titan Hinjewadi Resale Appreciation", "Park Titan 5-Year Capital Appreciation & Resale Liquidity"),
+    ("Park Titan Hinjewadi Maintenance Charges", "Park Titan Society Maintenance Sinking Fund & Running Charges"),
+    ("Flats in Pride Purple Hinjewadi", "Luxury Residential Flats in Pride Purple Hinjewadi"),
+    ("Pride Purple Hinjewadi Pre Launch & Booking", "Pride Purple Hinjewadi Booking Process & Token Privilege"),
+    ("Pride Purple Hinjewadi Customer Reviews", "Pride Purple Hinjewadi Verified Homebuyer Reviews & Ratings"),
+]
+
+PRIDE_PURPLE_HINJEWADI_INTENTS = [
+    ("official-overview-and-booking-guide", "Official Overview & Booking Guide"),
+    ("all-inclusive-price-and-cost-sheet", "Final All-Inclusive Price & Cost Sheet"),
+    ("sanctioned-carpet-area-and-floor-plans", "Sanctioned Carpet Area & Floor Plans"),
+    ("maharera-sanctions-and-possession-timeline", "MahaRERA Sanctions & Possession Timeline"),
+    ("sample-flat-virtual-tour-and-walkthrough", "Sample Flat Virtual Tour & Walkthrough"),
+    ("7-acre-podium-and-5-sports-academies", "7-Acre Podium & 5 Sports Academies"),
+    ("location-map-and-metro-connectivity", "Location Map & Metro Line 3 Connectivity"),
+    ("direct-sales-desk-and-site-visit", "Direct Sales Desk & Site Visit Appointment"),
+    ("verified-buyer-reviews-and-rating", "Verified Buyer Reviews & Community Rating"),
+    ("rental-income-and-resale-value", "Rental Income (5.2% Yield) & Resale Value"),
+]
+
 
 def slugify(text):
     text = text.lower().strip()
@@ -510,10 +567,24 @@ def generate_all_vectors():
                 "title": f"{corridor_title} — {q_type.replace('-', ' ').title()}",
                 "meta_desc": f"Authoritative Pune real estate market guide: {corridor_title}. {desc}. Park Titan Hinjewadi perspective. Official sales desk.",
                 "h1": f"{corridor_title}: {q_type.replace('-', ' ').title()}",
-                "entity": short_name,
-                "corridor_title": corridor_title,
                 "desc": desc,
                 "category": "Pune Real Estate Market",
+            })
+
+    # Pillar 10: Pride Purple Hinjewadi & Park Titan Exact Search Permutations
+    for entity_name, entity_desc in PRIDE_PURPLE_HINJEWADI_ENTITIES:
+        ent_slug = slugify(entity_name)
+        for q_type, q_desc in PRIDE_PURPLE_HINJEWADI_INTENTS:
+            slug = f"{ent_slug}-{q_type}"
+            vectors.append({
+                "pillar": "brand-authority",
+                "slug": slug,
+                "title": f"{entity_name} — {q_desc} | Official Pride Purple Portal",
+                "meta_desc": f"{entity_name}: {q_desc}. Official specifications, 2 & 3 BHK luxury residences (726-1212 sq.ft.), final prices from ₹93.57L*, 7-acre vehicle-free podium & 5 academies. Official sales desk.",
+                "h1": f"{entity_name}: {q_desc}",
+                "entity": entity_name,
+                "desc": entity_desc,
+                "category": "Pride Purple Hinjewadi Brand Authority",
             })
 
     # Intent modifiers covering genuine buyer search queries
@@ -578,7 +649,7 @@ def main():
     manifest = {
         "generated_at": TODAY,
         "total_vectors": total_count,
-        "pillars": ["commute", "config", "compare", "academy", "nri", "locality", "investment"],
+        "pillars": ["commute", "config", "compare", "academy", "nri", "locality", "investment", "ecosystem", "pune-market", "brand-authority"],
     }
     with open("explore/data/corpus-manifest.json", "w", encoding="utf-8") as f:
         json.dump(manifest, f, indent=2)
