@@ -7,3 +7,7 @@ node_modules/
 *service_account*.json
 service_account.json
 credentials.json
+keys/*.json
+!keys/README.md
+.indexing_state.json
+indexing_report.json
