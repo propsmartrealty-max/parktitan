@@ -58,6 +58,7 @@ TIER_1_CORE_URLS = [
     "https://purpleparktitan.com/videos/pride-purple-park-titan-official-walkthrough",
     "https://purpleparktitan.com/videos/",
     "https://purpleparktitan.com/explore/",
+    "https://purpleparktitan.com/directory/",
     "https://purpleparktitan.com/articles/",
     "https://purpleparktitan.com/articles/pride-purple-park-titan-hinjewadi-ecosystem-master-review",
     "https://purpleparktitan.com/articles/2bhk-3bhk-flats-hinjewadi-pune-market-guide",
