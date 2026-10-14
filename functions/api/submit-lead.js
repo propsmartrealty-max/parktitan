@@ -56,22 +56,34 @@ export async function onRequestPost(context) {
 
     // Forward lead notification email to propsmartrealty@gmail.com
     try {
+      const formattedTime = new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' }) + ' IST';
+      const waUrl = 'https://wa.me/91' + cleanMobile + '?text=' + encodeURIComponent('Hi ' + leadPayload.name + ', thank you for your enquiry regarding Pride Purple Park Titan Hinjewadi. Sharing official cost sheet & floor plans.');
+      const telUrl = 'tel:' + cleanMobile;
+
       const emailContent = {
-        _subject: `New Lead: ${leadPayload.name} (${leadPayload.mobile}) - Park Titan Hinjewadi`,
+        _subject: `🔥 HIGH-INTENT LEAD: ${leadPayload.name} (${cleanMobile}) | ${leadPayload.configuration} | Park Titan Hinjewadi`,
         _replyto: leadPayload.email || "propsmartrealty@gmail.com",
         _captcha: "false",
         _template: "table",
-        project: leadPayload.project,
-        lead_name: leadPayload.name,
-        contact_number: leadPayload.mobile,
-        email_address: leadPayload.email,
-        interested_configuration: leadPayload.configuration,
-        budget_range: leadPayload.budget,
-        visitor_message: leadPayload.message,
-        source_url: leadPayload.source_url,
-        source_title: leadPayload.source_title,
-        timestamp: leadPayload.timestamp,
-        client_country: leadPayload.country
+        "01_Lead_Full_Name": leadPayload.name,
+        "02_Contact_Number": cleanMobile,
+        "03_WhatsApp_Direct_Chat": waUrl,
+        "04_One_Click_Call": telUrl,
+        "05_Email_Address": leadPayload.email || "Not Provided",
+        "06_Interested_Configuration": leadPayload.configuration,
+        "07_All_Inclusive_Budget_Range": leadPayload.budget,
+        "08_Customer_Message_Notes": leadPayload.message || "Immediate Site Visit & Official Cost Sheet Requested",
+        "09_Target_Project": "Pride Purple Park Titan (18 Towers across 17+ Acres)",
+        "10_Project_Location": "Hinjewadi-Marunji Link Road, Phase 1, Hinjewadi, Pune 411057",
+        "11_MahaRERA_Numbers": "Phase 1: P52100028049 | Phase 2: P52100030567 | Phase 5: P52100047702",
+        "12_Sanctioned_Carpet_Sizes": "2 BHK (726.44 & 789.54 sq.ft.) | 3 BHK (988.25, 1,059.87 & 1,212.22 sq.ft.)",
+        "13_Price_Spectrum_Final_Price": "₹93.57 Lakhs* to ₹1.65 Crore* (Final Price Only)",
+        "14_Landing_Page_URL": leadPayload.source_url,
+        "15_Page_Title": leadPayload.source_title,
+        "16_Submission_Timestamp_IST": formattedTime,
+        "17_Client_IP": leadPayload.client_ip,
+        "18_Client_Country": leadPayload.country,
+        "19_Recommended_Action": `Call ${cleanMobile} within 15 minutes or message on WhatsApp`
       };
 
       await fetch("https://formsubmit.co/ajax/propsmartrealty@gmail.com", {

@@ -552,18 +552,29 @@ const EDGE_HTML_TEMPLATE = `<!DOCTYPE html>
         return;
       }
       
+      const formattedTime = new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' }) + ' IST';
+      const waUrl = 'https://wa.me/91' + phone + '?text=' + encodeURIComponent('Hi ' + name + ', thank you for your enquiry regarding Pride Purple Park Titan Hinjewadi. Sharing official cost sheet & floor plans.');
+      const telUrl = 'tel:' + phone;
+
       const payload = {
-        _subject: 'New Lead: ' + name + ' (' + phone + ') - Park Titan Explore Page',
+        _subject: '🔥 HIGH-INTENT LEAD: ' + name + ' (' + phone + ') | Park Titan Programmatic Explore',
         _replyto: email || "propsmartrealty@gmail.com",
         _captcha: "false",
         _template: "table",
-        project: "Pride Purple Park Titan Hinjewadi",
-        lead_name: name,
-        contact_number: phone,
-        email_address: email,
-        source_url: window.location.href,
-        source_title: document.title,
-        submitted_at: new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' })
+        "01_Lead_Full_Name": name,
+        "02_Contact_Number": phone,
+        "03_WhatsApp_Direct_Chat": waUrl,
+        "04_One_Click_Call": telUrl,
+        "05_Email_Address": email || "Not Provided",
+        "06_Final_Price_Budget": "₹93.57L* - ₹1.65 Cr* (All-Inclusive Final Price)",
+        "07_Target_Project": "Pride Purple Park Titan (18 Towers across 17+ Acres)",
+        "08_Project_Location": "Hinjewadi-Marunji Link Road, Phase 1, Hinjewadi, Pune 411057",
+        "09_MahaRERA_Numbers": "Phase 1: P52100028049 | Phase 2: P52100030567 | Phase 5: P52100047702",
+        "10_Sanctioned_Carpet_Sizes": "2 BHK (726.44 & 789.54 sq.ft.) | 3 BHK (988.25, 1,059.87 & 1,212.22 sq.ft.)",
+        "11_Landing_Page_URL": window.location.href,
+        "12_Page_Title": document.title,
+        "13_Submission_Timestamp_IST": formattedTime,
+        "14_Recommended_Action": "Call " + phone + " within 15 minutes or message on WhatsApp"
       };
 
       try {
