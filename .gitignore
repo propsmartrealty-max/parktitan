@@ -11,5 +11,7 @@ keys/*.json
 !keys/README.md
 .indexing_state.json
 indexing_report.json
+config.local.json
+.env*
 __pycache__/
 *.pyc
