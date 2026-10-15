@@ -59,3 +59,11 @@
 /.well-known/*
   Cache-Control: public, max-age=86400, stale-while-revalidate=604800
   Content-Type: text/plain; charset=utf-8
+
+/directory/*
+  Cache-Control: public, max-age=86400, stale-while-revalidate=604800
+  Cloudflare-CDN-Cache-Control: max-age=604800, stale-while-revalidate=86400
+
+/web-stories/*
+  Cache-Control: public, max-age=86400, stale-while-revalidate=604800
+  Cloudflare-CDN-Cache-Control: max-age=604800, stale-while-revalidate=86400
