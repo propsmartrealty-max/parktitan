@@ -512,6 +512,9 @@ def main():
                 key_paths.append(p.strip())
 
     key_paths = list(dict.fromkeys(key_paths))
+    if args.force:
+        state.data["account_exhaustion"] = {}
+        state.save()
     km = KeyManager(key_paths, state)
 
     if args.health_check:
