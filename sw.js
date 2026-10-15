@@ -1,10 +1,12 @@
-const CACHE_NAME = 'parktitan-v1';
+const CACHE_NAME = 'parktitan-v2';
 const PRECACHE_URLS = [
   '/',
   '/manifest.json',
   '/images/logo-park-titan.png',
   '/favicon.svg',
   '/favicon.ico',
+  '/directory/',
+  '/articles/',
   '/404.html'
 ];
 
