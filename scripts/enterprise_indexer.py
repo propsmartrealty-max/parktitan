@@ -57,7 +57,6 @@ TIER_1_CORE_URLS = [
     "https://purpleparktitan.com/",
     "https://purpleparktitan.com/videos/pride-purple-park-titan-official-walkthrough",
     "https://purpleparktitan.com/videos/",
-    "https://purpleparktitan.com/explore/",
     "https://purpleparktitan.com/directory/",
     "https://purpleparktitan.com/articles/",
     "https://purpleparktitan.com/articles/pride-purple-park-titan-hinjewadi-ecosystem-master-review",
@@ -77,13 +76,6 @@ TIER_1_CORE_URLS = [
     "https://purpleparktitan.com/web-stories/park-titan-40-luxury-amenities",
     "https://purpleparktitan.com/articles/pride-purple-hinjewadi-projects-township-ecosystem",
     "https://purpleparktitan.com/articles/pride-purple-group-pune-developer-track-record-review",
-    "https://purpleparktitan.com/explore/pride-purple-hinjewadi-official-overview-and-booking-guide",
-    "https://purpleparktitan.com/explore/pride-purple-park-titan-hinjewadi-all-inclusive-price-and-cost-sheet",
-    "https://purpleparktitan.com/explore/park-titan-hinjewadi-sanctioned-carpet-area-and-floor-plans",
-    "https://purpleparktitan.com/explore/pride-purple-2-bhk-flats-hinjewadi-official-overview-and-booking-guide",
-    "https://purpleparktitan.com/explore/pride-purple-3-bhk-flats-hinjewadi-all-inclusive-price-and-cost-sheet",
-    "https://purpleparktitan.com/explore/park-titan-hinjewadi-7-acre-podium-7-acre-podium-and-5-sports-academies",
-    "https://purpleparktitan.com/explore/park-titan-hinjewadi-sales-office-direct-sales-desk-and-site-visit",
 ]
 
 def get_pst_reset_time():

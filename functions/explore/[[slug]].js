@@ -22,8 +22,8 @@ const EDGE_HTML_TEMPLATE = `<!DOCTYPE html>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Pride Purple Park Titan Hinjewadi — Official Project Portal</title>
   <meta name="description" content="Explore Pride Purple Park Titan Hinjewadi across 17+ acres with 7-acre vehicle-free podium, 5 academies &amp; 2 &amp; 3 BHK homes."/>
-  <link rel="canonical" href="https://purpleparktitan.com/explore/"/>
-  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"/>
+  <link rel="canonical" href="https://purpleparktitan.com/"/>
+  <meta name="robots" content="noindex, follow"/>
   
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
@@ -638,10 +638,16 @@ export async function onRequest(context) {
         el.setAttribute('content', seoData.meta_desc);
       }
     })
-    // Update Canonical URL
+    // Consolidate authority to canonical homepage
     .on('link[rel="canonical"]', {
       element(el) {
-        el.setAttribute('href', canonicalUrl);
+        el.setAttribute('href', 'https://purpleparktitan.com/');
+      }
+    })
+    // Enforce noindex on programmatic doorway pages
+    .on('meta[name="robots"]', {
+      element(el) {
+        el.setAttribute('content', 'noindex, follow');
       }
     })
     // Inject Schema.org JSON-LD & Dynamic OpenGraph Tags into <head>
@@ -798,6 +804,7 @@ export async function onRequest(context) {
   const baseResponse = new Response(EDGE_HTML_TEMPLATE, {
     headers: {
       'Content-Type': 'text/html; charset=UTF-8',
+      'X-Robots-Tag': 'noindex, follow',
       'Cache-Control': 'public, max-age=86400, s-maxage=604800, stale-while-revalidate=2592000',
       'X-Programmatic-SEO-Engine': 'Cloudflare-HTMLRewriter-v3',
       'X-Content-Type-Options': 'nosniff'
@@ -1232,8 +1239,8 @@ function renderMasterDirectory(url) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Pride Purple Park Titan Hinjewadi — Master Exploration Hub &amp; Knowledge Graph</title>
   <meta name="description" content="Explore all 13,000+ programmatic search vectors for Pride Purple Park Titan Hinjewadi: transit corridors, sanctioned 2 &amp; 3 BHK floor plans, competitor audits, and NRI investment guides."/>
-  <link rel="canonical" href="https://purpleparktitan.com/explore/"/>
-  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"/>
+  <link rel="canonical" href="https://purpleparktitan.com/"/>
+  <meta name="robots" content="noindex, follow"/>
   
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
@@ -1396,6 +1403,7 @@ function renderMasterDirectory(url) {
   return new Response(directoryHtml, {
     headers: {
       'Content-Type': 'text/html; charset=UTF-8',
+      'X-Robots-Tag': 'noindex, follow',
       'Cache-Control': 'public, max-age=86400, s-maxage=604800',
       'X-Programmatic-Hub': 'Cloudflare-Edge-Directory',
       'X-Content-Type-Options': 'nosniff'
